@@ -543,3 +543,11 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .source-note{margin-top:var(--s6)}
 @media (max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}.card{grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:var(--s4)}}
 @media (max-width:620px){.quick-links{grid-template-columns:minmax(0,1fr)}.topbar-tools{margin-left:0;padding-bottom:6px}.card{grid-template-columns:minmax(0,1fr)}}
+.contact-form{display:grid;gap:var(--s4);max-width:40rem;margin-top:var(--s6)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.search-form{display:grid;gap:var(--s2);max-width:40rem}
+.search-form label{font-weight:600;color:var(--ink-strong)}
+.search-form div{display:flex;gap:var(--s2)}
+.search-form input{flex:1;min-height:46px;padding:10px 12px;border:1px solid #8a8a8a;border-radius:2px;font:inherit;color:var(--ink-strong)}
+.search-form input:focus-visible{outline:2px solid var(--red);outline-offset:0;border-color:var(--red)}
+.topbar-search{display:inline-flex}

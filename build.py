@@ -236,7 +236,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
  <div class="topbar"><div class="wrap">
   <a class="topbar-home" href="/">{esc(names['topbar'])}</a>
   <span class="topbar-social">{social}</span>
-  <span class="topbar-tools">{''.join(f'<a href="{esc(q["url"])}" rel="noopener">{esc(q["label"])}</a>' for q in SITE["topbarLinks"])}</span>
+  <span class="topbar-tools"><a href="/hledat/">Hledat</a>{''.join(f'<a href="{esc(q["url"])}" rel="noopener">{esc(q["label"])}</a>' for q in SITE["topbarLinks"])}</span>
  </div></div>
  <div class="banner"><div class="wrap">
   <a class="banner-home" href="/">{lockup()}</a>
@@ -260,7 +260,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
  <div class="f-red"><div class="wrap">
   <p>Zřizovatel: <a href="https://www.maltezskyrad.cz/">{esc(names['founder'])}</a></p>
   <p>{esc(names['orderShort'])}: <a href="https://www.orderofmalta.int/">www.orderofmalta.int</a></p>
-  <p><a href="/ochrana-osobnich-udaju/">{esc(T['privacy'])}</a></p>
+  <p><a href="/ochrana-osobnich-udaju/">{esc(T['privacy'])}</a> · <a href="/prohlaseni-o-pristupnosti/">Přístupnost</a> · <a href="/mapa-webu/">Mapa webu</a></p>
  </div></div>
 </footer>
 </body>
@@ -279,6 +279,22 @@ def contact_card():
  <div><dt>Telefon</dt><dd>{phones}</dd></div>
  <div><dt>E-mail</dt><dd><a href="mailto:{c['email']}">{c['email']}</a></dd></div>
 </dl>"""
+
+
+def contact_form():
+    """Posts to api/kontakt.js; works without JavaScript. ?chyba=1|2 in the URL shows the error (site.js)."""
+    f = lambda k, label, el="input", extra="": (f'<label class="ne-field"><span>{label} <i aria-hidden="true">*</i></span>'
+        + (f'<textarea name="{k}" rows="7" maxlength="5000" required{extra}></textarea>' if el == "textarea" else f'<input name="{k}" maxlength="200" required{extra}>') + '</label>')
+    return f"""<form class="contact-form ne" id="formular" method="post" action="/api/kontakt">
+ <p class="ne-msg ne-msg--error" id="form-error" role="alert" hidden data-1="Vyplňte prosím všechna pole." data-2="Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo napište na info@gymskutec.cz."></p>
+ {f("jmeno", "Jméno a příjmení", extra=' autocomplete="name"')}
+ {f("kontakt", "Kontakt (e-mail nebo telefon)")}
+ {f("predmet", "Předmět")}
+ {f("zprava", "Zpráva", "textarea")}
+ <label class="hp" aria-hidden="true">Nevyplňujte<input name="web" tabindex="-1" autocomplete="off"></label>
+ <p class="small">Odesláním souhlasíte se zpracováním údajů k vyřízení dotazu, viz <a href="/ochrana-osobnich-udaju/">Ochrana osobních údajů</a>. Pole s * jsou povinná.</p>
+ <p><button class="btn" type="submit">Odeslat</button></p>
+</form>"""
 
 
 def news_item(n, compact=False):
@@ -400,7 +416,7 @@ def render_page(p):
     url = p["url"]
     is_section = p.get("section") or bool(NAV_INDEX.get(url, {}).get("node", {}).get("children"))
     figure = f'<figure class="page-figure">{img(p["image"], p.get("imageAlt") or p["title"], eager=True)}</figure>' if p.get("image") else ""
-    special = contact_card() if p.get("contactCard") else ""
+    special = (contact_card() if p.get("contactCard") else "") + (contact_form() if p.get("contactForm") else "")
     source = ""
     if p.get("source") and not PRODUCTION:
         source = f'<p class="small source-note">Zdroj: <a href="{esc(p["source"])}">{esc(p["source"])}</a></p>'
@@ -414,8 +430,8 @@ def render_page(p):
  </header>
  <div class="page-main">
   {figure}
-  {special}
   <div class="prose">{enhance_body(p['body'])}</div>
+  {special}
   {section_children_html(url) if is_section else ''}
   {source}
  </div>
@@ -487,6 +503,30 @@ def render_simple(url, title, inner, status=None):
     return layout(url=url, title=title, body=body, status=status, description=plain(inner, 160))
 
 
+def sitemap_html(nodes):
+    return "<ul>" + "".join(f'<li><a href="{n["url"]}">{esc(n["title"])}</a>{sitemap_html(n["children"]) if n.get("children") else ""}</li>' for n in nodes) + "</ul>"
+
+
+ACCESSIBILITY = """<p>Gymnázium Suverénního řádu maltézských rytířů ve Skutči se zavazuje zpřístupnit své webové stránky v souladu se zákonem č. 99/2019 Sb., o přístupnosti internetových stránek a mobilních aplikací. Toto prohlášení se vztahuje na web www.gymskutec.cz.</p>
+<h2>Stav souladu</h2>
+<p>Web je navržen tak, aby splňoval normu ČSN EN 301 549 a pravidla WCAG 2.2 na úrovni AA: sémantické značení, ovládání klávesnicí, viditelné zaměření, dostatečný kontrast, popisky formulářů a textové alternativy obrázků.</p>
+<h2>Nepřístupný obsah</h2>
+<ul><li>Některé dokumenty ke stažení (PDF) převzaté ze stávajícího webu nemusí být přístupné; na vyžádání je poskytneme v přístupné podobě.</li><li>Některé informace (například harmonogram školního roku) jsou zatím jen v obrázku nebo v PDF.</li></ul>
+<h2>Zpětná vazba a kontakt</h2>
+<p>Narazíte-li na problém s přístupností, napište nám na <a href="mailto:info@gymskutec.cz">info@gymskutec.cz</a> nebo zavolejte na <a href="tel:+420739085660">739 085 660</a>.</p>
+<h2>Vymáhání</h2>
+<p>Nebude-li odpověď uspokojivá, můžete se obrátit na Ministerstvo vnitra, odbor eGovernmentu, nám. Hrdinů 1634/3, 140 21 Praha 4.</p>"""
+
+
+SEARCH_FORM = """<form class="search-form" role="search" action="/hledat/" method="get">
+ <label for="q">Hledaný výraz</label><div><input id="q" name="q" type="search" required autocomplete="off"><button class="btn" type="submit">Hledat</button></div>
+</form>
+<p id="search-status" class="small" role="status"></p>
+<ol id="search-results" class="index-list"></ol>
+<noscript><p>Vyhledávání potřebuje JavaScript. Projděte prosím <a href="/mapa-webu/">mapu webu</a>.</p></noscript>
+<script src="/js/search.js" defer></script>"""
+
+
 NEWS_EDITOR_URL = "/pridat-aktualitu/"
 
 
@@ -543,9 +583,17 @@ def build():
         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     privacy = (CONTENT / "privacy.html").read_text(encoding="utf-8")
     write("/ochrana-osobnich-udaju/", render_simple("/ochrana-osobnich-udaju/", "Ochrana osobních údajů", privacy, status="approval"))
+    write("/hledat/", render_simple("/hledat/", "Hledat", SEARCH_FORM))
+    (DIST / "hledat" / "index.json").write_text(json.dumps(  # what /js/search.js searches: title, url, plain text
+        [{"t": p["title"], "u": p["url"], "x": plain(p["body"], 600)} for p in PAGES.values()] +
+        [{"t": n["title"], "u": n["url"], "x": plain(n["body"], 600), "d": short_date(n["date"])} for n in NEWS], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    write("/mapa-webu/", render_simple("/mapa-webu/", "Mapa webu", sitemap_html(SITE["nav"]) + '<p><a href="/ochrana-osobnich-udaju/">Ochrana osobních údajů</a> · <a href="/prohlaseni-o-pristupnosti/">Prohlášení o přístupnosti</a></p>'))
+    write("/prohlaseni-o-pristupnosti/", render_simple("/prohlaseni-o-pristupnosti/", "Prohlášení o přístupnosti", ACCESSIBILITY, status="approval"))
+    write("/kontakty/napiste-nam/odeslano/", render_simple("/kontakty/napiste-nam/odeslano/", "Zpráva odeslána",
+                                                           '<p>Děkujeme, vaši zprávu jsme přijali. Odpovíme co nejdříve.</p><p><a class="link-strong" href="/">Úvodní stránka</a></p>'))
     write("/404.html", render_simple("/404.html", "Stránka nenalezena",
                                      '<p>Tato stránka neexistuje nebo byla přesunuta.</p><p><a class="link-strong" href="/">Úvodní stránka</a> · <a class="link-strong" href="/aktuality/">Aktuality</a> · <a class="link-strong" href="/kontakty/">Kontakty</a></p>'))
-    urls = ["/", "/aktuality/", "/ochrana-osobnich-udaju/"] + list(PAGES) + [n["url"] for n in NEWS]
+    urls = ["/", "/aktuality/", "/hledat/", "/ochrana-osobnich-udaju/", "/mapa-webu/", "/prohlaseni-o-pristupnosti/"] + list(PAGES) + [n["url"] for n in NEWS]
     (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
                                       "".join(f"<url><loc>{SITE['baseUrl']}{u}</loc></url>" for u in urls) + "</urlset>", encoding="utf-8")
     (DIST / "robots.txt").write_text(("User-agent: *\nAllow: /\nDisallow: /pridat-aktualitu/\nDisallow: /api/\n\nSitemap: " + SITE["baseUrl"] + "/sitemap.xml\n") if PRODUCTION

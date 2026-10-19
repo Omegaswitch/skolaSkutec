@@ -1,0 +1,56 @@
+# gymskutec.cz
+
+Website of the Gymnázium Suverénního řádu maltézských rytířů ve Skutči, a school founded by the Czech Grand Priory of the Sovereign Order of Malta (Suverénní řád maltézských rytířů – České velkopřevorství).
+
+It is built with the same engine and Grand Magistry frame as maltezskyrad.cz, lurdy.eu and velkoprevorskypalac.eu: a static generator in plain Python (standard library only), hosted on Vercel. Czech only.
+
+```sh
+python3 build.py serve 8000      # preview build, served at http://127.0.0.1:8000 (headers and redirects applied)
+python3 build.py                 # preview build into dist/ (noindex, content-status labels shown)
+python3 build.py --production    # production build
+python3 check.py                 # checks dist/: links, one <h1> per page, titles, descriptions, brand files, acronyms
+node tests/news.test.js          # news editor function, GitHub stubbed
+node tests/kontakt.test.js       # contact form function, e-mail stubbed
+```
+
+CI (`.github/workflows/ci.yml`) runs the build, `check.py` and both tests on every push.
+
+## Where things are
+
+| Path | What |
+|---|---|
+| `content/site.json` | Names, contact details, menu (`nav`), news categories, homepage texts, top-bar links |
+| `content/pages/<url>/index.html` | Pages: JSON front matter between `---` lines, then HTML. The URL is the old site's URL. |
+| `content/news/YYYY/MM/DD/slug.html` | News. Migrated articles keep their old URL (`…/<slug>-<ID>cs.html`) in the front matter; new posts get `/YYYY/MM/DD/slug/`. |
+| `content/privacy.html` | Privacy notice |
+| `vercel.json` | Hosting, security headers (CSP, HSTS…) and legacy redirects; copied to `dist/_headers` and `dist/_redirects` |
+| `static/` | CSS, JS, fonts, brand files (`img/`), media |
+| `static/img/logo/` | School logo variants (see `docs/brand-compliance.md`); regenerate with `tools/make_logo.py` |
+| `tools/migrate_files.py` | Downloads the documents and images still linked on the old site and rewrites the links. **Run before switching the domain.** |
+| `docs/` | Inventory of the old site, URL map, brand compliance, QA report |
+
+## Front matter fields
+
+`title`, `url`, `description`, optional `lead`, `image`, `status`, `source`, `contactCard`, `contactForm`.
+`status` shows a label in preview builds only: `summary` (rebuilt from a summary of the old page, original text to be checked),
+`existing` (carried over), `new` (new text awaiting approval), `approval` (needs sign-off). Remove it once the page is approved.
+HTML comments `<!-- OVĚŘIT: … -->` and `<!-- CHYBÍ: … -->` mark facts to verify or supply.
+
+## News (no GitHub needed)
+
+Staff publish at `/pridat-aktualitu/` (not linked, not indexed, password). Same editor as maltezskyrad.cz: text editor limited to the site's styles, date, categories, summary, main photo, attachments; edit or delete existing posts. `api/news.js` cleans the text and commits the post to `main`; Vercel rebuilds in about a minute.
+
+Vercel environment variables:
+
+| Variable | Value |
+|---|---|
+| `NEWS_USERS` | one `Name:password` per line, one per co-worker |
+| `NEWS_SECRET` | a long random string (`openssl rand -base64 32`) |
+| `GITHUB_TOKEN` | fine-grained token, repository `Omegaswitch/skolaSkutec` only, Contents: read and write |
+| `RESEND_API_KEY`, `MAIL_TO`, `MAIL_FROM` | contact form e-mail (Resend); `MAIL_TO` defaults to info@gymskutec.cz. Optional `NEWS_NOTIFY` for news e-mails. |
+
+## Rules (Grand Magistry communications policy and coat-of-arms guidelines)
+
+- Never write "SMOM" or "Malta" on its own (`check.py` enforces the acronym rule).
+- Never add, redraw or recolour an emblem; only the files allowed in `check.py` may appear under `/img/`.
+- Do not invent facts. Facts come from the old site (`docs/source-inventory*.md`) or the school.

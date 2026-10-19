@@ -53,3 +53,9 @@
     img.addEventListener("error", done, { once: true });
   });
 })();
+
+// contact form: show the error the form function redirected back with (?chyba=1|2)
+(function () {
+  var m = /[?&]chyba=(\d)/.exec(location.search), box = document.getElementById("form-error");
+  if (m && box && box.getAttribute("data-" + m[1])) { box.textContent = box.getAttribute("data-" + m[1]); box.hidden = false; }
+})();

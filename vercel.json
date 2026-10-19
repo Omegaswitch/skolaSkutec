@@ -125,5 +125,49 @@
       ]
     }
   ],
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "mapa-webu"
+        }
+      ],
+      "destination": "/mapa-webu/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cookies"
+        }
+      ],
+      "destination": "/ochrana-osobnich-udaju/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "hledej"
+        }
+      ],
+      "destination": "/hledat/",
+      "permanent": true
+    },
+    {
+      "source": "/cs/tiraz/",
+      "destination": "/prohlaseni-o-pristupnosti/",
+      "permanent": true
+    },
+    {
+      "source": "/cs/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

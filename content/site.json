@@ -16,18 +16,41 @@
   "city": "Skuteč",
   "email": "info@gymskutec.cz",
   "phones": [
-   {"label": "Kancelář a jídelna", "number": "+420 739 085 660"},
-   {"label": "Domov mládeže", "number": "+420 724 905 528"}
+   {
+    "label": "Kancelář a jídelna",
+    "number": "+420 739 085 660"
+   },
+   {
+    "label": "Domov mládeže",
+    "number": "+420 724 905 528"
+   }
   ],
-  "mapUrl": "https://www.openstreetmap.org/search?query=V%C3%ADt%C4%9Bzslava%20Nov%C3%A1ka%20584%2C%20Skute%C4%8D"
+  "mapUrl": "https://www.openstreetmap.org/search?query=V%C3%ADt%C4%9Bzslava%20Nov%C3%A1ka%20584%2C%20Skute%C4%8D",
+  "ico": "71341064"
  },
  "social": [
-  {"label": "Facebook", "url": "https://www.facebook.com/GS%C5%98MR-Skute%C4%8D-178420408988256/"},
-  {"label": "Instagram", "url": "https://www.instagram.com/gsrmrveskutci/"}
+  {
+   "label": "Facebook",
+   "url": "https://www.facebook.com/GS%C5%98MR-Skute%C4%8D-178420408988256/"
+  },
+  {
+   "label": "Instagram",
+   "url": "https://www.instagram.com/gsrmrveskutci/"
+  },
+  {
+   "label": "YouTube",
+   "url": "https://www.youtube.com/channel/UCvkVuaUcXy1Ymuqwx-9WtZQ"
+  }
  ],
  "topbarLinks": [
-  {"label": "Bakaláři", "url": "https://gymskutec.bakalari.cz/login"},
-  {"label": "Jídelníček", "url": "https://app.strava.cz/jidelnicky?jidelna=5644"}
+  {
+   "label": "Bakaláři",
+   "url": "https://gymskutec.bakalari.cz/login"
+  },
+  {
+   "label": "Jídelníček",
+   "url": "https://app.strava.cz/jidelnicky?jidelna=5644"
+  }
  ],
  "newsCategories": {
   "akce": "Školní akce",
@@ -37,31 +60,282 @@
   "projekty": "Projekty",
   "kavarny": "Studentské kavárny"
  },
- "nav": [],
+ "nav": [
+  {
+   "url": "/o-skole/",
+   "title": "O škole",
+   "children": [
+    {
+     "url": "/o-skole/zakladni-informace/",
+     "title": "Základní informace"
+    },
+    {
+     "url": "/o-skole/absolventi-a-uspechy-1/",
+     "title": "Absolventi a úspěchy"
+    },
+    {
+     "url": "/o-skole/zamestnanci-skoly/",
+     "title": "Zaměstnanci školy",
+     "children": [
+      {
+       "url": "/o-skole/zamestnanci-skoly/vedeni-skoly/",
+       "title": "Vedení školy"
+      },
+      {
+       "url": "/o-skole/zamestnanci-skoly/pedagogicky-sbor/",
+       "title": "Pedagogický sbor"
+      },
+      {
+       "url": "/o-skole/zamestnanci-skoly/provozni-zamestnanci/",
+       "title": "Provozní zaměstnanci"
+      }
+     ]
+    },
+    {
+     "url": "/o-skole/spiritual-skoly/",
+     "title": "Spirituál školy"
+    },
+    {
+     "url": "/o-skole/skolni-jidelna/",
+     "title": "Školní jídelna"
+    },
+    {
+     "url": "/o-skole/domov-mladeze/",
+     "title": "Domov mládeže"
+    },
+    {
+     "url": "/o-skole/skolni-poradenske-pracoviste/",
+     "title": "Školní poradenské pracoviště"
+    },
+    {
+     "url": "/o-skole/skolska-rada/",
+     "title": "Školská rada"
+    },
+    {
+     "url": "/o-skole/zakovsky-parlament/",
+     "title": "Žákovský parlament"
+    },
+    {
+     "url": "/o-skole/fotogalerie/",
+     "title": "Fotogalerie"
+    },
+    {
+     "url": "/o-skole/pro-darce-a-sponzory/",
+     "title": "Pro dárce a sponzory"
+    },
+    {
+     "url": "/o-skole/dokumenty-skoly/",
+     "title": "Dokumenty školy"
+    },
+    {
+     "url": "/o-skole/e-podatelna/",
+     "title": "E-podatelna"
+    },
+    {
+     "url": "/o-skole/povinne-informace/",
+     "title": "Povinné informace"
+    }
+   ]
+  },
+  {
+   "url": "/skolni-akce/",
+   "title": "Školní akce",
+   "children": [
+    {
+     "url": "/skolni-akce/skolni-akce-galerie/",
+     "title": "Galerie akcí"
+    },
+    {
+     "url": "/skolni-akce/zahranicni-zajezdy/",
+     "title": "Zahraniční zájezdy"
+    },
+    {
+     "url": "/skolni-akce/projekty/",
+     "title": "Projekty",
+     "children": [
+      {
+       "url": "/skolni-akce/projekty/projekty-eu/",
+       "title": "Projekty EU"
+      },
+      {
+       "url": "/skolni-akce/projekty/skolni-projekty/",
+       "title": "Školní projekty",
+       "children": [
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/projektove-dny/",
+         "title": "Projektové dny"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "url": "/skolni-akce/souteze/",
+     "title": "Soutěže"
+    },
+    {
+     "url": "/skolni-akce/studentske-kavarny/",
+     "title": "Studentské kavárny"
+    },
+    {
+     "url": "/skolni-akce/sportovni-akce/",
+     "title": "Sportovní akce"
+    }
+   ]
+  },
+  {
+   "url": "/studium/",
+   "title": "Studium",
+   "children": [
+    {
+     "url": "/studium/pro-uchazece-1/",
+     "title": "Pro uchazeče"
+    },
+    {
+     "url": "/studium/harmonogram-skolniho-roku/",
+     "title": "Harmonogram školního roku"
+    },
+    {
+     "url": "/studium/maturitni-zkouska/",
+     "title": "Maturitní zkouška"
+    },
+    {
+     "url": "/studium/odborna-praxe-bpc/",
+     "title": "Odborná praxe BPČ"
+    },
+    {
+     "url": "/studium/predmety/",
+     "title": "Předměty"
+    },
+    {
+     "url": "/studium/nepovinne-predmety-a-zajmove-krouzky/",
+     "title": "Nepovinné předměty a kroužky"
+    },
+    {
+     "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/",
+     "title": "Úspěchy a aktivity žáků"
+    },
+    {
+     "url": "/studium/zajimave-odkazy/",
+     "title": "Zajímavé odkazy"
+    },
+    {
+     "url": "/studium/suplovani/",
+     "title": "Suplování"
+    },
+    {
+     "url": "/studium/formulare-ke-stazeni/",
+     "title": "Formuláře ke stažení"
+    },
+    {
+     "url": "/studium/europass/",
+     "title": "Europass"
+    }
+   ]
+  },
+  {
+   "url": "/pro-zaky-a-rodice/",
+   "title": "Pro žáky a rodiče"
+  },
+  {
+   "url": "/aktuality/",
+   "title": "Aktuality"
+  },
+  {
+   "url": "/kontakty/",
+   "title": "Kontakty",
+   "children": [
+    {
+     "url": "/kontakty/kontaktni-informace/",
+     "title": "Kontaktní informace"
+    },
+    {
+     "url": "/kontakty/napiste-nam/",
+     "title": "Napište nám"
+    }
+   ]
+  }
+ ],
  "home": {
   "status": "new",
   "kicker": "Skuteč · od roku 1999",
   "title": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči",
   "lead": "Škola, kterou od roku 2009 zřizuje České velkopřevorství Maltézského řádu. U nás můžete studovat dva obory zakončené maturitou: gymnázium a bezpečnostně právní činnost.",
   "description": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči: gymnázium a obor bezpečnostně právní činnost, domov mládeže a školní jídelna. Zřizovatel: Maltézský řád – České velkopřevorství.",
-  "cta": {"label": "Pro uchazeče", "url": "/studium/pro-uchazece-1/"},
-  "cta2": {"label": "Harmonogram školního roku", "url": "/studium/harmonogram-skolniho-roku/"},
-  "photo": {"src": "/media/2023/04/Skutec_02-1024x768.jpg", "alt": "Návštěva velkopřevora Fra’ Pierra de Bizemont na gymnáziu ve Skutči", "caption": "Den učitelů 28. března 2023: velkopřevor Fra’ Pierre de Bizemont na návštěvě školy."},
+  "cta": {
+   "label": "Pro uchazeče",
+   "url": "/studium/pro-uchazece-1/"
+  },
+  "cta2": {
+   "label": "Harmonogram školního roku",
+   "url": "/studium/harmonogram-skolniho-roku/"
+  },
+  "photo": {
+   "src": "/media/2023/04/Skutec_02-1024x768.jpg",
+   "alt": "Návštěva velkopřevora Fra’ Pierra de Bizemont na gymnáziu ve Skutči",
+   "caption": "Den učitelů 28. března 2023: velkopřevor Fra’ Pierre de Bizemont na návštěvě školy."
+  },
   "programmesTitle": "Dva obory s maturitou",
   "programmesText": "Všeobecné gymnázium i odborný obor bezpečnostně právní činnost končí maturitní zkouškou.",
   "programmes": [
-   {"title": "Gymnázium", "text": "Všeobecné vzdělání a příprava na vysokou školu.", "url": "/studium/pro-uchazece-1/"},
-   {"title": "Bezpečnostně právní činnost", "text": "Odborný obor zakončený maturitou.", "url": "/studium/pro-uchazece-1/"}
+   {
+    "title": "Gymnázium",
+    "text": "Osmileté (po 5. třídě) a čtyřleté (po 9. třídě) studium.",
+    "url": "/studium/pro-uchazece-1/"
+   },
+   {
+    "title": "Bezpečnostně právní činnost",
+    "text": "Čtyřletý maturitní obor pro absolventy 9. tříd, s odbornou praxí.",
+    "url": "/studium/odborna-praxe-bpc/"
+   }
   ],
   "lifeTitle": "Život ve škole",
   "lifeText": "Společné výlety, studentské kavárny, majáles, maturitní ples a žákovský parlament. Škola má vlastní domov mládeže a jídelnu.",
-  "life": [],
+  "life": [
+   {
+    "title": "Domov mládeže",
+    "text": "Ubytování ve dvou- a třílůžkových pokojích, studovna, kuchyňka a posilovna.",
+    "url": "/o-skole/domov-mladeze/"
+   },
+   {
+    "title": "Školní jídelna",
+    "text": "Obědy v areálu školy, přihlašování přes Strava.cz.",
+    "url": "/o-skole/skolni-jidelna/"
+   },
+   {
+    "title": "Spirituál školy",
+    "text": "Duchovní obnovy, setkání a rozhovory pro žáky všech přesvědčení.",
+    "url": "/o-skole/spiritual-skoly/"
+   },
+   {
+    "title": "Školní poradenské pracoviště",
+    "text": "Výchovný poradce, metodik prevence a preventivní tým.",
+    "url": "/o-skole/skolni-poradenske-pracoviste/"
+   },
+   {
+    "title": "Žákovský parlament",
+    "text": "Funguje od září 2017; každá třída volí dva zástupce.",
+    "url": "/o-skole/zakovsky-parlament/"
+   }
+  ],
   "quickText": "Školní systémy a služby, které žáci a rodiče potřebují nejčastěji.",
   "quickLinks": [
-   {"label": "Bakaláři – přihlášení", "url": "https://gymskutec.bakalari.cz/login"},
-   {"label": "Plán akcí (Bakaláři)", "url": "https://gymskutec.bakalari.cz/core/Events/Agenda/Index"},
-   {"label": "Jídelníček", "url": "https://app.strava.cz/jidelnicky?jidelna=5644"},
-   {"label": "Harmonogram školního roku", "url": "/studium/harmonogram-skolniho-roku/"}
+   {
+    "label": "Bakaláři – přihlášení",
+    "url": "https://gymskutec.bakalari.cz/login"
+   },
+   {
+    "label": "Plán akcí (Bakaláři)",
+    "url": "https://gymskutec.bakalari.cz/core/Events/Agenda/Index"
+   },
+   {
+    "label": "Jídelníček",
+    "url": "https://app.strava.cz/jidelnicky?jidelna=5644"
+   },
+   {
+    "label": "Harmonogram školního roku",
+    "url": "/studium/harmonogram-skolniho-roku/"
+   }
   ],
   "orderTitle": "Škola Maltézského řádu",
   "orderText": "<p>Gymnázium založilo Biskupství královéhradecké v roce 1999. V roce 2009 je převzal Suverénní vojenský špitální řád svatého Jana Jeruzalémského, z Rhodu a z Malty – České velkopřevorství; budovu škole bezplatně věnovalo Biskupství královéhradecké.</p><p>České velkopřevorství zřizuje také <a href=\"https://vos.mojezdravka.cz/\">Vyšší odbornou školu zdravotnickou</a> v Praze a <a href=\"https://www.zsmr.eu/\">Základní školu Maltézských rytířů</a> v Kladně. Více o Řádu na <a href=\"https://www.maltezskyrad.cz/\">maltezskyrad.cz</a>.</p>"
