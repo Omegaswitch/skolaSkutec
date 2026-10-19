@@ -14,5 +14,6 @@ jobs:
           python-version: "3.12"
       - run: python3 build.py --offline
       - run: python3 check.py
+      - run: python3 tools/url_map.py
       - run: node tests/news.test.js
       - run: node tests/kontakt.test.js

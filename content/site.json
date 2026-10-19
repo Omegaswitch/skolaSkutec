@@ -105,7 +105,21 @@
     },
     {
      "url": "/o-skole/skolni-poradenske-pracoviste/",
-     "title": "Školní poradenské pracoviště"
+     "title": "Školní poradenské pracoviště",
+     "children": [
+      {
+       "url": "/o-skole/skolni-poradenske-pracoviste/minimalni-preventivni-program/",
+       "title": "Minimální preventivní program"
+      },
+      {
+       "url": "/o-skole/skolni-poradenske-pracoviste/informace-pro-rodice/",
+       "title": "Informace pro rodiče"
+      },
+      {
+       "url": "/o-skole/skolni-poradenske-pracoviste/psychologicke-poradenstvi/",
+       "title": "Psychologické poradenství"
+      }
+     ]
     },
     {
      "url": "/o-skole/skolska-rada/",
@@ -116,8 +130,216 @@
      "title": "Žákovský parlament"
     },
     {
+     "url": "/o-skole/projekty/",
+     "title": "Projekty",
+     "children": [
+      {
+       "url": "/o-skole/projekty/skolni-projekty/",
+       "title": "Školní projekty",
+       "children": [
+        {
+         "url": "/o-skole/projekty/skolni-projekty/zahranicni-vymena/",
+         "title": "Zahraniční výměna"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/etwinning/",
+         "title": "eTwinning"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/pribehy-bezpravi-1/",
+         "title": "Příběhy bezpráví"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/maraton-psani-dopisu-1/",
+         "title": "Maraton psaní dopisů"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/studentske-volby-1/",
+         "title": "Studentské volby"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/sdruzeni-tereza-tajny-zivot-mesta/",
+         "title": "Sdružení TEREZA – Tajný život města"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/ekoskola/",
+         "title": "Ekoškola"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/recyklohrani/",
+         "title": "Recyklohraní"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/putovni-vystavy-zidovskeho-muzea-v-praze/",
+         "title": "Putovní výstavy Židovského muzea v Praze"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/projekt-krokus/",
+         "title": "Projekt Krokus"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/fyzika-trochu-jinak/",
+         "title": "Fyzika trochu jinak"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/soutez-pri-vyuce-biologie/",
+         "title": "Soutěž při výuce biologie"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/",
+         "title": "Charitativní akce",
+         "children": [
+          {
+           "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/svetluska-1/",
+           "title": "Světluška"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/bila-pastelka/",
+           "title": "Bílá pastelka"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/srdickove-dny/",
+           "title": "Srdíčkové dny"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/adopce-na-dalku/",
+           "title": "Adopce na dálku"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/dalsi-charitativni-akce/",
+           "title": "Další charitativní akce"
+          }
+         ]
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/literarni-projekt-bible/",
+         "title": "Literární projekt Bible"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/pulhodinky/",
+         "title": "Půlhodinky",
+         "children": [
+          {
+           "url": "/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-cirkvi-a-dalsi-cinnost-spirituala/",
+           "title": "Půlhodinka s církví a další činnost spirituála"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/pulhodinky/modlitebni-pulhodinka/",
+           "title": "Modlitební půlhodinka"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-se-sv-janem-pavlem-ii/",
+           "title": "Půlhodinka se sv. Janem Pavlem II."
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-blahoslavenstvim/",
+           "title": "Půlhodinka s blahoslavenstvím"
+          },
+          {
+           "url": "/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-desaterem/",
+           "title": "Půlhodinka s desaterem"
+          }
+         ]
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/tridni-casopisy-1/",
+         "title": "Třídní časopisy"
+        },
+        {
+         "url": "/o-skole/projekty/skolni-projekty/pamet-naroda/",
+         "title": "Paměť národa"
+        }
+       ]
+      },
+      {
+       "url": "/o-skole/projekty/projekty-eu/",
+       "title": "Projekty EU",
+       "children": [
+        {
+         "url": "/o-skole/projekty/projekty-eu/anglie-2015/",
+         "title": "Anglie 2015"
+        }
+       ]
+      },
+      {
+       "url": "/o-skole/projekty/projekty-eu-sablony/",
+       "title": "Projekty EU − šablony",
+       "children": [
+        {
+         "url": "/o-skole/projekty/projekty-eu-sablony/2017-18/",
+         "title": "2017/18"
+        },
+        {
+         "url": "/o-skole/projekty/projekty-eu-sablony/2020-21/",
+         "title": "2020/21"
+        },
+        {
+         "url": "/o-skole/projekty/projekty-eu-sablony/2022-24/",
+         "title": "2022/24"
+        }
+       ]
+      }
+     ]
+    },
+    {
      "url": "/o-skole/fotogalerie/",
-     "title": "Fotogalerie"
+     "title": "Fotogalerie",
+     "children": [
+      {
+       "url": "/o-skole/fotogalerie/ucebny/",
+       "title": "Učebny"
+      },
+      {
+       "url": "/o-skole/fotogalerie/galerie-pozvanek/",
+       "title": "Galerie pozvánek"
+      },
+      {
+       "url": "/o-skole/fotogalerie/archiv/",
+       "title": "Archiv",
+       "children": [
+        {
+         "url": "/o-skole/fotogalerie/archiv/3-fairtradeova-kavarna/",
+         "title": "3. fairtradeová kavárna"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/maturitni-ples-2015/",
+         "title": "Maturitní ples 2015"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/majales-2015/",
+         "title": "Majáles 2015"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/cteni-v-ms/",
+         "title": "Čtení v MŠ"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/seznamovaci-kurz-2014/",
+         "title": "Seznamovací kurz 2014"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/skolni-budova/",
+         "title": "Školní budova"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/diplomy-a-oceneni/",
+         "title": "Diplomy a ocenění"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/majales-2014/",
+         "title": "Majáles 2014"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/detska-majalesova-olympiada-2014/",
+         "title": "Dětská majálesová olympiáda 2014"
+        },
+        {
+         "url": "/o-skole/fotogalerie/archiv/prodejni-vystava-zalozek/",
+         "title": "Prodejní výstava záložek"
+        }
+       ]
+      }
+     ]
     },
     {
      "url": "/o-skole/pro-darce-a-sponzory/",
@@ -164,6 +386,40 @@
         {
          "url": "/skolni-akce/projekty/skolni-projekty/projektove-dny/",
          "title": "Projektové dny"
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/charitativni-projekty/",
+         "title": "Charitativní projekty",
+         "children": [
+          {
+           "url": "/skolni-akce/projekty/skolni-projekty/charitativni-projekty/jeziskova-vnoucata/",
+           "title": "Ježíškova vnoučata"
+          },
+          {
+           "url": "/skolni-akce/projekty/skolni-projekty/charitativni-projekty/dalsi/",
+           "title": "Další…"
+          }
+         ]
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/ekoskola/",
+         "title": "Ekoškola"
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/recyklohrani/",
+         "title": "Recyklohraní"
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/etwinning/",
+         "title": "eTwinning"
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/zalozka-do-knihy/",
+         "title": "Záložka do knihy..."
+        },
+        {
+         "url": "/skolni-akce/projekty/skolni-projekty/tridni-casopisy/",
+         "title": "Třídní časopisy"
         }
        ]
       }
@@ -171,7 +427,29 @@
     },
     {
      "url": "/skolni-akce/souteze/",
-     "title": "Soutěže"
+     "title": "Soutěže",
+     "children": [
+      {
+       "url": "/skolni-akce/souteze/prirodovedne-souteze/",
+       "title": "Přírodovědné soutěže"
+      },
+      {
+       "url": "/skolni-akce/souteze/jazykove-souteze-1/",
+       "title": "Jazykové soutěže"
+      },
+      {
+       "url": "/skolni-akce/souteze/umelecke-souteze-1/",
+       "title": "Umělecké soutěže"
+      },
+      {
+       "url": "/skolni-akce/souteze/sportovni-souteze-1/",
+       "title": "Sportovní soutěže"
+      },
+      {
+       "url": "/skolni-akce/souteze/konference/",
+       "title": "Konference"
+      }
+     ]
     },
     {
      "url": "/skolni-akce/studentske-kavarny/",
@@ -205,7 +483,75 @@
     },
     {
      "url": "/studium/predmety/",
-     "title": "Předměty"
+     "title": "Předměty",
+     "children": [
+      {
+       "url": "/studium/predmety/cesky-jazyk-a-literatura/",
+       "title": "Český jazyk a literatura"
+      },
+      {
+       "url": "/studium/predmety/anglicky-jazyk/",
+       "title": "Anglický jazyk"
+      },
+      {
+       "url": "/studium/predmety/nemecky-jazyk/",
+       "title": "Německý jazyk"
+      },
+      {
+       "url": "/studium/predmety/latina/",
+       "title": "Latina"
+      },
+      {
+       "url": "/studium/predmety/svetova-nabozenstvi/",
+       "title": "Světová náboženství"
+      },
+      {
+       "url": "/studium/predmety/zaklady-krestanske-kultury/",
+       "title": "Základy křesťanské kultury"
+      },
+      {
+       "url": "/studium/predmety/zaklady-spolecenskych-ved/",
+       "title": "Základy společenských věd"
+      },
+      {
+       "url": "/studium/predmety/dejepis/",
+       "title": "Dějepis"
+      },
+      {
+       "url": "/studium/predmety/zemepis/",
+       "title": "Zeměpis"
+      },
+      {
+       "url": "/studium/predmety/biologie/",
+       "title": "Biologie"
+      },
+      {
+       "url": "/studium/predmety/matematika/",
+       "title": "Matematika"
+      },
+      {
+       "url": "/studium/predmety/odborne-predmety-bpc/",
+       "title": "Odborné předměty BPČ",
+       "children": [
+        {
+         "url": "/studium/predmety/odborne-predmety-bpc/bezpecnostni-a-strelecka-priprava/",
+         "title": "Bezpečnostní a střelecká příprava"
+        },
+        {
+         "url": "/studium/predmety/odborne-predmety-bpc/kriminalistika-a-kriminologie/",
+         "title": "Kriminalistika a kriminologie"
+        },
+        {
+         "url": "/studium/predmety/odborne-predmety-bpc/pedagogika-a-psychologie/",
+         "title": "Pedagogika a psychologie"
+        },
+        {
+         "url": "/studium/predmety/odborne-predmety-bpc/sebeobrana/",
+         "title": "Sebeobrana"
+        }
+       ]
+      }
+     ]
     },
     {
      "url": "/studium/nepovinne-predmety-a-zajmove-krouzky/",
@@ -213,7 +559,29 @@
     },
     {
      "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/",
-     "title": "Úspěchy a aktivity žáků"
+     "title": "Úspěchy a aktivity žáků",
+     "children": [
+      {
+       "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/m-hrubantova-od-fotografie-k-filmu/",
+       "title": "M. Hrubantová: Od fotografie k filmu"
+      },
+      {
+       "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/s-rudou-pozarem-nejen-o-hudbe/",
+       "title": "S Rudou Požárem (nejen) o hudbě"
+      },
+      {
+       "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/jarka-naghi-ja-a-rumunsko/",
+       "title": "Jarka Naghi – já a Rumunsko"
+      },
+      {
+       "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/almanach-sexty-2015-16/",
+       "title": "Almanach Sexty 2015/16"
+      },
+      {
+       "url": "/studium/uspechy-a-aktivity-zaku-i-absolventu/dalsi-studentske-prace/",
+       "title": "Další studentské práce"
+      }
+     ]
     },
     {
      "url": "/studium/zajimave-odkazy/",

@@ -168,6 +168,46 @@
       "source": "/cs/",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/novinky/",
+      "destination": "/aktuality/",
+      "permanent": true
+    },
+    {
+      "source": "/o-skole/dokumenty-skoly/skolni-rad-platny-od-1-9-2026-6.html",
+      "destination": "/o-skole/dokumenty-skoly/",
+      "permanent": true
+    },
+    {
+      "source": "/o-skole/dokumenty-skoly/svp-8.html",
+      "destination": "/o-skole/dokumenty-skoly/",
+      "permanent": true
+    },
+    {
+      "source": "/o-skole/dokumenty-skoly/vyrocni-zpravy-5.html",
+      "destination": "/o-skole/dokumenty-skoly/",
+      "permanent": true
+    },
+    {
+      "source": "/o-skole/fotogalerie/zahranicni-zajezdy/:path*",
+      "destination": "/skolni-akce/zahranicni-zajezdy/",
+      "permanent": true
+    },
+    {
+      "source": "/skolni-akce/besedy-a-exkurze-archiv/:path*",
+      "destination": "/aktuality/akce/",
+      "permanent": true
+    },
+    {
+      "source": "/skolni-akce/kulturni-akce/:path*",
+      "destination": "/aktuality/akce/",
+      "permanent": true
+    },
+    {
+      "source": "/studium/predmety/zemepis/zemepis-ucebnice-52cs.html",
+      "destination": "/studium/predmety/zemepis/",
+      "permanent": true
     }
   ]
 }
