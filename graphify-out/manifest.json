@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "static/js/news-editor.js": {
-    "mtime": 1792436357.2888997,
-    "seen": 1792436440.8952608,
-    "ast_hash": "77d364129d112f9119a252886da2909b",
+    "mtime": 1792436754.7880425,
+    "seen": 1792436868.5254042,
+    "ast_hash": "c6091e9257f6e58fe14de2e0657adeec",
     "semantic_hash": ""
   },
   "static/js/search.js": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1792434588.6595044,
-    "seen": 1792436440.8952904,
-    "ast_hash": "99f14c000fd74321b07ba52493046407",
+    "mtime": 1792436754.7888381,
+    "seen": 1792436868.5257618,
+    "ast_hash": "a5e9a1f5aa5e04529b408ef6c6c5e700",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/SKILL.md": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792436357.2894678,
-    "seen": 1792436440.8954122,
-    "ast_hash": "6142f1c255c475099201b95ed205a473",
+    "mtime": 1792436754.7891264,
+    "seen": 1792436868.5279567,
+    "ast_hash": "6f6d506a18fc7fe23b08583f48e21445",
     "semantic_hash": ""
   },
   "content/news/2014/02/13/ekoskola-den-zeme-2013-26cs.html": {
@@ -2472,9 +2472,9 @@
     "semantic_hash": ""
   },
   "tools/news-editor.html": {
-    "mtime": 1792434588.657941,
-    "seen": 1792436440.8963077,
-    "ast_hash": "0acacb69004a71a8264998a8d8261477",
+    "mtime": 1792436754.7884636,
+    "seen": 1792436868.544523,
+    "ast_hash": "e78372f93c3668ff7e15b6db2788bd46",
     "semantic_hash": ""
   },
   "static/img/banner/banner-photo.webp": {
@@ -3249,6 +3249,24 @@
     "mtime": 1792436105.855848,
     "seen": 1792436440.8962946,
     "ast_hash": "7d3ced6a365607bacb7292b0044f8a8a",
+    "semantic_hash": ""
+  },
+  "static/js/pdf-worker.js": {
+    "mtime": 1792436754.7594392,
+    "seen": 1792436868.5254092,
+    "ast_hash": "c0014bbc2ad279849918218103a0b0e8",
+    "semantic_hash": ""
+  },
+  "static/js/vendor/ghostscript-1.1.0/gs.js": {
+    "mtime": 1792436754.6506307,
+    "seen": 1792436868.525485,
+    "ast_hash": "a208a62fd258b8f183c3296fd635ed94",
+    "semantic_hash": ""
+  },
+  "static/js/vendor/ghostscript-1.1.0/SOURCE.txt": {
+    "mtime": 1792436754.7619135,
+    "seen": 1792436868.5445187,
+    "ast_hash": "b01660d16ced1b0e48e9c6be302262d3",
     "semantic_hash": ""
   }
 }

@@ -10,6 +10,7 @@
   // files: {sha, path, url, role, label} for new uploads, {url, role, label, ext} for files already on the site
   var state = { files: [], blobs: {}, editing: null, names: {} };
   var MAX = 3 * 1024 * 1024, DRAFT = "news-draft", GONE = "news-deleted";
+  var PDF_SHRINK_FROM = 1024 * 1024, V = (document.currentScript && document.currentScript.src.split("?")[1]) || "";
 
   function call(data, onProgress) {
     return new Promise(function (ok, fail) {
@@ -26,7 +27,7 @@
   function msg(el, text, kind) { el.textContent = text || ""; el.hidden = !text; el.className = "ne-msg" + (kind ? " ne-msg--" + kind : ""); }
   var ERR = {
     login: "Jméno nebo heslo nesouhlasí.", session: "Přihlášení vypršelo. Přihlaste se prosím znovu.",
-    type: "Lze nahrát jen fotografie (JPG, PNG, WebP) a PDF.", size: "Soubor je příliš velký (nejvýše 3 MB). Větší PDF prosím zmenšete.",
+    type: "Lze nahrát jen fotografie (JPG, PNG, WebP) a PDF.", size: "Soubor je i po zmenšení příliš velký (nejvýše 3 MB). PDF prosím rozdělte nebo zmenšete jeho obrázky.",
     missing: "Vyplňte prosím titulek, datum a text.", config: "Formulář ještě není nastavený (chybí přístupové údaje na serveru).",
     gone: "Tato aktualita už neexistuje (možná ji mezitím někdo smazal).",
     server: "Něco se nepovedlo na straně serveru. Zkuste to prosím za chvíli znovu.", 0: "Spojení se nezdařilo. Zkontrolujte připojení k internetu."
@@ -147,8 +148,23 @@
   }
   $("#ne-cancel").addEventListener("click", function () { reset(); restore(); tab("list"); });
 
-  // ---- files: shrink photos, then upload with a progress bar
+  // ---- files: shrink photos and large PDFs, then upload with a progress bar
+  // PDFs over 1 MB go through Ghostscript compiled to WebAssembly (/js/pdf-worker.js, as on lurdy.eu), in this browser;
+  // one worker per file, dropped afterwards. The smaller file is used only if Ghostscript actually made it smaller.
+  function shrinkPdf(file) {
+    if (file.size < PDF_SHRINK_FROM || !window.Worker) return Promise.resolve(file);
+    return file.arrayBuffer().then(function (buf) {
+      return new Promise(function (ok) {
+        var w = new Worker("/js/pdf-worker.js?" + V, { type: "module" });
+        var done = function (out) { w.terminate(); ok(out && out.length && out.length < file.size ? new File([out], file.name, { type: "application/pdf" }) : file); };
+        w.onmessage = function (e) { done(e.data); };
+        w.onerror = function () { done(null); };
+        w.postMessage(buf, [buf]);
+      });
+    }).catch(function () { return file; });
+  }
   function shrink(file) {
+    if (file.type === "application/pdf") return shrinkPdf(file);
     if (!/^image\/(jpeg|png|webp)$/.test(file.type) || !window.createImageBitmap) return Promise.resolve(file);
     return createImageBitmap(file).then(function (bmp) {
       var s = Math.min(1, 2000 / Math.max(bmp.width, bmp.height)), c = document.createElement("canvas");
@@ -164,7 +180,7 @@
   }
   function upload(file, role, row) {
     var bar = row && row.querySelector("progress"), note = row && row.querySelector(".ne-file-state");
-    if (note) note.textContent = "Připravuje se…";
+    if (note) note.textContent = file.type === "application/pdf" && file.size >= PDF_SHRINK_FROM ? "Zmenšuje se PDF…" : "Připravuje se…";
     return shrink(file).then(function (f) {
       if (!/^(image\/(jpeg|png|webp)|application\/pdf)$/.test(f.type)) throw { status: 400, body: { error: "type" } };
       if (f.size > MAX) throw { status: 413, body: { error: "size" } };

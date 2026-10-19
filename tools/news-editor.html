@@ -38,10 +38,11 @@
   <div class="ne-field"><span>Hlavní fotografie <small>(nepovinné – zobrazí se nad textem)</small></span>
    <label class="btn btn--ghost ne-pick">Vybrat fotografii<input id="ne-photo" type="file" accept="image/jpeg,image/png,image/webp" class="visually-hidden"></label>
    <ul id="ne-photo-box" class="ne-files ne-photo"></ul></div>
-  <div class="ne-field"><span>Přílohy ke stažení <small>(PDF nebo fotografie, nejvýše 3 MB na soubor)</small></span>
+  <div class="ne-field"><span>Přílohy ke stažení <small>(PDF nebo fotografie, nejvýše 3 MB na soubor; větší PDF se před odesláním zmenší přímo v prohlížeči)</small></span>
    <div class="ne-drop" id="ne-drop"><p>Přetáhněte soubory sem, nebo</p>
     <label class="btn btn--ghost ne-pick">vyberte soubory<input id="ne-files" type="file" multiple accept="application/pdf,image/jpeg,image/png,image/webp" class="visually-hidden"></label></div>
-   <ul id="ne-file-list" class="ne-files"></ul></div>
+   <ul id="ne-file-list" class="ne-files"></ul>
+   <p class="ne-hint">PDF zmenšuje Ghostscript (licence AGPL) spuštěný v tomto prohlížeči; soubor nikam jinam neodchází. <a href="/js/vendor/ghostscript-1.1.0/SOURCE.txt">Zdroj a licence</a>.</p></div>
   <div class="ne-submit"><button class="btn" type="submit" id="ne-publish">Zveřejnit</button>
    <p class="ne-msg" id="ne-msg" role="alert" hidden></p></div>
  </form>
