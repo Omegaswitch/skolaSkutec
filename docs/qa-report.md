@@ -31,3 +31,29 @@ Detector: 12 warnings on the homepage: `cramped-padding` on full-bleed bands who
 4. **Approvals**: school logo (Grand Priory), monochrome emblem use, photographs/consent, the privacy notice and accessibility statement, every "new" page.
 5. **Vercel settings**: `NEWS_USERS`, `NEWS_SECRET`, `GITHUB_TOKEN`, `RESEND_API_KEY` (contact form), DNS for www.gymskutec.cz.
 6. Homepage photography: only the Grand Prior's 2023 visit photos are available; pupils' everyday life needs photos from the school.
+
+## Final audit before presentation (19 October 2026)
+
+Full sweep with Playwright: 353 pages × 3 widths (1366, 820, 390 px), plus interaction tests, axe, Impeccable detector on the whole build, and a side-by-side comparison with maltezskyrad.cz and velkoprevorskypalac.eu.
+
+| Area | Result |
+|---|---|
+| Console errors, failed requests, broken local images | none on public pages |
+| Horizontal overflow | none (was: 5 px on /studium/predmety/matematika/ at 390 px — fixed) |
+| Layout shift (CLS > 0.05) | none on public pages (was: 0.09–0.11 at 820 px on 3 pages with tables — fixed) |
+| Interactions (13 tests) | skip link, submenu on focus, Escape closes, mobile menu and submenus, news category and year filters, article pager, search, form error message, form labels, 404 — all pass |
+| Animations | hover fades 160–280 ms, cross-document fade, section slide, image develop-in for uncached images only; all off under `prefers-reduced-motion`; same as the sister sites |
+| Accessibility (axe, WCAG 2.2 AA) | 0 violations on 353 pages |
+| Feeds | RSS (30 items) and sitemap (332 URLs) parse |
+
+Fixed in this audit:
+1. Tablet: news cards without a photo were squeezed into a 9rem column — image column now only when there is an image.
+2. Tablet layout shift: removed `content-visibility:auto` from tables (placeholder height 600 px made the page jump).
+3. Phone overflow: page grid track and prose now shrink and wrap long words/URLs.
+4. Preview label for "summary" pages had no background — now tinted like "existing".
+5. Contact page: address card first, as on maltezskyrad.cz.
+6. Homepage eyebrow now carries the short red rule used on velkoprevorskypalac.eu.
+
+Not changed (deliberate): mobile header height and the banner text shadow (shared with the sister sites); Impeccable detector `cramped-padding` / `dark-glow` / `flat-type-hierarchy` are false positives (full-bleed wrappers, family banner shadow, unresolved stylesheet); `broken-image` / `overused-font` hit a regex in news-editor.js and the vendored Quill CSS.
+
+Staff page `/pridat-aktualitu/`: its API exists only on Vercel (404 on the local server, expected); the sign-in form appears after a session check (layout shift 0.09–0.21, internal page only).

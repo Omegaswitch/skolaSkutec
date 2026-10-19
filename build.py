@@ -418,7 +418,8 @@ def render_page(p):
     url = p["url"]
     is_section = p.get("section") or bool(NAV_INDEX.get(url, {}).get("node", {}).get("children"))
     figure = f'<figure class="page-figure">{img(p["image"], p.get("imageAlt") or p["title"], eager=True)}</figure>' if p.get("image") else ""
-    special = (contact_card() if p.get("contactCard") else "") + (contact_form() if p.get("contactForm") else "")
+    card = contact_card() if p.get("contactCard") else ""  # facts first, as on maltezskyrad.cz's Kontakt
+    special = contact_form() if p.get("contactForm") else ""
     source = ""
     if p.get("source") and not PRODUCTION:
         source = f'<p class="small source-note">Zdroj: <a href="{esc(p["source"])}">{esc(p["source"])}</a></p>'
@@ -432,6 +433,7 @@ def render_page(p):
  </header>
  <div class="page-main">
   {figure}
+  {card}
   <div class="prose">{enhance_body(p['body'])}</div>
   {special}
   {section_children_html(url) if is_section else ''}

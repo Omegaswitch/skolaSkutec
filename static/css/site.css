@@ -292,6 +292,7 @@ html:not(.js) .cal-widget .cal-fallback{display:block;padding:var(--s5)}
 .content-status--new{background:#e8eef7;color:#1f3a63}
 .content-status--approval{background:#fde4e2;color:#7a1410}
 .content-status--verified{background:#e5f2e8;color:#1d4d2b}
+.content-status--summary{background:#fbf3d9;color:#5b4700}
 
 .prose{max-width:68ch;display:grid;gap:1.05em;font-size:1.0625rem}
 .prose h2{font:500 1.6rem/1.2 var(--display);margin-top:.9em}
@@ -373,7 +374,6 @@ html:not(.js) .cal-widget .cal-fallback{display:block;padding:var(--s5)}
 }
 
 /* long tables (Grand Masters, heads of the Grand Priory) are laid out only when scrolled near */
-.table-wrap{content-visibility:auto;contain-intrinsic-size:auto 600px}
 
 /* ---------- loading: skeletons and image placeholders ---------- */
 .skeleton span{display:block;border-radius:2px;background:rgba(0,0,0,.05);animation:breathe 2.4s ease-in-out infinite alternate}
@@ -540,8 +540,8 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .quick-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
 .quick-links a{display:flex;align-items:center;min-height:52px;padding:var(--s3) var(--s4);border:1px solid var(--rule);border-radius:2px;color:var(--ink-strong);font-weight:600;text-decoration:none;transition:border-color var(--fast) var(--ease),background var(--fast) var(--ease)}
 .quick-links a:hover{border-color:var(--red);background:var(--grey)}
-.source-note{margin-top:var(--s6)}
-@media (max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}.card{grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:var(--s4)}}
+.source-note{margin-top:var(--s6);overflow-wrap:anywhere}
+@media (max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}.card:has(.card-img){grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:var(--s4)}}
 @media (max-width:620px){.quick-links{grid-template-columns:minmax(0,1fr)}.topbar-tools{margin-left:0;padding-bottom:6px}.card{grid-template-columns:minmax(0,1fr)}}
 .contact-form{display:grid;gap:var(--s4);max-width:40rem;margin-top:var(--s6)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -567,3 +567,8 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .tiles span{font-size:.95rem}
 @media (max-width:1100px){.quick-links--row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:620px){.quick-links--row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.prose{min-width:0;overflow-wrap:break-word}
+.page-main{grid-template-columns:minmax(0,1fr)}
+/* eyebrow as on velkoprevorskypalac.eu: short red rule, then the label */
+.home-open--school .label{display:flex;align-items:center;gap:var(--s3);letter-spacing:.09em}
+.home-open--school .label::before{content:"";width:28px;height:2px;background:var(--red)}
