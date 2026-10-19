@@ -172,8 +172,8 @@ def nav_html(current_url):
 
 def lockup():
     """The school logo (tools/make_logo.py) in the banner, sized like the Order lockup on the sister sites: the shield keeps the Grand Magistry web size."""
-    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-white.svg").read_text()).group(1).split()]
-    return (f'<img class="lockup" src="/img/logo/logo-white.svg" alt="{esc(SITE["names"]["school"])}" width="{vb[2]:.0f}" height="{vb[3]:.0f}"'
+    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-red-on-dark.svg").read_text()).group(1).split()]
+    return (f'<img class="lockup" src="/img/logo/logo-red-on-dark.svg" alt="{esc(SITE["names"]["school"])}" width="{vb[2]:.0f}" height="{vb[3]:.0f}"'
             f' style="--h:{vb[3] / 126:.4f};--t:{vb[1] / 126:.4f}">')
 
 
