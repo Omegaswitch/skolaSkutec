@@ -511,17 +511,17 @@ def sitemap_html(nodes):
     return "<ul>" + "".join(f'<li><a href="{n["url"]}">{esc(n["title"])}</a>{sitemap_html(n["children"]) if n.get("children") else ""}</li>' for n in nodes) + "</ul>"
 
 
-ACCESSIBILITY = """<p>Gymnázium Suverénního řádu maltézských rytířů ve Skutči se zavazuje zpřístupnit své webové stránky v souladu se zákonem č. 99/2019 Sb., o přístupnosti internetových stránek a mobilních aplikací. Toto prohlášení se vztahuje na web www.gymskutec.cz.</p>
+ACCESSIBILITY = """<p>Gymnázium Suverénního řádu maltézských rytířů ve Skutči se zavazuje zpřístupnit své internetové stránky v souladu se zákonem č. 99/2019 Sb., o přístupnosti internetových stránek a mobilních aplikací, kterým se provádí směrnice Evropského parlamentu a Rady (EU) 2016/2102. Toto prohlášení se vztahuje na internetové stránky www.gymskutec.cz.</p>
 <h2>Stav souladu</h2>
-<p>Web je navržen tak, aby splňoval normu ČSN EN 301 549 a pravidla WCAG 2.2 na úrovni AA: sémantické značení, ovládání klávesnicí, viditelné zaměření, dostatečný kontrast, popisky formulářů a textové alternativy obrázků.</p>
+<p>Tyto internetové stránky jsou <strong>částečně v souladu</strong> s harmonizovanou normou EN 301 549 V3.2.1 (pravidla WCAG 2.1 na úrovni AA), a to z důvodu nesouladu uvedeného níže. Stránky jsou navíc kontrolovány podle novějších pravidel WCAG 2.2 AA.</p>
 <h2>Nepřístupný obsah</h2>
-<ul><li>Některé dokumenty ke stažení (PDF, DOC, DOCX, XLS, XLSX) převzaté ze stávajícího webu nemusí být přístupné, některá PDF nemají strojově čitelnou textovou vrstvu (WCAG 1.1.1); na vyžádání je poskytneme v přístupné podobě.</li><li>Některé informace (například harmonogram školního roku) jsou zatím jen v obrázku nebo v PDF.</li></ul>
-<h2>Zpětná vazba a kontakt</h2>
-<p>Narazíte-li na problém s přístupností, napište nám na <a href="mailto:info@gymskutec.cz">info@gymskutec.cz</a> nebo zavolejte na <a href="tel:+420739085660">739 085 660</a>.</p>
-<h2>Vymáhání</h2>
-<p>Nebude-li odpověď uspokojivá, můžete se obrátit na Digitální a informační agenturu, Na Vápence 915/14, 130 00 Praha 3, <a href="mailto:pristupnost@dia.gov.cz">pristupnost@dia.gov.cz</a>.</p>
+<ul><li>Některé dokumenty ke stažení (PDF, DOC, DOCX) převzaté ze stávajícího webu nejsou přístupné; některá PDF nemají strojově čitelnou textovou vrstvu (WCAG 1.1.1). Na vyžádání je poskytneme v přístupné podobě.</li><li>Některé informace (například harmonogram školního roku, složení školské rady) jsou zatím jen v obrázku nebo v PDF (WCAG 1.1.1).</li></ul>
 <h2>Vypracování prohlášení</h2>
-<p>Prohlášení bylo vypracováno pro nový web v říjnu 2026 na základě vlastního posouzení (automatická kontrola axe-core podle WCAG 2.2 AA na všech stránkách). Předchozí prohlášení ze dne 21. 8. 2019, revidované 8. 7. 2026, uvádělo částečný soulad s WCAG 2.1.</p>"""
+<p>Prohlášení bylo vypracováno dne 19. října 2026 na základě vlastního posouzení provedeného školou: automatická kontrola nástrojem axe-core všech stránek na počítači i mobilu a ruční kontrola ovládání klávesnicí. Prohlášení bude přezkoumáno nejméně jednou ročně.</p>
+<h2>Zpětná vazba a kontaktní údaje</h2>
+<p>Nedostatky v přístupnosti nám můžete oznámit a o nepřístupné informace požádat na <a href="mailto:info@gymskutec.cz">info@gymskutec.cz</a> nebo na telefonu <a href="tel:+420739085660">739 085 660</a>. Odpovíme bez zbytečného odkladu.</p>
+<h2>Postupy pro prosazování práva</h2>
+<p>Nebude-li odpověď uspokojivá, můžete podat podnět Digitální a informační agentuře, Na Vápence 915/14, 130 00 Praha 3, <a href="mailto:pristupnost@dia.gov.cz">pristupnost@dia.gov.cz</a> (§ 10 zákona č. 99/2019 Sb.).</p>"""
 
 
 SEARCH_FORM = """<form class="search-form" role="search" action="/hledat/" method="get">
