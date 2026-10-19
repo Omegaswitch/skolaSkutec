@@ -319,6 +319,7 @@ def render_home():
     quick = "".join(f'<li><a href="{esc(q["url"])}"{" rel=" + chr(34) + "noopener" + chr(34) if q["url"].startswith("http") else ""}>{esc(q["label"])}</a></li>' for q in h["quickLinks"])
     life = "".join(f'<li><a href="{p["url"]}"><b>{esc(p["title"])}</b><span>{esc(p["text"])}</span></a></li>' for p in h["life"])
     photo = h.get("photo")
+    figure = lambda f: f'<figure class="home-photo">{img(f["src"], f["alt"])}<figcaption>{esc(f["caption"])}</figcaption></figure>' if f else ""
     photo_html = f'<figure class="home-photo">{img(photo["src"], photo["alt"], eager=True)}<figcaption>{esc(photo["caption"])}</figcaption></figure>' if photo else ""
     latest = NEWS[:3]
     news_band = ""
@@ -330,7 +331,6 @@ def render_home():
     body = f"""
 <section class="home-open home-open--school" aria-labelledby="home-title"><div class="wrap home-intro">
  <div class="home-intro-main">
-  <p class="label">{esc(h['kicker'])}</p>
   <h1 id="home-title" class="display">{esc(h['title'])}</h1>
   <p class="lead">{esc(h['lead'])}</p>
   <p class="home-actions"><a class="btn" href="{h['cta']['url']}">{esc(h['cta']['label'])}</a> <a class="link-strong" href="{h['cta2']['url']}">{esc(h['cta2']['label'])}</a></p>
@@ -350,14 +350,14 @@ def render_home():
 
 {news_band}
 
-<section class="band band-grey" aria-labelledby="life-title"><div class="wrap">
- <div class="section-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p></div>
- <ul class="tiles">{life}</ul>
+<section class="band band-grey" aria-labelledby="life-title"><div class="wrap split">
+ <div class="split-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p>{figure(h.get('lifePhoto'))}</div>
+ <ul class="works">{life}</ul>
 </div></section>
 
 
 <section class="band" aria-labelledby="order-title"><div class="wrap split">
- <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2></div>
+ <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2>{figure(h.get('orderPhoto'))}</div>
  <div class="prose">{h['orderText']}</div>
 </div></section>
 """
