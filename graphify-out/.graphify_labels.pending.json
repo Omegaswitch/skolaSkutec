@@ -34,7 +34,7 @@
   "32": "SKILL.md",
   "33": "The Toolkit",
   "34": ".remove",
-  "35": "captureElementToBlob",
+  "35": ".forEach",
   "36": "createLiveBrowserDomHelpers",
   "37": "createLiveBrowserSessionState",
   "38": "N",
@@ -46,7 +46,7 @@
   "44": "New visual work",
   "45": "O škole (menu item without its own URL)",
   "46": "optimize.md",
-  "47": "u",
+  "47": "onAnnotDown",
   "48": "Scan mode (approach C: auto-extract, then confirm descriptive language)",
   "49": "Hardening Dimensions",
   "50": ".getSelection",
@@ -106,5 +106,8 @@
   "104": "search.js",
   "105": "site.js",
   "106": "Persuade and Experience",
-  "107": ".canAdd"
+  "107": ".canAdd",
+  "108": "mountSvelteComponentVariant",
+  "109": "bolder.md",
+  "110": "logo_viewbox"
 }

@@ -268,6 +268,10 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
   <p class="f-name">{esc(names['school'])}</p>
   <p>{esc(c['street'])}, {esc(c['zip'])} {esc(c['city'])} · <a href="mailto:{c['email']}">{c['email']}</a> · {phones}</p>
  </div></div>
+ <div class="f-partners"><div class="wrap">
+  <p><span class="label">Spolupracujeme</span> {" · ".join(f'<a href="{esc(l["url"])}"{link_attr(l["url"])}>{esc(l["label"])}</a>' for l in SITE["partners"])}</p>
+  <p><span class="label">Odkazy</span> {" · ".join(f'<a href="{esc(l["url"])}"{link_attr(l["url"])}>{esc(l["label"])}</a>' for l in SITE["links"][3:8])}</p>
+ </div></div>
  <div class="f-red"><div class="wrap">
   <p>Zřizovatel: <a href="https://www.maltezskyrad.cz/">{esc(names['founder'])}</a></p>
   <p>{esc(names['orderShort'])}: <a href="https://www.orderofmalta.int/">www.orderofmalta.int</a></p>
@@ -324,7 +328,12 @@ def news_card(n):
 # ---------------------------------------------------------------- pages
 
 
+def link_attr(u):
+    return ' rel="noopener"' if u.startswith("http") else ""
+
+
 def render_home():
+    links = "".join(f'<li><a href="{esc(l["url"])}"{link_attr(l["url"])}><b>{esc(l["label"])}</b><span>{esc(l["text"])}</span></a></li>' for l in SITE["links"])
     h, names = SITE["home"], SITE["names"]
     programmes = "".join(f'<li><a href="{p["url"]}"><b>{esc(p["title"])}</b><span>{esc(p["text"])}</span></a></li>' for p in h["programmes"])
     quick = "".join(f'<li><a href="{esc(q["url"])}"{" rel=" + chr(34) + "noopener" + chr(34) if q["url"].startswith("http") else ""}>{esc(q["label"])}</a></li>' for q in h["quickLinks"])
@@ -367,7 +376,12 @@ def render_home():
 </div></section>
 
 
-<section class="band" aria-labelledby="order-title"><div class="wrap split">
+<section class="band" aria-labelledby="links-title"><div class="wrap">
+ <div class="section-head"><h2 id="links-title" class="display-m">Užitečné odkazy</h2></div>
+ <ul class="works">{links}</ul>
+</div></section>
+
+<section class="band band-grey" aria-labelledby="order-title"><div class="wrap split">
  <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2>{figure(h.get('orderPhoto'))}</div>
  <div class="prose">{h['orderText']}</div>
 </div></section>

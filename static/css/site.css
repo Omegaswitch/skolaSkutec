@@ -576,3 +576,7 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .photo-run img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
 .prose img{max-height:80vh;width:auto}
 .prose .photo-run img{max-height:none;width:100%}
+/* old site's sidebar links and partners (every page) */
+.f-partners{background:#fff;border-top:1px solid var(--rule);font-size:.9rem}
+.f-partners .wrap{display:grid;gap:var(--s2);padding-block:var(--s5)}
+.f-partners .label{margin-right:var(--s2)}
