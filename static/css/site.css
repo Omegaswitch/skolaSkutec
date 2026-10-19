@@ -551,3 +551,4 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .search-form input{flex:1;min-height:46px;padding:10px 12px;border:1px solid #8a8a8a;border-radius:2px;font:inherit;color:var(--ink-strong)}
 .search-form input:focus-visible{outline:2px solid var(--red);outline-offset:0;border-color:var(--red)}
 .topbar-search{display:inline-flex}
+.prose td:first-child,.prose th:first-child{white-space:nowrap}
