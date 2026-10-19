@@ -1,0 +1,82 @@
+{
+ "baseUrl": "https://www.gymskutec.cz",
+ "defaultImage": "/media/2023/04/Skutec_01-1024x519.jpg",
+ "names": {
+  "school": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči",
+  "site": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči",
+  "topbar": "Gymnázium ve Skutči · Maltézský řád",
+  "order": "Suverénní vojenský špitální řád svatého Jana Jeruzalémského, z Rhodu a z Malty",
+  "orderShort": "Suverénní maltézský řád",
+  "entity": "České velkopřevorství",
+  "founder": "Maltézský řád – České velkopřevorství"
+ },
+ "contact": {
+  "street": "Vítězslava Nováka 584",
+  "zip": "539 73",
+  "city": "Skuteč",
+  "email": "info@gymskutec.cz",
+  "phones": [
+   {"label": "Kancelář a jídelna", "number": "+420 739 085 660"},
+   {"label": "Domov mládeže", "number": "+420 724 905 528"}
+  ],
+  "mapUrl": "https://www.openstreetmap.org/search?query=V%C3%ADt%C4%9Bzslava%20Nov%C3%A1ka%20584%2C%20Skute%C4%8D"
+ },
+ "social": [
+  {"label": "Facebook", "url": "https://www.facebook.com/GS%C5%98MR-Skute%C4%8D-178420408988256/"},
+  {"label": "Instagram", "url": "https://www.instagram.com/gsrmrveskutci/"}
+ ],
+ "topbarLinks": [
+  {"label": "Bakaláři", "url": "https://gymskutec.bakalari.cz/login"},
+  {"label": "Jídelníček", "url": "https://app.strava.cz/jidelnicky?jidelna=5644"}
+ ],
+ "newsCategories": {
+  "akce": "Školní akce",
+  "souteze": "Soutěže",
+  "sport": "Sport",
+  "zajezdy": "Zahraniční zájezdy",
+  "projekty": "Projekty",
+  "kavarny": "Studentské kavárny"
+ },
+ "nav": [],
+ "home": {
+  "status": "new",
+  "kicker": "Skuteč · od roku 1999",
+  "title": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči",
+  "lead": "Škola, kterou od roku 2009 zřizuje České velkopřevorství Maltézského řádu. U nás můžete studovat dva obory zakončené maturitou: gymnázium a bezpečnostně právní činnost.",
+  "description": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči: gymnázium a obor bezpečnostně právní činnost, domov mládeže a školní jídelna. Zřizovatel: Maltézský řád – České velkopřevorství.",
+  "cta": {"label": "Pro uchazeče", "url": "/studium/pro-uchazece-1/"},
+  "cta2": {"label": "Harmonogram školního roku", "url": "/studium/harmonogram-skolniho-roku/"},
+  "photo": {"src": "/media/2023/04/Skutec_02-1024x768.jpg", "alt": "Návštěva velkopřevora Fra’ Pierra de Bizemont na gymnáziu ve Skutči", "caption": "Den učitelů 28. března 2023: velkopřevor Fra’ Pierre de Bizemont na návštěvě školy."},
+  "programmesTitle": "Dva obory s maturitou",
+  "programmesText": "Všeobecné gymnázium i odborný obor bezpečnostně právní činnost končí maturitní zkouškou.",
+  "programmes": [
+   {"title": "Gymnázium", "text": "Všeobecné vzdělání a příprava na vysokou školu.", "url": "/studium/pro-uchazece-1/"},
+   {"title": "Bezpečnostně právní činnost", "text": "Odborný obor zakončený maturitou.", "url": "/studium/pro-uchazece-1/"}
+  ],
+  "lifeTitle": "Život ve škole",
+  "lifeText": "Společné výlety, studentské kavárny, majáles, maturitní ples a žákovský parlament. Škola má vlastní domov mládeže a jídelnu.",
+  "life": [],
+  "quickText": "Školní systémy a služby, které žáci a rodiče potřebují nejčastěji.",
+  "quickLinks": [
+   {"label": "Bakaláři – přihlášení", "url": "https://gymskutec.bakalari.cz/login"},
+   {"label": "Plán akcí (Bakaláři)", "url": "https://gymskutec.bakalari.cz/core/Events/Agenda/Index"},
+   {"label": "Jídelníček", "url": "https://app.strava.cz/jidelnicky?jidelna=5644"},
+   {"label": "Harmonogram školního roku", "url": "/studium/harmonogram-skolniho-roku/"}
+  ],
+  "orderTitle": "Škola Maltézského řádu",
+  "orderText": "<p>Gymnázium založilo Biskupství královéhradecké v roce 1999. V roce 2009 je převzal Suverénní vojenský špitální řád svatého Jana Jeruzalémského, z Rhodu a z Malty – České velkopřevorství; budovu škole bezplatně věnovalo Biskupství královéhradecké.</p><p>České velkopřevorství zřizuje také <a href=\"https://vos.mojezdravka.cz/\">Vyšší odbornou školu zdravotnickou</a> v Praze a <a href=\"https://www.zsmr.eu/\">Základní školu Maltézských rytířů</a> v Kladně. Více o Řádu na <a href=\"https://www.maltezskyrad.cz/\">maltezskyrad.cz</a>.</p>"
+ },
+ "text": {
+  "skip": "Přejít na obsah",
+  "menu": "Menu",
+  "morePages": "další stránky",
+  "inSection": "V této části",
+  "privacy": "Ochrana osobních údajů",
+  "status": {
+   "existing": "Převzato ze stávajícího webu – čeká na kontrolu",
+   "new": "Nový text – čeká na schválení",
+   "approval": "Vyžaduje schválení",
+   "summary": "Shrnutí ze stávajícího webu – doplnit původní text"
+  }
+ }
+}
