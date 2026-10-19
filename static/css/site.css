@@ -99,7 +99,7 @@ html:active-view-transition-type(slide)::view-transition-new(page-main){animatio
 /* ---------- header (Grand Magistry frame) ---------- */
 .topbar{background:var(--red);color:#fff;font-size:.8rem}
 .topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s1) var(--s5);min-height:36px}
-.topbar a{color:#fff;text-decoration:none}
+.topbar a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:24px}
 .topbar a:hover{text-decoration:underline}
 .topbar-home{font-weight:600;letter-spacing:.02em}
 .topbar-social{display:flex;gap:var(--s4)}
@@ -146,7 +146,8 @@ html:active-view-transition-type(slide)::view-transition-new(page-main){animatio
   /* photo pinned to a fixed height so the lockup never meets the name; it fades into the menu grey below */
   .banner{background-color:var(--ink);background-image:linear-gradient(180deg,rgba(14,22,30,.84) 0,rgba(14,22,30,.86) 60px,var(--ink) 124px),url(/img/banner/banner-photo.webp);background-size:100% 100%,auto 128px;background-position:0 0,-383px 0}
   .banner .wrap{justify-content:flex-start;align-items:flex-end;min-height:0;padding-top:104px;padding-bottom:var(--s3)}
-  .fullname{text-align:left;font-size:.72rem}
+  .fullname{text-align:left;font-size:.8rem}
+  .fullname span{display:none}  /* phones: the founder line repeats the top bar, and at this size it was 10px */
   .banner{--shield:60px}
   .banner-home{top:16px}
   .mainnav .wrap{padding-left:0;padding-right:0}
