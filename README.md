@@ -38,7 +38,7 @@ HTML comments `<!-- OVĚŘIT: … -->` and `<!-- CHYBÍ: … -->` mark facts to 
 
 ## News (no GitHub needed)
 
-Staff publish at `/pridat-aktualitu/` (not linked, not indexed, password). Same editor as maltezskyrad.cz: text editor limited to the site's styles, date, categories, summary, main photo, attachments; edit or delete existing posts. `api/news.js` cleans the text and commits the post to `main`; Vercel rebuilds in about a minute.
+Staff publish at `/pridat-aktualitu/` (not linked, not indexed, password). Same editor as maltezskyrad.cz: text editor limited to the site's styles, date, categories, summary, main photo, attachments; edit or delete existing posts. Several photos can be inserted into the text at once; two or more in a row appear as a photo grid. `api/news.js` cleans the text and commits the post to `main`; Vercel rebuilds in about a minute.
 
 Vercel environment variables:
 

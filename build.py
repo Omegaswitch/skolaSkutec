@@ -127,8 +127,14 @@ def enhance_body(body):
             return tag
         wh = image_size(html.unescape(src.group(1))) if src.group(1).startswith("/") else None
         extra = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
+        if ' alt="' not in tag:
+            extra += ' alt=""'
         return tag[:-1] + f'{extra} loading="lazy" decoding="async" class="ph-img">'
     body = re.sub(r"<img [^>]+>", fix_img, body)
+    # two or more photos in a row (the editor puts each on its own line) become a grid; each opens its full file
+    photo = r'(?:<figure><img [^>]+></figure>|<p><img [^>]+></p>|<img [^>]+>)'
+    body = re.sub(rf"(?:{photo}\s*){{2,}}", lambda m: '<div class="photo-run">' + re.sub(
+        r'<img src="([^"]+)"[^>]*>', lambda i: f'<a href="{i.group(1)}" aria-label="Zobrazit celou fotografii">{i.group(0)}</a>', m.group(0)) + "</div>", body)
     body = re.sub(r"<table>", '<div class="table-wrap" tabindex="0"><table>', body)
     return body.replace("</table>", "</table></div>")
 

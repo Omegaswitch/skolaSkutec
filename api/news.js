@@ -17,7 +17,7 @@ const MAX_TEXT = 200000;
 const TYPES = { "application/pdf": "pdf", "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const MAGIC = [[[0x25, 0x50, 0x44, 0x46], "application/pdf"], [[0xff, 0xd8, 0xff], "image/jpeg"],
   [[0x89, 0x50, 0x4e, 0x47], "image/png"], [[0x52, 0x49, 0x46, 0x46], "image/webp"]];
-const CATEGORIES = Object.keys(SITE.newsCategories).filter((c) => !["news_malteser_international", "nezarazene"].includes(c));
+const CATEGORIES = Object.keys(SITE.newsCategories);
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const env = (k, d = "") => process.env[k] || d;

@@ -138,7 +138,7 @@
   }
   function reset() {
     state.files = []; state.blobs = {}; state.editing = null;
-    editor.reset(); setDate(); setCategories(["ceske-velkoprevorstvi"]);
+    editor.reset(); setDate(); setCategories(["akce"]);
     if (quill) quill.setText("");
     $("#ne-photo-box").innerHTML = ""; $("#ne-file-list").innerHTML = "";
     $("#ne-text").parentNode.hidden = false; $("#ne-locked").hidden = true; $("#ne-text-hint").hidden = false;
@@ -235,7 +235,11 @@
   function setDate() { var n = new Date(); n.setMinutes(n.getMinutes() - n.getTimezoneOffset()); $("#ne-date").value = n.toISOString().slice(0, 16); }
   function setup() {
     if (quill || !window.Quill) return;
-    setDate(); setCategories(["ceske-velkoprevorstvi"]);
+    // Quill's image format accepts only http(s) and data sources and turns anything else into "//:0"; the preview of a
+    // photo being uploaded is a blob: URL, which must survive until it is swapped for the uploaded /media/ address
+    var Img = Quill.import("formats/image");
+    Quill.register(class extends Img { static sanitize(url) { return /^blob:/.test(url) ? url : Img.sanitize(url); } }, true);
+    setDate(); setCategories(["akce"]);
     quill = new Quill("#ne-text", {
       theme: "snow", placeholder: "Text aktuality…",
       formats: ["header", "bold", "italic", "underline", "strike", "link", "list", "blockquote", "image"],
@@ -252,13 +256,19 @@
     editor.querySelectorAll("#ne-title, #ne-excerpt").forEach(function (el) { el.addEventListener("input", function () { clearTimeout(t); t = setTimeout(save, 800); }); });
   }
   function insertImage() {
-    var i = document.createElement("input"); i.type = "file"; i.accept = "image/jpeg,image/png,image/webp";
+    var i = document.createElement("input"); i.type = "file"; i.accept = "image/jpeg,image/png,image/webp"; i.multiple = true;
     i.onchange = function () {
-      var f = i.files[0]; if (!f) return;
-      var range = quill.getSelection(true), local = URL.createObjectURL(f);
-      quill.insertEmbed(range.index, "image", local, "user"); quill.setSelection(range.index + 1);
-      var note = $("#ne-inline-msg"); msg(note, "Fotografie se nahrává…");
-      upload(f, "inline").then(function (it) { state.blobs[local] = it.url; msg(note); }, function (r) { msg(note, errorOf(r), "error"); });
+      var files = Array.prototype.slice.call(i.files); if (!files.length) return;
+      // each photo on its own line: two or more in a row become a photo grid on the site
+      var at = quill.getSelection(true).index, note = $("#ne-inline-msg"), left = files.length;
+      msg(note, files.length > 1 ? "Fotografie se nahrávají… (" + files.length + ")" : "Fotografie se nahrává…");
+      files.forEach(function (f) {
+        var local = URL.createObjectURL(f);
+        quill.insertEmbed(at, "image", local, "user"); at += 1;
+        if (files.length > 1) { quill.insertText(at, "\n", "user"); at += 1; }
+        upload(f, "inline").then(function (it) { state.blobs[local] = it.url; if (--left === 0) msg(note); }, function (r) { msg(note, errorOf(r), "error"); });
+      });
+      quill.setSelection(at);
     };
     i.click();
   }
