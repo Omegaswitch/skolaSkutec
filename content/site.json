@@ -693,7 +693,15 @@
     "url": "https://gymskutec.bakalari.cz/login"
    },
    {
-    "label": "Plán akcí (Bakaláři)",
+    "label": "Suplování",
+    "url": "https://gymskutec.bakalari.cz/next/zmeny.aspx"
+   },
+   {
+    "label": "Rozvrhy",
+    "url": "https://gymskutec.bakalari.cz/timetable/public"
+   },
+   {
+    "label": "Plán akcí",
     "url": "https://gymskutec.bakalari.cz/core/Events/Agenda/Index"
    },
    {
@@ -701,8 +709,8 @@
     "url": "https://app.strava.cz/jidelnicky?jidelna=5644"
    },
    {
-    "label": "Harmonogram školního roku",
-    "url": "/studium/harmonogram-skolniho-roku/"
+    "label": "Formuláře ke stažení",
+    "url": "/studium/formulare-ke-stazeni/"
    }
   ],
   "orderTitle": "Škola Maltézského řádu",

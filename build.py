@@ -305,8 +305,9 @@ def news_item(n, compact=False):
 
 def news_card(n):
     pic = f'<div class="card-img">{img(n["image"], "")}</div>' if n.get("image") else ""
+    excerpt = f'<p>{esc(n["excerpt"])}</p>' if n.get("excerpt") else ""
     return (f'<li class="card">{pic}<div class="card-body"><time datetime="{n["date"][:10]}">{fmt_date(n["date"])}</time>'
-            f'<a href="{n["url"]}">{esc(n["title"])}</a></div></li>')
+            f'<a href="{n["url"]}">{esc(n["title"])}</a>{excerpt}</div></li>')
 
 
 # ---------------------------------------------------------------- pages
@@ -337,6 +338,11 @@ def render_home():
  {photo_html}
 </div></section>
 
+<section class="band band-quick" aria-labelledby="quick-title"><div class="wrap">
+ <h2 id="quick-title" class="label">Pro žáky a rodiče</h2>
+ <ul class="quick-links quick-links--row">{quick}</ul>
+</div></section>
+
 <section class="band band-grey" aria-labelledby="prog-title"><div class="wrap split">
  <div class="split-head"><h2 id="prog-title" class="display-m">{esc(h['programmesTitle'])}</h2><p>{esc(h['programmesText'])}</p></div>
  <ul class="works">{programmes}</ul>
@@ -344,17 +350,13 @@ def render_home():
 
 {news_band}
 
-<section class="band band-grey" aria-labelledby="life-title"><div class="wrap split">
- <div class="split-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p></div>
- <ul class="works">{life}</ul>
+<section class="band band-grey" aria-labelledby="life-title"><div class="wrap">
+ <div class="section-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p></div>
+ <ul class="tiles">{life}</ul>
 </div></section>
 
-<section class="band" aria-labelledby="quick-title"><div class="wrap split">
- <div class="split-head"><h2 id="quick-title" class="display-m">Rychlé odkazy</h2><p>{esc(h['quickText'])}</p></div>
- <ul class="quick-links">{quick}</ul>
-</div></section>
 
-<section class="band band-grey" aria-labelledby="order-title"><div class="wrap split">
+<section class="band" aria-labelledby="order-title"><div class="wrap split">
  <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2></div>
  <div class="prose">{h['orderText']}</div>
 </div></section>

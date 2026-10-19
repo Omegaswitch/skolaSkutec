@@ -552,3 +552,18 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .search-form input:focus-visible{outline:2px solid var(--red);outline-offset:0;border-color:var(--red)}
 .topbar-search{display:inline-flex}
 .prose td:first-child,.prose th:first-child{white-space:nowrap}
+/* critique fixes (Impeccable, Oct 2026): red only for links and actions; quick links up front; life as tiles */
+.band-grey .works a,.band-grey .tiles a{color:var(--ink)}
+.band-grey .works a:hover b,.tiles a:hover b{color:var(--red-text)}
+.card-body p{font-size:.93rem;color:var(--muted)}
+.band-quick{padding-block:var(--s6);border-top:1px solid var(--rule)}
+.band-quick .label{margin-bottom:var(--s3)}
+.quick-links--row{grid-template-columns:repeat(6,minmax(0,1fr))}
+.quick-links--row a{justify-content:center;text-align:center;font-size:.95rem}
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr));gap:var(--s4)}
+.tiles a{display:grid;gap:var(--s2);height:100%;padding:var(--s5);background:#fff;border-top:2px solid var(--red);text-decoration:none;transition:box-shadow var(--fast) var(--ease)}
+.tiles a:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.tiles b{font:500 1.25rem/1.25 var(--display);color:var(--ink-strong)}
+.tiles span{font-size:.95rem}
+@media (max-width:1100px){.quick-links--row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){.quick-links--row{grid-template-columns:repeat(2,minmax(0,1fr))}}
