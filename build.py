@@ -240,7 +240,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
  </div></div>
  <div class="banner"><div class="wrap">
   <a class="banner-home" href="/">{lockup()}</a>
-  <p class="fullname">{esc(names['order'])}<span>{esc(names['entity'])} · zřizovatel školy</span></p>
+  <p class="fullname">{esc(names['school'])}<span>Maltézský řád · {esc(names['entity'])}</span></p>
  </div></div>
  <nav class="mainnav" aria-label="{esc(T['menu'])}"><div class="wrap">
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">{esc(T['menu'])}</button>

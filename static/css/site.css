@@ -114,7 +114,7 @@ html:active-view-transition-type(slide)::view-transition-new(page-main){animatio
 /* lockup: the shield keeps the Grand Magistry web size and top; accents may rise above it (--t), clear space Y = .077 × shield */
 .banner-home{position:absolute;left:max(var(--gutter),env(safe-area-inset-left,0px));top:30px;line-height:0}
 .lockup{display:block;width:auto;height:calc(var(--shield)*var(--h));margin-top:calc(var(--shield)*var(--t))}
-.fullname{color:#fff;text-align:right;font:600 clamp(.74rem,1.2vw,1rem)/1.32 var(--ui);letter-spacing:.035em;text-transform:uppercase;max-width:31em;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 14px rgba(14,28,46,.5)}
+.fullname{color:#fff;text-align:right;text-wrap:balance;font:600 clamp(.74rem,1.2vw,1rem)/1.32 var(--ui);letter-spacing:.035em;text-transform:uppercase;max-width:31em;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 14px rgba(14,28,46,.5)}
 .fullname span{display:block;margin-top:5px;font-size:.86em;letter-spacing:.09em}
 .mainnav{background:var(--ink)}
 .menu-toggle{display:none}
