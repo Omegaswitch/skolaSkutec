@@ -1,5 +1,6 @@
 // /pridat-aktualitu/: sign in, then write a new post or edit / delete an existing one (api/news.js).
-// Photos are shrunk on this device before upload (2000 px, WebP or JPEG, which also drops location data from the camera);
+// Photos are shrunk on this device before upload (1600 px on the long side, WebP or JPEG, which also drops location data
+// from the camera) and PDFs over 1 MB are compressed with Ghostscript (WebAssembly);
 // every file goes up in its own request.
 (function () {
   var root = document.getElementById("news-app");
@@ -167,12 +168,12 @@
     if (file.type === "application/pdf") return shrinkPdf(file);
     if (!/^image\/(jpeg|png|webp)$/.test(file.type) || !window.createImageBitmap) return Promise.resolve(file);
     return createImageBitmap(file).then(function (bmp) {
-      var s = Math.min(1, 2000 / Math.max(bmp.width, bmp.height)), c = document.createElement("canvas");
+      var s = Math.min(1, 1600 / Math.max(bmp.width, bmp.height)), c = document.createElement("canvas");  // the pages never show a photo larger
       c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
       var g = c.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height); g.drawImage(bmp, 0, 0, c.width, c.height);
       var as = function (type, q) { return new Promise(function (ok) { c.toBlob(ok, type, q); }); };
-      return as("image/webp", 0.82).then(function (b) { return b && b.type === "image/webp" ? b : as("image/jpeg", 0.85); }) // Safari cannot write WebP
-        .then(function (b) { return b ? new File([b], file.name.replace(/\.\w+$/, "") + (b.type === "image/webp" ? ".webp" : ".jpg"), { type: b.type }) : file; });
+      return as("image/webp", 0.8).then(function (b) { return b && b.type === "image/webp" ? b : as("image/jpeg", 0.82); }) // Safari cannot write WebP
+        .then(function (b) { return b && b.size < file.size ? new File([b], file.name.replace(/\.\w+$/, "") + (b.type === "image/webp" ? ".webp" : ".jpg"), { type: b.type }) : file; });  // keep the original if it was already smaller
     }).catch(function () { return file; });
   }
   function toBase64(blob) {
@@ -180,7 +181,7 @@
   }
   function upload(file, role, row) {
     var bar = row && row.querySelector("progress"), note = row && row.querySelector(".ne-file-state");
-    if (note) note.textContent = file.type === "application/pdf" && file.size >= PDF_SHRINK_FROM ? "Zmenšuje se PDF…" : "Připravuje se…";
+    if (note) note.textContent = file.type === "application/pdf" ? (file.size >= PDF_SHRINK_FROM ? "Zmenšuje se PDF…" : "Připravuje se…") : "Zmenšuje se fotografie…";
     return shrink(file).then(function (f) {
       if (!/^(image\/(jpeg|png|webp)|application\/pdf)$/.test(f.type)) throw { status: 400, body: { error: "type" } };
       if (f.size > MAX) throw { status: 413, body: { error: "size" } };
