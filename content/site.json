@@ -626,7 +626,6 @@
  ],
  "home": {
   "status": "new",
-  "kicker": "Skuteč · od roku 1999",
   "title": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči",
   "lead": "Škola, kterou od roku 2009 zřizuje České velkopřevorství Maltézského řádu. U nás můžete studovat dva obory zakončené maturitou: gymnázium a bezpečnostně právní činnost.",
   "description": "Gymnázium Suverénního řádu maltézských rytířů ve Skutči: gymnázium a obor bezpečnostně právní činnost, domov mládeže a školní jídelna. Zřizovatel: Maltézský řád – České velkopřevorství.",
@@ -643,6 +642,8 @@
    "alt": "Návštěva velkopřevora Fra’ Pierra de Bizemont na gymnáziu ve Skutči",
    "caption": "Den učitelů 28. března 2023: velkopřevor Fra’ Pierre de Bizemont na návštěvě školy."
   },
+  "lifePhoto": {"src": "/media/2023/04/Skutec_03-1024x768.jpg", "alt": "Studenti gymnázia s velkopřevorem Fra’ Pierrem de Bizemont ve třídě", "caption": "Studenti s velkopřevorem Fra’ Pierrem de Bizemont, březen 2023."},
+  "orderPhoto": {"src": "/media/2023/04/Skutec_01-1024x519.jpg", "alt": "Velkopřevor Fra’ Pierre de Bizemont s hosty před vchodem do gymnázia", "caption": "Velkopřevor Fra’ Pierre de Bizemont a PhDr. Ursula Czernin při návštěvě gymnázia, březen 2023."},
   "programmesTitle": "Dva obory s maturitou",
   "programmesText": "Všeobecné gymnázium i odborný obor bezpečnostně právní činnost končí maturitní zkouškou.",
   "programmes": [

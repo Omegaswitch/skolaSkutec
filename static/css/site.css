@@ -108,13 +108,13 @@ html:active-view-transition-type(slide)::view-transition-new(page-main){animatio
 .lang a:hover{background:rgba(255,255,255,.18);text-decoration:none}
 .lang a[aria-current]{background:#fff;color:var(--red);font-weight:700}
 /* the official 2546×218 banner photograph, centred at native height as in the Grand Magistry theme; the personalised lockup sits on it */
-.banner{position:relative;background-color:var(--sky);background-image:linear-gradient(90deg,rgba(14,28,46,0) 38%,rgba(14,28,46,.5) 62%,rgba(14,28,46,.6) 100%),url(/img/banner/banner-photo.webp),linear-gradient(90deg,var(--sky-left) 50%,var(--sky) 50%);background-repeat:no-repeat;background-size:100% 100%,2546px 218px,100% 100%;background-position:0 0,max(-653px,calc(50vw - 1273px)) 0,0 0}
+.banner{position:relative;background-color:var(--sky);background-image:linear-gradient(90deg,rgba(14,22,30,.86) 0%,rgba(14,22,30,.82) 38%,rgba(14,28,46,.4) 54%,rgba(14,28,46,.5) 62%,rgba(14,28,46,.6) 100%),url(/img/banner/banner-photo.webp),linear-gradient(90deg,var(--sky-left) 50%,var(--sky) 50%);background-repeat:no-repeat;background-size:100% 100%,2546px 218px,100% 100%;background-position:0 0,max(-653px,calc(50vw - 1273px)) 0,0 0}
 .banner .wrap{display:flex;align-items:center;justify-content:flex-end;min-height:218px;padding-block:var(--s4);position:relative}
 .banner{--shield:107px}
 /* lockup: the shield keeps the Grand Magistry web size and top; accents may rise above it (--t), clear space Y = .077 × shield */
 .banner-home{position:absolute;left:max(var(--gutter),env(safe-area-inset-left,0px));top:30px;line-height:0}
 .lockup{display:block;width:auto;height:calc(var(--shield)*var(--h));margin-top:calc(var(--shield)*var(--t))}
-.fullname{color:#fff;text-align:right;font:600 clamp(.74rem,1.2vw,1rem)/1.32 var(--ui);letter-spacing:.035em;text-transform:uppercase;max-width:31em;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 14px rgba(14,28,46,.5)}
+.fullname{color:#fff;text-align:right;text-wrap:balance;font:600 clamp(.74rem,1.2vw,1rem)/1.32 var(--ui);letter-spacing:.035em;text-transform:uppercase;max-width:31em;text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 14px rgba(14,28,46,.5)}
 .fullname span{display:block;margin-top:5px;font-size:.86em;letter-spacing:.09em}
 .mainnav{background:var(--ink)}
 .menu-toggle{display:none}
@@ -144,7 +144,7 @@ html:active-view-transition-type(slide)::view-transition-new(page-main){animatio
 @media (max-width:960px){
   .topbar-social{display:none}
   /* photo pinned to a fixed height so the lockup never meets the name; it fades into the menu grey below */
-  .banner{background-color:var(--ink);background-image:linear-gradient(180deg,rgba(69,69,69,0) 60px,var(--ink) 124px),url(/img/banner/banner-photo.webp);background-size:100% 100%,auto 128px;background-position:0 0,-383px 0}
+  .banner{background-color:var(--ink);background-image:linear-gradient(180deg,rgba(14,22,30,.84) 0,rgba(14,22,30,.86) 60px,var(--ink) 124px),url(/img/banner/banner-photo.webp);background-size:100% 100%,auto 128px;background-position:0 0,-383px 0}
   .banner .wrap{justify-content:flex-start;align-items:flex-end;min-height:0;padding-top:104px;padding-bottom:var(--s3)}
   .fullname{text-align:left;font-size:.72rem}
   .banner{--shield:60px}
@@ -521,7 +521,6 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .home-open--school{padding-block:clamp(var(--s7),7vw,112px) clamp(var(--s7),6vw,var(--s9))}
 .home-open--school .home-intro{align-items:center;gap:var(--s6) clamp(var(--s6),6vw,96px)}
 .home-open--school .home-intro-main{gap:var(--s5)}
-.home-open--school .label{color:var(--red-text)}
 .home-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s4) var(--s5)}
 .home-photo{margin:0;display:grid;gap:var(--s2)}
 .home-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
@@ -553,22 +552,20 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .topbar-search{display:inline-flex}
 .prose td:first-child,.prose th:first-child{white-space:nowrap}
 /* critique fixes (Impeccable, Oct 2026): red only for links and actions; quick links up front; life as tiles */
-.band-grey .works a,.band-grey .tiles a{color:var(--ink)}
-.band-grey .works a:hover b,.tiles a:hover b{color:var(--red-text)}
+.band-grey .works a{color:var(--ink)}
+.band-grey .works a:hover b{color:var(--red-text)}
 .card-body p{font-size:.93rem;color:var(--muted)}
 .band-quick{padding-block:var(--s6);border-top:1px solid var(--rule)}
 .band-quick .label{margin-bottom:var(--s3)}
 .quick-links--row{grid-template-columns:repeat(6,minmax(0,1fr))}
 .quick-links--row a{justify-content:center;text-align:center;font-size:.95rem}
-.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr));gap:var(--s4)}
-.tiles a{display:grid;gap:var(--s2);height:100%;padding:var(--s5);background:#fff;border-top:2px solid var(--red);text-decoration:none;transition:box-shadow var(--fast) var(--ease)}
-.tiles a:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.tiles b{font:500 1.25rem/1.25 var(--display);color:var(--ink-strong)}
-.tiles span{font-size:.95rem}
 @media (max-width:1100px){.quick-links--row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:620px){.quick-links--row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .prose{min-width:0;overflow-wrap:break-word}
 .page-main{grid-template-columns:minmax(0,1fr)}
 /* eyebrow as on velkoprevorskypalac.eu: short red rule, then the label */
-.home-open--school .label{display:flex;align-items:center;gap:var(--s3);letter-spacing:.09em}
-.home-open--school .label::before{content:"";width:28px;height:2px;background:var(--red)}
+/* landing 2026-10-19: larger opening photograph; photographs beside "Život ve škole" and "Škola Maltézského řádu" */
+@media (min-width:961px){.home-open--school .home-intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.split>.prose{align-content:start}
+.split-head .home-photo{margin-top:var(--s5)}
+.split-head .home-photo img{aspect-ratio:800/470}

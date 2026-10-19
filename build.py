@@ -172,8 +172,8 @@ def nav_html(current_url):
 
 def lockup():
     """The school logo (tools/make_logo.py) in the banner, sized like the Order lockup on the sister sites: the shield keeps the Grand Magistry web size."""
-    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-white.svg").read_text()).group(1).split()]
-    return (f'<img class="lockup" src="/img/logo/logo-white.svg" alt="{esc(SITE["names"]["school"])}" width="{vb[2]:.0f}" height="{vb[3]:.0f}"'
+    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-red-on-dark.svg").read_text()).group(1).split()]
+    return (f'<img class="lockup" src="/img/logo/logo-red-on-dark.svg" alt="{esc(SITE["names"]["school"])}" width="{vb[2]:.0f}" height="{vb[3]:.0f}"'
             f' style="--h:{vb[3] / 126:.4f};--t:{vb[1] / 126:.4f}">')
 
 
@@ -240,7 +240,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
  </div></div>
  <div class="banner"><div class="wrap">
   <a class="banner-home" href="/">{lockup()}</a>
-  <p class="fullname">{esc(names['order'])}<span>{esc(names['entity'])} · zřizovatel školy</span></p>
+  <p class="fullname">{esc(names['school'])}<span>Maltézský řád · {esc(names['entity'])}</span></p>
  </div></div>
  <nav class="mainnav" aria-label="{esc(T['menu'])}"><div class="wrap">
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">{esc(T['menu'])}</button>
@@ -319,6 +319,7 @@ def render_home():
     quick = "".join(f'<li><a href="{esc(q["url"])}"{" rel=" + chr(34) + "noopener" + chr(34) if q["url"].startswith("http") else ""}>{esc(q["label"])}</a></li>' for q in h["quickLinks"])
     life = "".join(f'<li><a href="{p["url"]}"><b>{esc(p["title"])}</b><span>{esc(p["text"])}</span></a></li>' for p in h["life"])
     photo = h.get("photo")
+    figure = lambda f: f'<figure class="home-photo">{img(f["src"], f["alt"])}<figcaption>{esc(f["caption"])}</figcaption></figure>' if f else ""
     photo_html = f'<figure class="home-photo">{img(photo["src"], photo["alt"], eager=True)}<figcaption>{esc(photo["caption"])}</figcaption></figure>' if photo else ""
     latest = NEWS[:3]
     news_band = ""
@@ -330,7 +331,6 @@ def render_home():
     body = f"""
 <section class="home-open home-open--school" aria-labelledby="home-title"><div class="wrap home-intro">
  <div class="home-intro-main">
-  <p class="label">{esc(h['kicker'])}</p>
   <h1 id="home-title" class="display">{esc(h['title'])}</h1>
   <p class="lead">{esc(h['lead'])}</p>
   <p class="home-actions"><a class="btn" href="{h['cta']['url']}">{esc(h['cta']['label'])}</a> <a class="link-strong" href="{h['cta2']['url']}">{esc(h['cta2']['label'])}</a></p>
@@ -350,14 +350,14 @@ def render_home():
 
 {news_band}
 
-<section class="band band-grey" aria-labelledby="life-title"><div class="wrap">
- <div class="section-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p></div>
- <ul class="tiles">{life}</ul>
+<section class="band band-grey" aria-labelledby="life-title"><div class="wrap split">
+ <div class="split-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p>{figure(h.get('lifePhoto'))}</div>
+ <ul class="works">{life}</ul>
 </div></section>
 
 
 <section class="band" aria-labelledby="order-title"><div class="wrap split">
- <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2></div>
+ <div class="split-head"><h2 id="order-title" class="display-m">{esc(h['orderTitle'])}</h2>{figure(h.get('orderPhoto'))}</div>
  <div class="prose">{h['orderText']}</div>
 </div></section>
 """
