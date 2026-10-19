@@ -292,7 +292,7 @@ def contact_form():
  {f("predmet", "Předmět")}
  {f("zprava", "Zpráva", "textarea")}
  <label class="hp" aria-hidden="true">Nevyplňujte<input name="web" tabindex="-1" autocomplete="off"></label>
- <p class="small">Odesláním souhlasíte se zpracováním údajů k vyřízení dotazu, viz <a href="/ochrana-osobnich-udaju/">Ochrana osobních údajů</a>. Pole s * jsou povinná.</p>
+ <p class="small">Údaje z formuláře použijeme jen k vyřízení vašeho dotazu, viz <a href="/ochrana-osobnich-udaju/#formular">Ochrana osobních údajů</a>. Pole s * jsou povinná.</p>
  <p><button class="btn" type="submit">Odeslat</button></p>
 </form>"""
 
