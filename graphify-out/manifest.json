@@ -60,15 +60,15 @@
     "semantic_hash": ""
   },
   "build.py": {
-    "mtime": 1792436233.5468671,
-    "seen": 1792436440.8952446,
-    "ast_hash": "f28cd36fcd533a7db1ae92f8e2180d48",
+    "mtime": 1792437627.9952242,
+    "seen": 1792437709.7777147,
+    "ast_hash": "fdc678a58ac2d457fe61ad27ca616359",
     "semantic_hash": ""
   },
   "check.py": {
-    "mtime": 1792434588.6179414,
-    "seen": 1792436440.895248,
-    "ast_hash": "0062fdcd133ffd69b761b906a219e5f6",
+    "mtime": 1792437627.995882,
+    "seen": 1792437709.7777183,
+    "ast_hash": "1c41b7f7dd665c9dba2857c50584bff2",
     "semantic_hash": ""
   },
   "content/site.json": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1792436754.7888381,
-    "seen": 1792436868.5257618,
-    "ast_hash": "a5e9a1f5aa5e04529b408ef6c6c5e700",
+    "mtime": 1792437627.9964333,
+    "seen": 1792437709.7782052,
+    "ast_hash": "2220fc85cf57b7683e4bcd3f3006ad21",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/SKILL.md": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792436966.8891318,
-    "seen": 1792437047.526567,
-    "ast_hash": "6f6d506a18fc7fe23b08583f48e21445",
+    "mtime": 1792437627.9970584,
+    "seen": 1792437709.7801538,
+    "ast_hash": "7b730056a6b6379750909ffc343c973b",
     "semantic_hash": ""
   },
   "content/news/2014/02/13/ekoskola-den-zeme-2013-26cs.html": {

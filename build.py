@@ -176,11 +176,16 @@ def nav_html(current_url):
     return f'<ul class="nav-list">{"".join(lis)}</ul>'
 
 
+def logo_viewbox():
+    """The school lockup's viewBox: its height and the accents above the shield top, in shield units (see .lockup in the CSS)."""
+    return [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-red-on-dark.svg").read_text()).group(1).split()]
+
+
 def lockup():
     """The school logo (tools/make_logo.py) in the banner, sized like the Order lockup on the sister sites: the shield keeps the Grand Magistry web size."""
-    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', (STATIC / "img" / "logo" / "logo-red-on-dark.svg").read_text()).group(1).split()]
+    vb = logo_viewbox()
     return (f'<img class="lockup" src="/img/logo/logo-red-on-dark.svg" alt="{esc(SITE["names"]["school"])}" width="{vb[2]:.0f}" height="{vb[3]:.0f}"'
-            f' style="--h:{vb[3] / 126:.4f};--t:{vb[1] / 126:.4f}">')
+            f'>')
 
 
 def layout(*, url, title, body, description="", image=None, status=None, main_class=""):
@@ -577,6 +582,9 @@ def build():
     if DIST.exists():
         shutil.rmtree(DIST)
     shutil.copytree(STATIC, DIST)
+    vb = logo_viewbox()  # the lockup's size variables live in the stylesheet, so pages carry no inline style (CSP style-src 'self')
+    with (DIST / "css" / "site.css").open("a", encoding="utf-8") as f:
+        f.write(f"\n.lockup{{--h:{vb[3] / 126:.4f};--t:{vb[1] / 126:.4f}}}\n")
     write("/", render_home())
     for p in PAGES.values():
         write(p["url"], render_page(p))

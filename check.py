@@ -72,6 +72,8 @@ def main():
         text = f.read_text(encoding="utf-8")
         page.feed(text)
         pages += 1
+        if 'style="' in text:
+            errors.append(f"{rel}: inline style attribute (the CSP allows stylesheets only)")
         if page.h1 != 1:
             errors.append(f"{rel}: {page.h1} <h1> elements")
         if not page.title.strip():
