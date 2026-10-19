@@ -16,14 +16,15 @@ Checked against the same sources as maltezskyrad.cz (see that repository's `docs
 
 ## School logo (`static/img/logo/`)
 
-Built the way the Vyšší odborná škola zdravotnická Suverénního řádu maltézských rytířů (Žerotínova, Praha; vos.mojezdravka.cz) builds its logo: the official red shield on the left, the school name in two lines of red geometric bold sans to its right, the last baseline near the foot of the shield. Only the name changes: "Gymnázium Suverénního řádu / maltézských rytířů ve Skutči".
+Built the way the Vyšší odborná škola zdravotnická Suverénního řádu maltézských rytířů (Žerotínova, Praha; vos.mojezdravka.cz) builds its logo: the Order lockup (official red shield with "MALTÉZSKÝ ŘÁD / ČESKÁ REPUBLIKA" aligned to the shield top, the same lockup as maltezskyrad.cz), a thin rule with a short tick at its left end, and the school name in two lines of red geometric bold sans, the last baseline near the foot of the shield. Only the name changes: "Gymnázium Suverénního řádu / maltézských rytířů ve Skutči". Proportions measured on the VOŠ file (`logo-vos-male2.png`).
 
 | File | Use |
 |---|---|
-| `logo-primary.svg` | Red on white: documents, letterheads, the site on white |
-| `logo-white.svg` | White text, shield unchanged: the site banner, dark or photographic grounds |
+| `logo-primary.svg` | On white: lockup text black, school name red (documents, letterheads) |
+| `logo-red-on-dark.svg` | As the VOŠ logo: lockup text white, school name red, on dark plain grounds |
+| `logo-white.svg` | All text white, shield unchanged: the site banner (photograph), where red text would lack contrast |
 | `logo-mono-black.svg` | One colour (stamps, fax, engraving) — approval needed (row 7) |
-| `logo-compact.svg` | "Gymnázium / Skuteč": small sizes, social avatars |
+| `logo-compact.svg` | Lockup + "Gymnázium ve Skutči" on one line: small sizes |
 | `shield.svg` | The shield alone (official artwork) |
 
 Regenerate with `pip install fonttools && python3 tools/make_logo.py`.
