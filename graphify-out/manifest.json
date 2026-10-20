@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "content/site.json": {
-    "mtime": 1792510915.265096,
-    "seen": 1792511145.2066119,
-    "ast_hash": "8b6955ba807ea92b1639e478f90b1cde",
+    "mtime": 1792518443.0841043,
+    "seen": 1792518501.6414351,
+    "ast_hash": "0d65a3a5764d0511c7f0f4208d9a65c1",
     "semantic_hash": ""
   },
   "skills-lock.json": {
@@ -3279,6 +3279,12 @@
     "mtime": 1792510916.2855496,
     "seen": 1792511145.2073457,
     "ast_hash": "7cb706f6d3dc431d1593d2b999f52972",
+    "semantic_hash": ""
+  },
+  "content/pages/maltezsky-rad/index.html": {
+    "mtime": 1792518304.2258236,
+    "seen": 1792518501.6519673,
+    "ast_hash": "6263a04b510cd5ffa97df7c82dbe31b0",
     "semantic_hash": ""
   }
 }
