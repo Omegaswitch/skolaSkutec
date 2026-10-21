@@ -608,6 +608,12 @@ button.btn[disabled]{opacity:.65;cursor:progress}
 .ne-unpublished time{color:var(--red-text)}
 #ne-date-hint{display:block;color:var(--red-text)}
 #ne-events .ne-card{margin-bottom:var(--s5)}
+/* the event form holds two date-time fields side by side; they cannot shrink below the browser's own picker */
+#ne-event-form{max-width:640px}
+#ne-event-form .ne-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+#ne-event-form .ne-row .ne-check{grid-column:1/-1}
+.ne input{min-width:0}
+@media (max-width:640px){#ne-event-form .ne-row{grid-template-columns:minmax(0,1fr)}}
 
 .events{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
 .events li{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:var(--s4);padding:12px 0;border-bottom:1px solid var(--rule);scroll-margin-top:var(--s5)}
