@@ -830,5 +830,10 @@
    "label": "Život dětem",
    "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/srdickove-dny/"
   }
- ]
+ ],
+ "supabase": {
+  "url": "https://pqmgtvfeavidoecwbvwy.supabase.co",
+  "key": "sb_publishable_NZxHEcLwZ3QEuhF7sYzSsg_93ZgZBr1",
+  "site": "skutec"
+ }
 }

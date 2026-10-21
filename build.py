@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 CONTENT, STATIC, DIST = ROOT / "content", ROOT / "static", ROOT / "dist"
 PRODUCTION = "--production" in sys.argv
 SITE = json.loads((CONTENT / "site.json").read_text(encoding="utf-8"))
+SB = SITE["supabase"]  # the shared database of the school sites; the key is the public one
 T = SITE["text"]
 ASSET_VERSION = datetime.now().strftime("%Y%m%d%H%M")
 MONTHS = ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
@@ -32,6 +33,9 @@ esc = lambda s: html.escape(str(s or ""), quote=True)
 def read_doc(path):
     _, meta, body = path.read_text(encoding="utf-8").split("---\n", 2)
     return json.loads(meta), body.strip()
+
+
+DYNAMIC_PAGE = re.compile(r"data-events|data-gallery")  # such pages are rendered on request by api/page.py
 
 
 def load_pages():
@@ -699,29 +703,61 @@ NEWS_EDITOR_URL = "/pridat-aktualitu/"
 def render_news_editor():
     """Staff page for publishing news and events (api/news.js); not linked, not indexed, behind a password."""
     body = f"""
-<div class="wrap page page--simple ne" id="news-app">
+<div class="wrap page page--simple ne" id="news-app" data-site="{SB["site"]}" data-supabase-url="{SB["url"]}" data-supabase-key="{SB["key"]}" data-categories="{esc(json.dumps(SITE["newsCategories"], ensure_ascii=False))}">
  <header class="page-head"><h1 class="display">Přidat aktualitu</h1>
   <p class="lead-s">Aktualita se po zveřejnění objeví na webu v sekci <a href="/aktuality/">Aktuality</a> asi za minutu.</p></header>
  <noscript><p class="ne-msg ne-msg--error">Formulář potřebuje zapnutý JavaScript.</p></noscript>
  <form id="ne-login" class="ne-card" hidden>
   <h2 class="display-s">Přihlášení</h2>
-  <label class="ne-field"><span>Jméno</span><input name="name" autocomplete="username" required></label>
+  <label class="ne-field"><span>E-mail</span><input name="email" type="email" autocomplete="username" required></label>
   <label class="ne-field"><span>Heslo</span><input name="password" type="password" autocomplete="current-password" required></label>
   <p class="ne-msg" id="ne-login-msg" role="alert" hidden></p>
-  <p><button class="btn" type="submit">Přihlásit se</button></p>
+  <p><button class="btn" type="submit">Přihlásit se</button> <button class="link-btn" type="button" id="ne-forgot">Zapomenuté heslo</button></p>
+ </form>
+ <form id="ne-mfa" class="ne-card" hidden>
+  <h2 class="display-s">Ověření jednorázovým kódem</h2>
+  <div id="ne-mfa-enrol" hidden>
+   <p>Přihlášení má dva kroky: heslo a kód z aplikace v telefonu (například Google Authenticator, Microsoft Authenticator nebo Authy). Nastavíte to jednou: v aplikaci načtěte tento kód a opište šestimístné číslo, které aplikace ukáže.</p>
+   <p class="ne-qr"><img id="ne-mfa-qr" alt="QR kód pro aplikaci" width="180" height="180"></p>
+   <p class="small">Nejde načíst? Zadejte do aplikace ručně tento klíč: <code id="ne-mfa-secret"></code></p>
+  </div>
+  <label class="ne-field"><span>Kód z aplikace</span><input id="ne-mfa-code" inputmode="numeric" autocomplete="one-time-code" required></label>
+  <p class="ne-msg" id="ne-mfa-msg" role="alert" hidden></p>
+  <p><button class="btn" type="submit">Ověřit</button> <button class="link-btn" type="button" id="ne-mfa-cancel">Zrušit a odhlásit</button></p>
+ </form>
+ <form id="ne-recover" class="ne-card" hidden>
+  <h2 class="display-s">Nové heslo</h2>
+  <label class="ne-field"><span>Nové heslo <small>(alespoň 10 znaků)</small></span><input id="ne-new-password" type="password" autocomplete="new-password" minlength="10" required></label>
+  <p class="ne-msg" id="ne-recover-msg" role="alert" hidden></p>
+  <p><button class="btn" type="submit">Uložit heslo</button></p>
  </form>
  <div id="ne-app" hidden>
  <p class="ne-who">Přihlášen(a): <b id="ne-user"></b> · <button type="button" class="link-btn" id="ne-logout">Odhlásit</button></p>
  <div class="ne-tabs" role="tablist" aria-label="Co chcete udělat">
   <button type="button" role="tab" id="ne-tab-new" aria-selected="true" aria-controls="ne-editor">Nová aktualita</button>
   <button type="button" role="tab" id="ne-tab-list" aria-selected="false" aria-controls="ne-manage">Upravit nebo smazat</button>
-  <button type="button" role="tab" id="ne-tab-events" aria-selected="false" aria-controls="ne-events" hidden>Události</button>
+  <button type="button" role="tab" id="ne-tab-events" aria-selected="false" aria-controls="ne-events">Události</button>
+  <button type="button" role="tab" id="ne-tab-members" aria-selected="false" aria-controls="ne-members" hidden>Uživatelé</button>
  </div>
  <section id="ne-manage" role="tabpanel" aria-labelledby="ne-tab-list" hidden>
   <label class="ne-field"><span>Hledat aktualitu</span><input id="ne-search" type="search" placeholder="Část titulku nebo rok…"></label>
   <ul id="ne-list" class="ne-list"></ul>
-  <p class="ne-hint">Nové a upravené aktuality se v seznamu objeví asi za minutu, až se web znovu sestaví. Koncepty a naplánované aktuality jsou označené; smazat lze jen vlastní aktuality (správce všechny).</p>
+  <p class="ne-hint">Koncepty a naplánované aktuality jsou označené; smazat lze jen vlastní aktuality (správce všechny).</p>
   <p class="ne-msg" id="ne-list-msg" role="alert" hidden></p>
+ </section>
+ <section id="ne-members" role="tabpanel" aria-labelledby="ne-tab-members" hidden>
+  <form id="ne-member-form" class="ne-card">
+   <h2 class="display-s">Kdo může publikovat</h2>
+   <p>Účet vzniká pozvánkou v administraci Supabase (Authentication → Users → Invite user). Pozvaná osoba si nastaví heslo a aplikaci s kódy; tady jí pak dáte přístup k tomuto webu. Redaktor upravuje a maže jen své aktuality a události, správce všechny a může připnout oznámení a spravovat uživatele.</p>
+   <div class="ne-row">
+    <label class="ne-field"><span>E-mail účtu</span><input id="ne-member-email" type="email" required></label>
+    <label class="ne-field"><span>Role</span><select id="ne-member-role"><option value="editor">redaktor</option><option value="admin">správce</option></select></label>
+   </div>
+   <div class="ne-submit"><button class="btn" type="submit">Přidat nebo změnit roli</button></div>
+  </form>
+  <h2 class="display-s">Uživatelé tohoto webu</h2>
+  <ul id="ne-member-list" class="ne-list"></ul>
+  <p class="ne-msg" id="ne-member-msg" role="alert" hidden></p>
  </section>
  <section id="ne-events" role="tabpanel" aria-labelledby="ne-tab-events" hidden>
   <form id="ne-event-form" class="ne-card">
@@ -780,6 +816,7 @@ def render_news_editor():
 </div>
 <link rel="stylesheet" href="/js/vendor/quill-2.0.3/quill.snow.css">
 <script src="/js/vendor/quill-2.0.3/quill.js"></script>
+<script src="/js/vendor/supabase-2.49.4/supabase.js"></script>
 <script src="/js/news-editor.js?v={ASSET_VERSION}"></script>"""
     h = layout(url=NEWS_EDITOR_URL, title="Přidat aktualitu", body=body, description="Přidání aktuality na web gymnázia.")
     return h.replace("<head>\n", '<head>\n<meta name="robots" content="noindex, nofollow">\n', 1) if PRODUCTION else h
@@ -813,45 +850,31 @@ def build():
     vb = logo_viewbox()  # the lockup's size variables live in the stylesheet, so pages carry no inline style (CSP style-src 'self')
     with (DIST / "css" / "site.css").open("a", encoding="utf-8") as f:
         f.write(f"\n.lockup{{--h:{vb[3] / 126:.4f};--t:{vb[1] / 126:.4f}}}\n")
-    write("/", render_home())
     for p in PAGES.values():
-        write(p["url"], render_page(p))
-    for i, n in enumerate(NEWS):
-        write(n["url"], render_article(n, NEWS[i + 1] if i + 1 < len(NEWS) else None, NEWS[i - 1] if i else None))
-    write("/aktuality/", render_news_index(NEWS[:40]))
-    for c in SITE["newsCategories"]:
-        items = [n for n in NEWS if c in n.get("categories", [])]
-        if items:
-            write(f"/aktuality/{c}/", render_news_index(items, active=c, url=f"/aktuality/{c}/"))
-    for y in sorted({n["date"][:4] for n in NEWS}):
-        write(f"/aktuality/{y}/", render_news_index([n for n in NEWS if n["date"].startswith(y)], year=y, url=f"/aktuality/{y}/"))
-    write("/udalosti/", render_events_page())
+        if not DYNAMIC_PAGE.search(p["body"]):
+            write(p["url"], render_page(p))
     write(NEWS_EDITOR_URL, render_news_editor())
-    (DIST / NEWS_EDITOR_URL.strip("/") / "news.json").write_text(json.dumps(  # the editor's list of posts to edit or delete
-        [{"path": n["src"], "url": n["url"], "title": n["title"], "date": n["date"][:16], "author": n.get("author"), "editedBy": n.get("editedBy"),
-          "draft": bool(n.get("draft")), "pinned": bool(n.get("pinned"))} for n in ALL_NEWS],
-        ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     privacy = (CONTENT / "privacy.html").read_text(encoding="utf-8")
     write("/ochrana-osobnich-udaju/", render_simple("/ochrana-osobnich-udaju/", "Ochrana osobních údajů", privacy, status="approval"))
     write("/hledat/", render_simple("/hledat/", "Hledat", SEARCH_FORM))
-    (DIST / "hledat" / "index.json").write_text(json.dumps(  # what /js/search.js searches: title, url, plain text
-        [{"t": p["title"], "u": p["url"], "x": plain(p["body"], 600)} for p in PAGES.values()] +
-        [{"t": n["title"], "u": n["url"], "x": plain(n["body"], 600), "d": short_date(n["date"])} for n in NEWS], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write("/mapa-webu/", render_simple("/mapa-webu/", "Mapa webu", sitemap_html(SITE["nav"]) + '<p><a href="/ochrana-osobnich-udaju/">Ochrana osobních údajů</a> · <a href="/prohlaseni-o-pristupnosti/">Prohlášení o přístupnosti</a></p>'))
     write("/prohlaseni-o-pristupnosti/", render_simple("/prohlaseni-o-pristupnosti/", "Prohlášení o přístupnosti", ACCESSIBILITY, status="approval"))
     write("/kontakty/napiste-nam/odeslano/", render_simple("/kontakty/napiste-nam/odeslano/", "Zpráva odeslána",
                                                            '<p>Děkujeme, vaši zprávu jsme přijali. Odpovíme co nejdříve.</p><p><a class="link-strong" href="/">Úvodní stránka</a></p>'))
     write("/404.html", render_simple("/404.html", "Stránka nenalezena",
                                      '<p>Tato stránka neexistuje nebo byla přesunuta.</p><p><a class="link-strong" href="/">Úvodní stránka</a> · <a class="link-strong" href="/aktuality/">Aktuality</a> · <a class="link-strong" href="/kontakty/">Kontakty</a></p>'))
-    urls = ["/", "/aktuality/", "/udalosti/", "/hledat/", "/ochrana-osobnich-udaju/", "/mapa-webu/", "/prohlaseni-o-pristupnosti/"] + list(PAGES) + [n["url"] for n in NEWS]
-    (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-                                      "".join(f"<url><loc>{SITE['baseUrl']}{u}</loc></url>" for u in urls) + "</urlset>", encoding="utf-8")
     (DIST / "robots.txt").write_text(("User-agent: *\nAllow: /\nDisallow: /pridat-aktualitu/\nDisallow: /api/\n\nSitemap: " + SITE["baseUrl"] + "/sitemap.xml\n") if PRODUCTION
                                      else "User-agent: *\nDisallow: /\n", encoding="utf-8")
-    (DIST / "feed.xml").write_text(rss(), encoding="utf-8")
+    sizes = {}
+    for f in sorted(list((STATIC / "media").rglob("*")) + list((STATIC / "img").rglob("*"))):
+        if f.is_file():
+            u = "/" + f.relative_to(STATIC).as_posix()
+            wh = image_size(u)
+            sizes[u] = list(wh) if wh else {"ext": f.suffix.lstrip(".").upper(), "size": f.stat().st_size}
+    (CONTENT / "image-sizes.json").write_text(json.dumps(sizes, separators=(",", ":")), encoding="utf-8")
     (DIST / "_headers").write_text(HEADERS + ("" if PRODUCTION else "/*\n  X-Robots-Tag: noindex, nofollow\n"), encoding="utf-8")
     (DIST / "_redirects").write_text("".join(f"{a} {b} 301\n" for a, b in REDIRECTS), encoding="utf-8")
-    print(f"built {len(PAGES)} pages, {len(NEWS)} news, {'production' if PRODUCTION else 'preview'} → {DIST}")
+    print(f"built {len(PAGES)} pages (news, events and galleries come from the database), {'production' if PRODUCTION else 'preview'} → {DIST}")
 
 
 # ---------------------------------------------------------------- local preview server

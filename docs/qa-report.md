@@ -80,3 +80,23 @@ notice → shown on the home page → event added, edited, deleted → post dele
 
 Still needing authorisation: the Vercel environment variables (`NEWS_USERS`, `NEWS_SECRET`, `GITHUB_TOKEN`,
 `DEPLOY_HOOK_URL`, `CRON_SECRET`) are not set on this project, so publishing is not live yet.
+
+## Shared Supabase database (21 October 2026)
+
+News, events, notices and galleries moved from files in the repository to the schools' shared Supabase project.
+Verified:
+
+| Check | Result |
+|---|---|
+| Row level security, run in SQL as anonymous, editor without second factor, editor with it (member of two sites), administrator | anonymous sees published posts only; no writes without the second factor; an editor writes only to their sites, edits only their own rows, cannot pin, cannot move a row to another site, cannot manage members; an administrator edits any row of their site, pins, lists and manages members, cannot touch another site or remove themselves |
+| Auth REST: password sign-in, TOTP enrolment and verification, `aal2` claim, re-sign-in back to `aal1` | as designed |
+| Storage: upload to own site folder, to another site's folder, without second factor, of an HTML file | 200 / refused / refused / refused (mime type) |
+| Staff page in Chromium: administrator enrols the authenticator, publishes a pinned post with a photo, lists users; editor signs in with the code, sees no pin field or users tab, cannot delete or edit the administrator's post, saves a draft, adds, edits and deletes an event, deletes their own draft | all as designed, 0 page errors |
+| Rendered pages from the database on the local stand-in: home (news band, pinned notice, events), listings, categories, years, pagination, posts (legacy and new, photo sizes), gallery, events page, event page, RSS, sitemap, search index, 404 | all rendered; axe 0 violations, no overflow, one h1, alt texts at 390/1024/1366 px |
+| Output sanitiser on hostile text (script, event handlers, foreign image, javascript: link, iframe) | removed; legacy tables kept for imported (server-marked) posts |
+| Supabase security advisors | one open item for the project owner: enable leaked-password protection (Authentication → Settings) |
+| `python3 build.py --production --offline`, `python3 check.py` | pass |
+
+Needs the project owner (Supabase dashboard): sign-ups off, Redirect URLs for the three domains, SMTP sender for
+invitation and recovery mail (the built-in sender is limited to a few mails per hour), Czech e-mail templates,
+leaked-password protection; then invite the real editors and remove the two test accounts.
