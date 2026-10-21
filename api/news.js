@@ -1,14 +1,20 @@
-// Publishing news from /pridat-aktualitu/ without GitHub: staff sign in with a password, upload files one by one
-// (each request stays under Vercel's 4.5 MB body limit) and publish. The article is committed to the main branch
-// as content/news/YYYY/MM/DD/slug.html, its files to static/media/YYYY/MM/; Vercel then rebuilds the site.
+// Publishing from /pridat-aktualitu/ without GitHub: staff sign in with a password, upload files one by one
+// (each request stays under Vercel's 4.5 MB body limit) and publish. An article is committed to the main branch
+// as content/news/YYYY/MM/DD/slug.html, its files to static/media/YYYY/MM/, events to content/events.json;
+// Vercel then rebuilds the site. The same file runs on every Order of Malta site (only the three constants below differ).
 //
-// Env: NEWS_USERS   one "Name:password" per line (or separated by ";"), one per co-worker
+// Env: NEWS_USERS   one "Name:password" or "Name:password:admin" per line (or separated by ";"), one per co-worker;
+//                   without ":admin" the person is an editor (writes and edits their own posts and events)
 //      NEWS_SECRET  long random string that signs the sign-in cookie
 //      GITHUB_TOKEN fine-grained token, this repository only, Contents: read and write
-//      GITHUB_REPO  owner/name (default Omegaswitch/skolaSkutec), GITHUB_BRANCH (default main)
-//      optional: RESEND_API_KEY, NEWS_NOTIFY (who is emailed about each post), MAIL_FROM
+//      GITHUB_REPO  owner/name (default below), GITHUB_BRANCH (default main)
+//      optional: RESEND_API_KEY, NEWS_NOTIFY (who is emailed about each change), MAIL_FROM
 const crypto = require("crypto");
 const SITE = require("../content/site.json");
+
+const DEFAULT_REPO = "Omegaswitch/skolaSkutec";
+const DEFAULT_CATEGORY = "akce";
+const FEATURES = {"events": true, "pin": true};  // events: the calendar of events; pin: a notice pinned to the home page
 
 const COOKIE = "news_session";
 const SESSION_HOURS = 12;
@@ -17,21 +23,28 @@ const MAX_TEXT = 200000;
 const TYPES = { "application/pdf": "pdf", "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const MAGIC = [[[0x25, 0x50, 0x44, 0x46], "application/pdf"], [[0xff, 0xd8, 0xff], "image/jpeg"],
   [[0x89, 0x50, 0x4e, 0x47], "image/png"], [[0x52, 0x49, 0x46, 0x46], "image/webp"]];
-const CATEGORIES = Object.keys(SITE.newsCategories);
+const HIDDEN_CATEGORIES = ["news_malteser_international", "nezarazene_import"];
+const CATEGORIES = Object.keys(SITE.newsCategories).filter((c) => !HIDDEN_CATEGORIES.includes(c));
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const env = (k, d = "") => process.env[k] || d;
+const ROLES = ["editor", "admin"];
 
-// ---------------------------------------------------------------- sign-in
+// ---------------------------------------------------------------- sign-in and roles
 
 function users() {
   const out = {};
   for (const line of env("NEWS_USERS").split(/[\n;]/)) {
     const i = line.indexOf(":");
-    if (i > 0) out[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+    if (i <= 0) continue;
+    let password = line.slice(i + 1).trim(), role = "editor";
+    const m = password.match(/^(.*):(editor|admin)$/);
+    if (m) { password = m[1]; role = m[2]; }
+    if (password) out[line.slice(0, i).trim()] = { password, role };
   }
   return out;
 }
+const roleOf = (name) => (users()[name] || {}).role || "editor";
 
 const same = (a, b) => {
   const x = crypto.createHash("sha256").update(String(a)).digest(), y = crypto.createHash("sha256").update(String(b)).digest();
@@ -57,6 +70,9 @@ async function throttle(ip) {
   if (n) await new Promise((r) => setTimeout(r, Math.min(8000, 500 * 2 ** n)));
 }
 
+// An editor may change what they wrote (or what nobody signed: imported posts); an admin may change anything.
+const mayChange = (user, meta) => roleOf(user) === "admin" || !meta.author || meta.author === user || meta.editedBy === user;
+
 // ---------------------------------------------------------------- content
 
 const ALLOWED = new Set(["p", "br", "h2", "h3", "strong", "em", "u", "s", "a", "ul", "ol", "li", "blockquote", "img"]);
@@ -72,7 +88,7 @@ function safeHref(v) {
 // HTML (headings, bold, lists, links, quotes, photos uploaded to /media/), so nothing legitimate is lost.
 function sanitise(html) {
   html = String(html).replace(/<!--[\s\S]*?-->/g, "").replace(/<(script|style|iframe|object|svg|math)\b[\s\S]*?<\/\1\s*>/gi, "")
-    .replace(/&nbsp;| /g, " ");
+    .replace(/&nbsp;| /g, " ");
   let out = "";
   const open = [];
   for (const part of html.split(/(<\/?[a-zA-Z][^<>]*>)/)) {
@@ -107,6 +123,7 @@ function sanitise(html) {
 
 const plain = (html) => html.replace(/<\/?(p|h2|h3|li|ul|ol|blockquote|br)\b[^>]*>/g, " ").replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 const excerptOf = (text) => (text.length <= 180 ? text : text.slice(0, text.lastIndexOf(" ", 180)) + "…");
+const oneLine = (s, max) => String(s || "").replace(/\s+/g, " ").trim().slice(0, max);
 
 function slugify(s) {
   return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70).replace(/-$/, "") || "aktualita";
@@ -120,17 +137,24 @@ function sniff(buf) {
 // ---------------------------------------------------------------- GitHub
 
 async function gh(path, opts = {}) {
-  const r = await fetch(`https://api.github.com/repos/${env("GITHUB_REPO", "Omegaswitch/skolaSkutec")}${path}`, {
+  const r = await fetch(`https://api.github.com/repos/${env("GITHUB_REPO", DEFAULT_REPO)}${path}`, {
     ...opts,
-    headers: { Authorization: `Bearer ${env("GITHUB_TOKEN")}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "gymskutec-news", ...(opts.body ? { "Content-Type": "application/json" } : {}) },
+    headers: { Authorization: `Bearer ${env("GITHUB_TOKEN")}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "order-of-malta-news", ...(opts.body ? { "Content-Type": "application/json" } : {}) },
   });
   if (r.status === 404 && opts.allow404) return null;
   if (!r.ok) throw Object.assign(new Error(`GitHub ${r.status} ${path}`), { status: r.status });
   return r.json();
 }
 
+const contentsPath = (path) => `/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${env("GITHUB_BRANCH", "main")}`;
+
 async function exists(path) {
-  return !!(await gh(`/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${env("GITHUB_BRANCH", "main")}`, { allow404: true }));
+  return !!(await gh(contentsPath(path), { allow404: true }));
+}
+
+async function readFile(path) {
+  const r = await gh(contentsPath(path), { allow404: true });
+  return r ? Buffer.from(r.content, "base64").toString("utf8") : null;
 }
 
 async function commit(files, message, author) {
@@ -142,7 +166,7 @@ async function commit(files, message, author) {
     const tree = await gh("/git/trees", { method: "POST", body: JSON.stringify({ base_tree: head.tree.sha,
       tree: files.map((f) => ({ path: f.path, mode: "100644", type: "blob", ...(f.delete ? { sha: null } : f.sha ? { sha: f.sha } : { content: f.content }) })) }) });
     const c = await gh("/git/commits", { method: "POST", body: JSON.stringify({ message, tree: tree.sha, parents: [ref.object.sha],
-      author: { name: author, email: "aktuality@gymskutec.cz" } }) });
+      author: { name: author, email: `aktuality@${new URL(SITE.baseUrl).host.replace(/^www\./, "")}` } }) });
     try {
       return await gh(`/git/refs/heads/${branch}`, { method: "PATCH", body: JSON.stringify({ sha: c.sha }) });
     } catch (e) {
@@ -155,11 +179,11 @@ async function notify(subject, html) {
   if (!env("RESEND_API_KEY") || !env("NEWS_NOTIFY")) return;
   await fetch("https://api.resend.com/emails", {
     method: "POST", headers: { Authorization: `Bearer ${env("RESEND_API_KEY")}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: env("MAIL_FROM", "Aktuality <aktuality@gymskutec.cz>"), to: env("NEWS_NOTIFY").split(/[,;\s]+/).filter(Boolean), subject, html }),
+    body: JSON.stringify({ from: env("MAIL_FROM", `Aktuality <aktuality@${new URL(SITE.baseUrl).host.replace(/^www\./, "")}>`), to: env("NEWS_NOTIFY").split(/[,;\s]+/).filter(Boolean), subject, html }),
   }).catch(() => {});  // a failed notice never blocks publishing
 }
 
-// ---------------------------------------------------------------- actions
+// ---------------------------------------------------------------- files
 
 async function upload(body) {
   const type = TYPES[body.type] ? body.type : null;
@@ -174,6 +198,8 @@ async function upload(body) {
   return [200, { sha: blob.sha, path, url: path.replace(/^static/, ""), size: buf.length, type }];
 }
 
+// ---------------------------------------------------------------- news
+
 const NEWS_PATH = /^content\/news\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+\.html$/;
 const MEDIA_URL = /^\/media\/[A-Za-z0-9\/._%-]+$/;
 const FILE_P = /\n?<p class="file"><a href="([^"]+)">([^<]*)<\/a> \(([A-Z0-9]+)\)<\/p>/g;
@@ -181,27 +207,29 @@ const FILE_P = /\n?<p class="file"><a href="([^"]+)">([^<]*)<\/a> \(([A-Z0-9]+)\
 const editable = (html) => !/<(figure|figcaption|table|hr|h4|h5|div|iframe|video)\b/i.test(html);
 
 async function readNews(path) {
-  const r = await gh(`/contents/${path}?ref=${env("GITHUB_BRANCH", "main")}`, { allow404: true });
-  if (!r) return null;
-  const [, meta, body] = Buffer.from(r.content, "base64").toString("utf8").split("---\n");
+  const text = await readFile(path);
+  if (text == null) return null;
+  const [, meta, body] = text.split("---\n");
   const attachments = [];
-  const text = (body || "").replace(FILE_P, (_, url, label, ext) => { attachments.push({ url, label, ext }); return ""; }).trim();
-  return { meta: JSON.parse(meta), body: text, attachments };
+  const content = (body || "").replace(FILE_P, (_, url, label, ext) => { attachments.push({ url, label, ext }); return ""; }).trim();
+  return { meta: JSON.parse(meta), body: content, attachments };
 }
 
-async function load(body) {
+async function load(body, user) {
   if (!NEWS_PATH.test(body.path || "")) return [400, { error: "path" }];
   const n = await readNews(body.path);
   if (!n) return [404, { error: "gone" }];
   const m = n.meta;
   return [200, { path: body.path, title: m.title, date: String(m.date || "").slice(0, 16), categories: m.categories || [], excerpt: m.excerpt || "",
-    image: m.image || null, url: m.url, author: m.author || null, body: n.body, attachments: n.attachments, editable: editable(n.body) }];
+    image: m.image || null, url: m.url, author: m.author || null, draft: !!m.draft, pinned: !!m.pinned, body: n.body, attachments: n.attachments,
+    editable: editable(n.body), mayChange: mayChange(user, m) }];
 }
 
 async function remove(body, user) {
   if (!NEWS_PATH.test(body.path || "")) return [400, { error: "path" }];
   const n = await readNews(body.path);
   if (!n) return [404, { error: "gone" }];
+  if (!mayChange(user, n.meta)) return [403, { error: "forbidden" }];
   await commit([{ path: body.path, delete: true }], `Smazána aktualita: ${n.meta.title} (${user})`, user);
   await notify(`Smazaná aktualita: ${n.meta.title}`, `<p>${esc(user)} smazal(a) aktualitu <b>${esc(n.meta.title)}</b> (${esc(n.meta.url)}).</p>`);
   return [200, { url: n.meta.url }];
@@ -213,8 +241,9 @@ async function publish(body, user) {
   if (editing && !NEWS_PATH.test(body.path)) return [400, { error: "path" }];
   const old = editing ? await readNews(body.path) : null;
   if (editing && !old) return [404, { error: "gone" }];
+  if (editing && !mayChange(user, old.meta)) return [403, { error: "forbidden" }];
   const keep = editing && !editable(old.body);
-  const title = String(body.title || "").replace(/\s+/g, " ").trim().slice(0, 200);
+  const title = oneLine(body.title, 200);
   const html = keep ? old.body : sanitise(String(body.body || "").slice(0, MAX_TEXT));
   const date = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(body.date || "") ? body.date : null;
   const cats = (Array.isArray(body.categories) ? body.categories : []).filter((c) => c in SITE.newsCategories);
@@ -229,7 +258,7 @@ async function publish(body, user) {
   const media = files.map((f) => ({ ...f, url: f.sha ? f.path.replace(/^static/, "") : f.url }));
   const image = media.find((f) => f.role === "image");
   const attachments = media.filter((f) => f.role === "attachment").map((f) =>
-    `<p class="file"><a href="${esc(f.url)}">${esc(String(f.label || "Stáhnout").replace(/\s+/g, " ").trim().slice(0, 120) || "Stáhnout")}</a> (${(f.ext || f.url.split(".").pop()).toUpperCase().replace(/[^A-Z0-9]/g, "")})</p>`).join("\n");
+    `<p class="file"><a href="${esc(f.url)}">${esc(oneLine(f.label || "Stáhnout", 120) || "Stáhnout")}</a> (${(f.ext || f.url.split(".").pop()).toUpperCase().replace(/[^A-Z0-9]/g, "")})</p>`).join("\n");
   const added = media.filter((f) => f.sha && (f.role !== "inline" || html.includes(f.url)));
 
   let path, url;
@@ -242,18 +271,79 @@ async function publish(body, user) {
     if (n > 1) slug += `-${n}`;
     path = `content/news/${Y}/${M}/${D}/${slug}.html`; url = `/${Y}/${M}/${D}/${slug}/`;
   }
-  const excerpt = String(body.excerpt || "").replace(/\s+/g, " ").trim().slice(0, 300) || excerptOf(plain(html));
-  const meta = { ...(old ? old.meta : {}), title, url, date, categories: cats.length ? cats : ["akce"],
+  const excerpt = oneLine(body.excerpt, 300) || excerptOf(plain(html));
+  const meta = { ...(old ? old.meta : {}), title, url, date, categories: cats.length ? cats : [DEFAULT_CATEGORY],
     image: image ? image.url : null, excerpt, author: (old && old.meta.author) || user, imported: false };
+  // a draft is kept in the repository but not built; a future date is built once it has come (scheduled)
+  if (body.draft) meta.draft = true; else delete meta.draft;
+  // pinning a notice to the home page is the admins' call; an editor's save keeps whatever an admin set
+  if (FEATURES.pin && roleOf(user) === "admin" && body.pinned != null) { if (body.pinned) meta.pinned = true; else delete meta.pinned; }
   if (editing) { meta.editedBy = user; delete meta.status; }  // edited by staff: no longer an unreviewed import
   const text = keep ? html : html.replace(/<\/(p|h2|h3|ul|ol|blockquote)>/g, "</$1>\n").trim();
   const doc = `---\n${JSON.stringify(meta, null, 1)}\n---\n${text}${attachments ? "\n" + attachments : ""}\n`;
 
-  await commit([{ path, content: doc }, ...added.map((f) => ({ path: f.path, sha: f.sha }))],
-    `${editing ? "Upravena aktualita" : "Aktualita"}: ${title} (${user})`, user);
-  await notify(`${editing ? "Upravená" : "Nová"} aktualita: ${title}`,
-    `<p>${esc(user)} ${editing ? "upravil(a)" : "zveřejnil(a)"} aktualitu <b>${esc(title)}</b>.</p><p><a href="${SITE.baseUrl}${url}">${SITE.baseUrl}${url}</a> (na webu asi za minutu)</p>`);
-  return [200, { url, path }];
+  const what = meta.draft ? "Koncept aktuality" : date > localNow() ? "Naplánována aktualita" : editing ? "Upravena aktualita" : "Aktualita";
+  await commit([{ path, content: doc }, ...added.map((f) => ({ path: f.path, sha: f.sha }))], `${what}: ${title} (${user})`, user);
+  if (!meta.draft) await notify(`${editing ? "Upravená" : "Nová"} aktualita: ${title}`,
+    `<p>${esc(user)} ${editing ? "upravil(a)" : "zveřejnil(a)"} aktualitu <b>${esc(title)}</b>.</p><p><a href="${SITE.baseUrl}${url}">${SITE.baseUrl}${url}</a> (na webu asi za minutu${date > localNow() ? ", po uvedeném datu" : ""})</p>`);
+  return [200, { url, path, draft: !!meta.draft, scheduled: date.slice(0, 10) > localNow().slice(0, 10) }];
+}
+
+// Prague time as "YYYY-MM-DDTHH:MM", the same form the editor sends (it fills in the device's local time)
+function localNow() {
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Prague", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+    .formatToParts(new Date()).map((x) => [x.type, x.value]));
+  return `${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}`;
+}
+
+// ---------------------------------------------------------------- events (content/events.json)
+
+const EVENTS_PATH = "content/events.json";
+const WHEN = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/;
+
+async function readEvents() {
+  const text = await readFile(EVENTS_PATH);
+  const list = text ? JSON.parse(text) : [];
+  return Array.isArray(list) ? list : [];
+}
+
+const eventSlug = (title, start) => `${slugify(title).slice(0, 60)}-${start.slice(0, 10)}`;
+
+async function listEvents() {
+  return [200, { events: (await readEvents()).map((e) => ({ ...e, description: e.description || "" })) }];
+}
+
+async function saveEvent(body, user) {
+  const title = oneLine(body.title, 200);
+  const start = WHEN.test(body.start || "") ? body.start : null;
+  const end = WHEN.test(body.end || "") ? body.end : start;
+  const place = oneLine(body.place, 120);
+  const description = sanitise(String(body.description || "").slice(0, 20000));
+  if (!title || !start || end < start) return [400, { error: "missing" }];
+  const list = await readEvents();
+  const i = body.url ? list.findIndex((e) => e.url === body.url) : -1;
+  if (body.url && i < 0) return [404, { error: "gone" }];
+  if (i >= 0 && !mayChange(user, list[i])) return [403, { error: "forbidden" }];
+  let url = i >= 0 ? list[i].url : `/udalost/${eventSlug(title, start)}/`;
+  for (let n = 2; i < 0 && list.some((e) => e.url === url); n++) url = `/udalost/${eventSlug(title, start)}-${n}/`;
+  const event = { ...(i >= 0 ? list[i] : { author: user }), title, start, end, allDay: !!body.allDay, url, description, ...(place ? { place } : {}) };
+  if (!place) delete event.place;
+  if (i >= 0) { event.editedBy = user; list[i] = event; } else list.push(event);
+  list.sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
+  await commit([{ path: EVENTS_PATH, content: JSON.stringify(list, null, 1) + "\n" }], `${i >= 0 ? "Upravena událost" : "Událost"}: ${title} (${user})`, user);
+  await notify(`${i >= 0 ? "Upravená" : "Nová"} událost: ${title}`, `<p>${esc(user)} ${i >= 0 ? "upravil(a)" : "přidal(a)"} událost <b>${esc(title)}</b> (${esc(start)}).</p>`);
+  return [200, { url, event }];
+}
+
+async function removeEvent(body, user) {
+  const list = await readEvents();
+  const i = list.findIndex((e) => e.url === body.url);
+  if (i < 0) return [404, { error: "gone" }];
+  if (!mayChange(user, list[i])) return [403, { error: "forbidden" }];
+  const [gone] = list.splice(i, 1);
+  await commit([{ path: EVENTS_PATH, content: JSON.stringify(list, null, 1) + "\n" }], `Smazána událost: ${gone.title} (${user})`, user);
+  await notify(`Smazaná událost: ${gone.title}`, `<p>${esc(user)} smazal(a) událost <b>${esc(gone.title)}</b> (${esc(gone.start)}).</p>`);
+  return [200, { url: gone.url }];
 }
 
 // ---------------------------------------------------------------- handler
@@ -267,7 +357,9 @@ async function readJson(req) {
 
 module.exports = async (req, res) => {
   const send = (status, data) => { res.statusCode = status; res.setHeader("Content-Type", "application/json; charset=utf-8"); res.setHeader("Cache-Control", "no-store"); res.end(JSON.stringify(data)); };
-  if (req.method === "GET") return send(200, { user: session(req), categories: CATEGORIES.map((c) => [c, SITE.newsCategories[c]]), allCategories: SITE.newsCategories });
+  const info = (user) => ({ user, role: user ? roleOf(user) : null, categories: CATEGORIES.map((c) => [c, SITE.newsCategories[c]]), allCategories: SITE.newsCategories,
+    defaultCategory: DEFAULT_CATEGORY, features: { events: !!FEATURES.events, pin: !!FEATURES.pin && !!user && roleOf(user) === "admin" } });
+  if (req.method === "GET") return send(200, info(session(req)));
   if (req.method !== "POST") { res.setHeader("Allow", "GET, POST"); return send(405, { error: "method" }); }
   const origin = req.headers.origin;
   if (origin && new URL(origin).host !== req.headers.host) return send(403, { error: "origin" });  // with SameSite=Strict: no cross-site posts
@@ -278,20 +370,26 @@ module.exports = async (req, res) => {
     if (body.action === "login") {
       const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0] || "?";
       await throttle(ip);
-      const name = Object.keys(users()).find((u) => u.toLowerCase() === String(body.name || "").trim().toLowerCase());
-      if (!name || !same(users()[name], String(body.password || ""))) { failures.set(ip, (failures.get(ip) || 0) + 1); return send(401, { error: "login" }); }
+      const all = users();
+      const name = Object.keys(all).find((u) => u.toLowerCase() === String(body.name || "").trim().toLowerCase());
+      if (!name || !same(all[name].password, String(body.password || ""))) { failures.set(ip, (failures.get(ip) || 0) + 1); return send(401, { error: "login" }); }
       failures.delete(ip);
       const exp = Date.now() + SESSION_HOURS * 3600e3;
       setCookie(res, `${name}|${exp}|${sign(`${name}|${exp}`)}`, SESSION_HOURS * 3600);
-      return send(200, { user: name });
+      return send(200, info(name));
     }
     if (body.action === "logout") { setCookie(res, "", 0); return send(200, { user: null }); }
     const user = session(req);
     if (!user) return send(401, { error: "session" });
     if (body.action === "upload") return send(...(await upload(body)));
     if (body.action === "publish") return send(...(await publish(body, user)));
-    if (body.action === "load") return send(...(await load(body)));
+    if (body.action === "load") return send(...(await load(body, user)));
     if (body.action === "delete") return send(...(await remove(body, user)));
+    if (FEATURES.events) {
+      if (body.action === "events") return send(...(await listEvents()));
+      if (body.action === "event") return send(...(await saveEvent(body, user)));
+      if (body.action === "event-delete") return send(...(await removeEvent(body, user)));
+    }
     return send(400, { error: "action" });
   } catch (e) {
     console.error(e);
@@ -301,3 +399,4 @@ module.exports = async (req, res) => {
 
 module.exports.sanitise = sanitise;
 module.exports.slugify = slugify;
+module.exports.users = users;

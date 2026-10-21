@@ -1,65 +1,66 @@
 {
   ".claude/skills/impeccable/scripts/command-metadata.json": {
-    "mtime": 1792434588.6068442,
-    "seen": 1792436440.8952017,
+    "mtime": 1792510915.2328892,
+    "seen": 1792511145.206577,
     "ast_hash": "533063bcdd4e150bf9037bbb1f00402a",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/data/font-index-failures.json": {
-    "mtime": 1792434588.6068442,
-    "seen": 1792436440.8952146,
+    "mtime": 1792510915.2328892,
+    "seen": 1792511145.2065868,
     "ast_hash": "c14048ea4e2b4a062933664822bc0399",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/impeccable": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.8952205,
+    "mtime": 1792510915.2375495,
+    "seen": 1792511145.2065911,
     "ast_hash": "f18c34d8b8f98622af2836288648732a",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/live-browser-dom.js": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.895224,
+    "mtime": 1792510915.2375495,
+    "seen": 1792511145.2065935,
     "ast_hash": "5727f418039223d9113c0d88cf1be10d",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/live-browser-ignores.js": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.8952274,
+    "mtime": 1792510915.2375495,
+    "seen": 1792511145.2065961,
     "ast_hash": "dd05503f92e1cf9b3feedbb19070f59e",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/live-browser-session.js": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.8952303,
+    "mtime": 1792510915.2375495,
+    "seen": 1792511145.2065988,
     "ast_hash": "a13150062de33065759d24521adacacf",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/live-browser.js": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.8952334,
+    "mtime": 1792510915.2415495,
+    "seen": 1792511145.2066007,
     "ast_hash": "fc15fd360c654fef08999d0119e10fce",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/scripts/modern-screenshot.umd.js": {
-    "mtime": 1792434588.613127,
-    "seen": 1792436440.8952358,
+    "mtime": 1792510915.2415495,
+    "seen": 1792511145.2066026,
     "ast_hash": "4fe5f9e490ab4f107afc707d7eafc819",
     "semantic_hash": ""
   },
   "api/kontakt.js": {
-    "mtime": 1792434588.6177292,
-    "seen": 1792436440.8952384,
+    "mtime": 1792510915.2426643,
+    "seen": 1792511145.206604,
     "ast_hash": "536d0688fefc8e368d78283c6e1a31a1",
     "semantic_hash": ""
   },
   "api/news.js": {
-    "mtime": 1792436233.54583,
-    "seen": 1792436440.8952417,
-    "ast_hash": "c316ace4608098afa9dcdf03de6b9f82",
+    "mtime": 1792569413.3508842,
+    "seen": 1792569551.0590029,
+    "ast_hash": "4cd8b35cd9aab96be68adb03844fd10c",
     "semantic_hash": ""
   },
   "build.py": {
+<<<<<<< HEAD
     "mtime": 1792573756.2165732,
     "seen": 1792573943.6337643,
     "ast_hash": "176b6ab7fbc3387a68ab3e6470b86208",
@@ -75,3200 +76,3218 @@
     "mtime": 1792573904.9378088,
     "seen": 1792573943.6337786,
     "ast_hash": "6f6c1fd4789a38f8d9e477e1ffe4b67c",
+=======
+    "mtime": 1792569413.3500292,
+    "seen": 1792569551.0590138,
+    "ast_hash": "2e750716d79860d5fc094bc907b9c49c",
+    "semantic_hash": ""
+  },
+  "check.py": {
+    "mtime": 1792510915.2428942,
+    "seen": 1792511145.2066102,
+    "ast_hash": "1c41b7f7dd665c9dba2857c50584bff2",
+    "semantic_hash": ""
+  },
+  "content/site.json": {
+    "mtime": 1792568613.7364302,
+    "seen": 1792569551.0590508,
+    "ast_hash": "07e3159135ed0d770ec206cfd2a90a1a",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
     "semantic_hash": ""
   },
   "skills-lock.json": {
-    "mtime": 1792434588.649127,
-    "seen": 1792436440.8952534,
+    "mtime": 1792510915.2855494,
+    "seen": 1792511145.2066135,
     "ast_hash": "b1c1acfdd5e5af98b563c45d5278a792",
     "semantic_hash": ""
   },
   "static/img/banner/banner-photo.webp.json": {
-    "mtime": 1792434588.6538575,
-    "seen": 1792436440.8952563,
+    "mtime": 1792510915.2918944,
+    "seen": 1792511145.2066154,
     "ast_hash": "ad5b0b8f34ef1e7f846ea8f5fa3e4513",
     "semantic_hash": ""
   },
   "static/js/head.js": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.8952587,
-    "ast_hash": "f01c64368fdb865cbab90731b0f88404",
+    "mtime": 1792510915.2935495,
+    "seen": 1792511145.2066166,
+    "ast_hash": "a83d5b39502d24a635bd3ac1462286ef",
     "semantic_hash": ""
   },
   "static/js/news-editor.js": {
-    "mtime": 1792436966.8879168,
-    "seen": 1792437047.5228188,
-    "ast_hash": "6c55e8b5e6764205e038b8508219a950",
+    "mtime": 1792569413.3520591,
+    "seen": 1792569551.059169,
+    "ast_hash": "773a3849a80d279a57563ef56d0922c7",
     "semantic_hash": ""
   },
   "static/js/search.js": {
-    "mtime": 1792434588.6550157,
-    "seen": 1792436440.895264,
+    "mtime": 1792510915.294604,
+    "seen": 1792511145.2066236,
     "ast_hash": "a32c813f6dfbefa74b4051c9ad4b0346",
     "semantic_hash": ""
   },
   "static/js/site.js": {
-    "mtime": 1792434588.6550157,
-    "seen": 1792436440.8952663,
-    "ast_hash": "a513f64ff552285961d258ec4742e4d9",
+    "mtime": 1792511029.0277267,
+    "seen": 1792511145.206626,
+    "ast_hash": "57d4ae06eca6f66ccadaa289be6c2dc7",
     "semantic_hash": ""
   },
   "static/js/vendor/quill-2.0.3/quill.js": {
-    "mtime": 1792434588.655628,
-    "seen": 1792436440.895269,
+    "mtime": 1792510915.6070273,
+    "seen": 1792511145.2066314,
     "ast_hash": "cda744273ed7e32de5379e83724d8b4d",
     "semantic_hash": ""
   },
   "static/speculation-rules.json": {
-    "mtime": 1792434588.657288,
-    "seen": 1792436440.8952706,
+    "mtime": 1792510916.6415496,
+    "seen": 1792511145.2066336,
     "ast_hash": "90c0375a2c9fa4db0706e91d731a5125",
     "semantic_hash": ""
   },
   "tests/kontakt.test.js": {
-    "mtime": 1792434588.657288,
-    "seen": 1792436440.8952734,
+    "mtime": 1792510916.6415496,
+    "seen": 1792511145.2066357,
     "ast_hash": "19fd46151faf7afc46a0b8819f7b7f29",
     "semantic_hash": ""
   },
   "tests/news.test.js": {
-    "mtime": 1792434588.6578405,
-    "seen": 1792436440.8952765,
-    "ast_hash": "690b6d5cc8260eaef31c166bd3b5c42d",
+    "mtime": 1792568424.2893634,
+    "seen": 1792569551.0595205,
+    "ast_hash": "faf4699a55ef2aa867ee0c46c4dbc9dd",
     "semantic_hash": ""
   },
   "tools/make_logo.py": {
-    "mtime": 1792434588.657941,
-    "seen": 1792436440.895279,
+    "mtime": 1792510916.6455495,
+    "seen": 1792511145.2066402,
     "ast_hash": "a8d9aefc71a26589a6946331c374e3ef",
     "semantic_hash": ""
   },
   "tools/migrate_files.py": {
-    "mtime": 1792434588.657941,
-    "seen": 1792436440.8952813,
-    "ast_hash": "3a6f79ba1c438704b9210fe127d5585a",
+    "mtime": 1792510916.6455495,
+    "seen": 1792511145.206642,
+    "ast_hash": "f57dbd1f11f1a23f127a383136df8c7b",
     "semantic_hash": ""
   },
   "tools/source/order-lockup-cs.json": {
-    "mtime": 1792434588.657941,
-    "seen": 1792436440.8952856,
+    "mtime": 1792510916.6455495,
+    "seen": 1792511145.2066433,
     "ast_hash": "38ae3ad22f9a9b734669dcab8c85d024",
     "semantic_hash": ""
   },
   "tools/url_map.py": {
-    "mtime": 1792434588.6595044,
-    "seen": 1792436440.8952878,
+    "mtime": 1792510916.6495183,
+    "seen": 1792511145.2066448,
     "ast_hash": "4ad78c2868b32bc9ecbee2cf331d55e9",
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1792437627.9964333,
-    "seen": 1792437709.7782052,
-    "ast_hash": "2220fc85cf57b7683e4bcd3f3006ad21",
+    "mtime": 1792569413.3527079,
+    "seen": 1792569551.0596678,
+    "ast_hash": "f8fca79d5316da84045318dc148631b9",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/SKILL.md": {
-    "mtime": 1792434588.6023471,
-    "seen": 1792436440.8952928,
+    "mtime": 1792510915.2283971,
+    "seen": 1792511145.2066476,
     "ast_hash": "51b7cca34d0048bff28cc98597bbb7aa",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/agents/openai.yaml": {
-    "mtime": 1792434588.602684,
-    "seen": 1792436440.8952951,
+    "mtime": 1792510915.2288465,
+    "seen": 1792511145.206649,
     "ast_hash": "1232e1e58afd6467b515d20946ad8ba5",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/adapt.md": {
-    "mtime": 1792434588.602684,
-    "seen": 1792436440.895298,
+    "mtime": 1792510915.2288465,
+    "seen": 1792511145.2066507,
     "ast_hash": "430695dd62438302654025f62e865ffc",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/adapt.native.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953006,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066522,
     "ast_hash": "3ddd9497ad357d386a08d27e9e6e3f25",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/android.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953032,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066534,
     "ast_hash": "18f5d94b2c51ac3bfede3b209660bbb5",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/animate.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953056,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066548,
     "ast_hash": "610f85bc3d6d370810836681204b015d",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/audit.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953083,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.206656,
     "ast_hash": "8ce7e6092ee3ce6c787e96f567c3026b",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/audit.native.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953104,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066576,
     "ast_hash": "35e0f32a6ca17635594a141394e936b6",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/bolder.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953125,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066593,
     "ast_hash": "4dc058cbd273b89f9bab0437db1205ed",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/clarify.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953147,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066603,
     "ast_hash": "413da6eb075a6c3ed05de43f760f3be8",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/colorize.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953168,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066622,
     "ast_hash": "0bf2887698d75473acd5a5b0ccbe1d3e",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/component-review.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953195,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066636,
     "ast_hash": "6805984a39edac8cee39fbcb4e09e947",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/craft-floor.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.895322,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066655,
     "ast_hash": "25aab06e86c6e44785c9885169196dda",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/craft.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953242,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066667,
     "ast_hash": "9075911f45c58c15a720f8188b2738f4",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/critique.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953261,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066684,
     "ast_hash": "aaa025b535d5262c7dcb6ee3e2ca7599",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/degraded/asset-producer.md": {
-    "mtime": 1792434588.6030517,
-    "seen": 1792436440.8953285,
+    "mtime": 1792510915.229142,
+    "seen": 1792511145.2066698,
     "ast_hash": "bd704054817484c1188bbb8b8e51406d",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/degraded/documenter.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895331,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066717,
     "ast_hash": "a38215374db267ad2be047a2a58cc816",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/degraded/finish-reviewer.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953328,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066734,
     "ast_hash": "0850d34ddae341e50f594e22a3913bd3",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/degraded/manual-edit-applier.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895336,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066753,
     "ast_hash": "1652cf7a403f11f4d57382e5ccec6999",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/delight.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953383,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066765,
     "ast_hash": "4a4fb8494ddda3d2b4687b938209eb32",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/distill.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953407,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066774,
     "ast_hash": "f83cce4cadafad7911dbb39e2a47ea94",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/doctor.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953433,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206679,
     "ast_hash": "d4eb48962b545bb366e287cb3db6c791",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/document.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953457,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206681,
     "ast_hash": "394aa79ec9bec496a079a8e510733efb",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/extract.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895348,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066824,
     "ast_hash": "88c7e517902f774f1f365d374d517cf4",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/generate.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953502,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066839,
     "ast_hash": "c88c726a91875ddf46b3c7b692c3671f",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/harden.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953524,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066855,
     "ast_hash": "741d28442557efc0f88d0eef14ea9c15",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/hooks.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895355,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066867,
     "ast_hash": "a065f2bd1b4d5b1a92aa9b0324134a8f",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/init.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953574,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206688,
     "ast_hash": "f78ca04c54e5555e42050d086ebeb52f",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/ios.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953598,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066894,
     "ast_hash": "a8f56b5c246ad44e142853ef59a19039",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/layout.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953624,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066905,
     "ast_hash": "d4db3672050d72bd68949ef6ca614569",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/live-setup.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953643,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066917,
     "ast_hash": "e870461022ffc424f05fdfdd38ad0367",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/live.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895367,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066932,
     "ast_hash": "8e808bf2a9181807ca9e92b322a92f6c",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/mode-operate.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.895369,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066944,
     "ast_hash": "bf63bc740b342576279715f35922daad",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/mode-persuade.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953717,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066958,
     "ast_hash": "9536e656c3fab5a8d85f1dcde6df45aa",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/mode-read.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953743,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2066967,
     "ast_hash": "09353e7df8b71096238a1d18c6fbfe44",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/new-work.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953764,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206698,
     "ast_hash": "3bb3b6e401f79eade3cd4b919cb9e399",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/onboard.md": {
-    "mtime": 1792434588.604043,
-    "seen": 1792436440.8953786,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206699,
     "ast_hash": "3d4dcb0ea41999ec3c8c0c423cc631fe",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/operate.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953812,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067003,
     "ast_hash": "53a569b985749058f7b178a32e0a157f",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/optimize.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.895384,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067013,
     "ast_hash": "1b469f0ff8d133e50f6539988fa4819b",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/overdrive.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953862,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067022,
     "ast_hash": "8e0b7d24a478bc3e4c2429dd6ff8ce42",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/polish.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953884,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067037,
     "ast_hash": "36ed382b9f9692d0545b34dfd643670b",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/quieter.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953907,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.206705,
     "ast_hash": "9d037f5df3a6084451cc4e7f64628fab",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/region-map.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953931,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067075,
     "ast_hash": "fbedb05ecee2abb30af4c473de67c343",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/routing.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8953953,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067087,
     "ast_hash": "16cfad4cde91da597491055320b2c3ba",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/shape.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.895398,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067103,
     "ast_hash": "ecf5345d56452d10cd2c9203a7512704",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/typeset.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8954003,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067118,
     "ast_hash": "44fdf5662f8003feebd2251242952563",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/reference/visualize.md": {
-    "mtime": 1792434588.605127,
-    "seen": 1792436440.8954024,
+    "mtime": 1792510915.2303069,
+    "seen": 1792511145.2067132,
     "ast_hash": "ff7d6bc22637047893030109f249ce9b",
     "semantic_hash": ""
   },
   ".github/workflows/ci.yml": {
-    "mtime": 1792434588.6177292,
-    "seen": 1792436440.8954048,
+    "mtime": 1792510915.2426643,
+    "seen": 1792511145.2067144,
     "ast_hash": "ad98f80e4864772d2372eef2919f3c2a",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792434588.6177292,
-    "seen": 1792436440.8954074,
+    "mtime": 1792510915.2426643,
+    "seen": 1792511145.2067156,
     "ast_hash": "5f98024a0a13dd56c517df9b93d4416c",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
-    "mtime": 1792434588.6177292,
-    "seen": 1792436440.89541,
+    "mtime": 1792510915.2426643,
+    "seen": 1792511145.2067173,
     "ast_hash": "40fc326b5266c74940eee14253833bd9",
     "semantic_hash": ""
   },
   "README.md": {
+<<<<<<< HEAD
     "mtime": 1792573916.0011764,
     "seen": 1792573943.6369202,
     "ast_hash": "36671b26b381ee10d0a58b6db751add1",
+=======
+    "mtime": 1792569530.8787148,
+    "seen": 1792569551.0620513,
+    "ast_hash": "b7ba06cfe920ebdb5eaa1ba5d2aa3f60",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
     "semantic_hash": ""
   },
   "content/news/2014/02/13/ekoskola-den-zeme-2013-26cs.html": {
-    "mtime": 1792434588.6183977,
-    "seen": 1792436440.8954155,
+    "mtime": 1792510915.243442,
+    "seen": 1792511145.20672,
     "ast_hash": "be49f253f3802a090ecb21c51dd2d084",
     "semantic_hash": ""
   },
   "content/news/2014/02/19/putovni-vystavy-zidovskeho-muzea-v-praze-28cs.html": {
-    "mtime": 1792434588.6183977,
-    "seen": 1792436440.8954184,
+    "mtime": 1792510915.243442,
+    "seen": 1792511145.2067215,
     "ast_hash": "a21258f760a89a0c8661c7fc23abe88b",
     "semantic_hash": ""
   },
   "content/news/2014/04/17/diplomy-a-oceneni-350cs.html": {
-    "mtime": 1792434588.6184995,
-    "seen": 1792436440.895421,
+    "mtime": 1792510915.2435715,
+    "seen": 1792511145.206723,
     "ast_hash": "0ce68813bc57bae0bf2805920de412fe",
     "semantic_hash": ""
   },
   "content/news/2014/04/17/skolni-budova-349cs.html": {
-    "mtime": 1792434588.6185296,
-    "seen": 1792436440.8954232,
+    "mtime": 1792510915.2436032,
+    "seen": 1792511145.2067242,
     "ast_hash": "e5924c682018be766066a00e25abde32",
     "semantic_hash": ""
   },
   "content/news/2014/05/17/majales-2014-351cs.html": {
-    "mtime": 1792434588.6185622,
-    "seen": 1792436440.8954256,
+    "mtime": 1792510915.243632,
+    "seen": 1792511145.2067254,
     "ast_hash": "6c4d8a78719338cd9d5b16635203f583",
     "semantic_hash": ""
   },
   "content/news/2014/06/11/detska-majalesova-olympiada-2014-352cs.html": {
-    "mtime": 1792434588.6186152,
-    "seen": 1792436440.895428,
+    "mtime": 1792510915.243683,
+    "seen": 1792511145.2067266,
     "ast_hash": "3c2bd2898a03651575a0e8f9df4dceb5",
     "semantic_hash": ""
   },
   "content/news/2014/11/07/seznamovaci-kurz-2014-348cs.html": {
-    "mtime": 1792434588.6186574,
-    "seen": 1792436440.8954298,
+    "mtime": 1792510915.2437224,
+    "seen": 1792511145.206728,
     "ast_hash": "5f932420c254c1b29f0f527f723091e0",
     "semantic_hash": ""
   },
   "content/news/2015/02/10/maturitni-ples-2015-345cs.html": {
-    "mtime": 1792434588.618699,
-    "seen": 1792436440.8954325,
+    "mtime": 1792510915.243787,
+    "seen": 1792511145.2067294,
     "ast_hash": "bc1ccc92b62d031cbbffc42497a36d66",
     "semantic_hash": ""
   },
   "content/news/2015/03/10/cteni-v-ms-347cs.html": {
-    "mtime": 1792434588.6187735,
-    "seen": 1792436440.895435,
+    "mtime": 1792510915.2439232,
+    "seen": 1792511145.206731,
     "ast_hash": "30021c7dbd3e206aafa0c10771300f8a",
     "semantic_hash": ""
   },
   "content/news/2015/03/10/prodejni-vystava-zalozek-353cs.html": {
-    "mtime": 1792434588.618825,
-    "seen": 1792436440.8954375,
+    "mtime": 1792510915.2439454,
+    "seen": 1792511145.2067323,
     "ast_hash": "6758b84ee256e394c4a5a6e17d774596",
     "semantic_hash": ""
   },
   "content/news/2015/05/19/majales-2015-346cs.html": {
-    "mtime": 1792434588.6188593,
-    "seen": 1792436440.8954396,
+    "mtime": 1792510915.2441454,
+    "seen": 1792511145.2067335,
     "ast_hash": "efc2eea0ce8afc7c77001aa76f47b262",
     "semantic_hash": ""
   },
   "content/news/2016/01/09/anglie-2015-343cs.html": {
-    "mtime": 1792434588.6189055,
-    "seen": 1792436440.895442,
+    "mtime": 1792510915.2446852,
+    "seen": 1792511145.2067354,
     "ast_hash": "84e82b456483a82142cd07be448cf207",
     "semantic_hash": ""
   },
   "content/news/2016/03/15/3-fairtradeova-kavarna-344cs.html": {
-    "mtime": 1792434588.6189654,
-    "seen": 1792436440.895444,
+    "mtime": 1792510915.2447934,
+    "seen": 1792511145.2067366,
     "ast_hash": "774bd77b19bcdc9b1bd6251385247c35",
     "semantic_hash": ""
   },
   "content/news/2016/05/25/s-rudou-pozarem-nejen-o-hudbe-50cs.html": {
-    "mtime": 1792434588.6190064,
-    "seen": 1792436440.8954463,
+    "mtime": 1792510915.2448323,
+    "seen": 1792511145.206738,
     "ast_hash": "fcdb7481797ab5422b76975a04d2b3a2",
     "semantic_hash": ""
   },
   "content/news/2016/06/11/m-hrubantova-od-fotografie-k-dokumentarnimu-filmu-51cs.html": {
-    "mtime": 1792434588.6190524,
-    "seen": 1792436440.8954482,
+    "mtime": 1792510915.2448678,
+    "seen": 1792511145.206739,
     "ast_hash": "655cef4ec47844765f48359db02defd1",
     "semantic_hash": ""
   },
   "content/news/2016/11/09/adopce-na-dalku-29cs.html": {
-    "mtime": 1792434588.619108,
-    "seen": 1792436440.8954506,
+    "mtime": 1792510915.2449498,
+    "seen": 1792511145.2067401,
     "ast_hash": "322bbde41ece152690a78524e764c5f4",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/dve-adventni-zamysleni-73cs.html": {
-    "mtime": 1792434588.6191535,
-    "seen": 1792436440.895453,
+    "mtime": 1792510915.2450178,
+    "seen": 1792511145.2067416,
     "ast_hash": "6d88923bf0ff3edfbc55bbacd0749a2a",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/mimoradne-mse-sv-ve-skolnim-roce-2016-17-68cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.895455,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.2067432,
     "ast_hash": "2981c90e0fc7219f19f941d590be2d39",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/pulhodinka-s-cirkvi-a-dalsi-program-v-listopadu-71cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.8954573,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.2067444,
     "ast_hash": "ba81431689a74f46606e7c645a88dd0e",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/pulhodinka-s-cirkvi-a-dalsi-program-v-prosinci-72cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.8954597,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.2067456,
     "ast_hash": "a1e4c1a242fefdf2210706a33b79cda3",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/pulhodinka-s-cirkvi-a-dalsi-program-v-rijnu-70cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.895462,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.2067466,
     "ast_hash": "ec1f1ab69f7f41ecbeacb9e09319a13e",
     "semantic_hash": ""
   },
   "content/news/2016/12/10/pulhodinka-s-cirkvi-a-dalsi-program-v-zari-69cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.895465,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.206748,
     "ast_hash": "c211f9f0b9f2282443b4cb4a5edbc40a",
     "semantic_hash": ""
   },
   "content/news/2016/12/16/pribehy-bezpravi-2013-mesic-filmu-na-skolach-2013-74cs.html": {
-    "mtime": 1792434588.6191807,
-    "seen": 1792436440.895468,
+    "mtime": 1792510915.24509,
+    "seen": 1792511145.206749,
     "ast_hash": "891120ad52d31aba80fbcaccb6d13cc5",
     "semantic_hash": ""
   },
   "content/news/2016/12/16/pribehy-bezpravi-mesic-filmu-na-skolach-2014-75cs.html": {
-    "mtime": 1792434588.619309,
-    "seen": 1792436440.8954706,
+    "mtime": 1792510915.2454703,
+    "seen": 1792511145.2067502,
     "ast_hash": "15adf3569540483cb55e188974b635b6",
     "semantic_hash": ""
   },
   "content/news/2016/12/16/pribehy-bezpravi-mesic-filmu-na-skolach-2015-76cs.html": {
-    "mtime": 1792434588.619309,
-    "seen": 1792436440.8954737,
+    "mtime": 1792510915.2454703,
+    "seen": 1792511145.2067516,
     "ast_hash": "f4cd7a04d9d30c1a8ab67c9e705235c3",
     "semantic_hash": ""
   },
   "content/news/2016/12/16/pribehy-bezpravi-mesic-filmu-na-skolach-2016-77cs.html": {
-    "mtime": 1792434588.619309,
-    "seen": 1792436440.8954763,
+    "mtime": 1792510915.2454703,
+    "seen": 1792511145.206753,
     "ast_hash": "099082a496b67bc13dfe6590dc358bb2",
     "semantic_hash": ""
   },
   "content/news/2016/12/20/maraton-psani-dopisu-2016-80cs.html": {
-    "mtime": 1792434588.619309,
-    "seen": 1792436440.8954787,
+    "mtime": 1792510915.2454703,
+    "seen": 1792511145.2067544,
     "ast_hash": "fa3480baea4505ddf5d975d34d5ccc7b",
     "semantic_hash": ""
   },
   "content/news/2016/12/20/maraton-psani-dopisu-v-roce-2015-79cs.html": {
-    "mtime": 1792434588.61939,
-    "seen": 1792436440.895481,
+    "mtime": 1792510915.245604,
+    "seen": 1792511145.2067559,
     "ast_hash": "7dd1adb5938f8e41fe2f94fab2b432ea",
     "semantic_hash": ""
   },
   "content/news/2017/01/04/pulhodinka-s-cirkvi-a-dalsi-program-v-lednu-83cs.html": {
-    "mtime": 1792434588.6194258,
-    "seen": 1792436440.895483,
+    "mtime": 1792510915.2456348,
+    "seen": 1792511145.2067568,
     "ast_hash": "11fc6b7ce2b0a6071fd772e86fbc289c",
     "semantic_hash": ""
   },
   "content/news/2017/01/05/svetluska-2015-84cs.html": {
-    "mtime": 1792434588.6194258,
-    "seen": 1792436440.8954859,
+    "mtime": 1792510915.2456348,
+    "seen": 1792511145.2067578,
     "ast_hash": "378134175eb6680fd67c4ed34893ba32",
     "semantic_hash": ""
   },
   "content/news/2017/01/05/svetluska-2016-85cs.html": {
-    "mtime": 1792434588.6195014,
-    "seen": 1792436440.8954883,
+    "mtime": 1792510915.2457385,
+    "seen": 1792511145.2067592,
     "ast_hash": "e18b78c95e6c1562fe899f5a45f4ba34",
     "semantic_hash": ""
   },
   "content/news/2017/02/06/pulhodinka-s-cirkvi-a-dalsi-program-v-unoru-97cs.html": {
-    "mtime": 1792434588.6195397,
-    "seen": 1792436440.8954906,
+    "mtime": 1792510915.2457716,
+    "seen": 1792511145.2067606,
     "ast_hash": "2b1738125d803d24286ba59a14cf13e3",
     "semantic_hash": ""
   },
   "content/news/2017/02/27/pulhodinka-s-cirkvi-a-dalsi-program-v-breznu-106cs.html": {
-    "mtime": 1792434588.6195397,
-    "seen": 1792436440.8954923,
+    "mtime": 1792510915.2457716,
+    "seen": 1792511145.2067618,
     "ast_hash": "5bdd895e4a9be4e119e7cc348cd7840e",
     "semantic_hash": ""
   },
   "content/news/2017/04/02/pulhodinka-s-cirkvi-a-dalsi-program-v-dubnu-111cs.html": {
-    "mtime": 1792434588.6196408,
-    "seen": 1792436440.895495,
+    "mtime": 1792510915.2459266,
+    "seen": 1792511145.2067628,
     "ast_hash": "4f601b86dbc6a2c06b6fb8bdf4b12038",
     "semantic_hash": ""
   },
   "content/news/2017/05/09/pulhodinka-s-cirkvi-a-dalsi-program-v-kvetnu-140cs.html": {
-    "mtime": 1792434588.619707,
-    "seen": 1792436440.8954976,
+    "mtime": 1792510915.2459774,
+    "seen": 1792511145.2067702,
     "ast_hash": "63a98543e5f09cf5e9ed56b60d0c4f2e",
     "semantic_hash": ""
   },
   "content/news/2017/05/31/charitativni-sbirka-a-exkurze-v-azylovem-dome-144cs.html": {
-    "mtime": 1792434588.619707,
-    "seen": 1792436440.8954997,
+    "mtime": 1792510915.2459774,
+    "seen": 1792511145.2067714,
     "ast_hash": "930bc2f9f48c83e8b3f10868eb188cf5",
     "semantic_hash": ""
   },
   "content/news/2017/06/01/tajny-zivot-mesta-motivacni-seminar-147cs.html": {
-    "mtime": 1792434588.6198559,
-    "seen": 1792436440.8955019,
+    "mtime": 1792510915.2460482,
+    "seen": 1792511145.2067728,
     "ast_hash": "046d9aa8783bde8c8cfdae3a41919ed3",
     "semantic_hash": ""
   },
   "content/news/2017/06/06/mse-svate-v-cervnu-145cs.html": {
-    "mtime": 1792434588.6198559,
-    "seen": 1792436440.8955045,
+    "mtime": 1792510915.2460482,
+    "seen": 1792511145.2067738,
     "ast_hash": "7722806b8e6a430fc0ec15afd70d02e3",
     "semantic_hash": ""
   },
   "content/news/2017/06/14/tajny-zivot-mesta-dalsi-aktivity-k-projektu-148cs.html": {
-    "mtime": 1792434588.6198559,
-    "seen": 1792436440.8955066,
+    "mtime": 1792510915.2460482,
+    "seen": 1792511145.2067752,
     "ast_hash": "c3c246b71213b995ae09527893931a65",
     "semantic_hash": ""
   },
   "content/news/2017/07/01/vysledky-pruzkumu-o-hodnotach-152cs.html": {
-    "mtime": 1792434588.6199653,
-    "seen": 1792436440.8955092,
+    "mtime": 1792510915.2465808,
+    "seen": 1792511145.2067766,
     "ast_hash": "0ffa21411e24ddce5eaf6988e7194c92",
     "semantic_hash": ""
   },
   "content/news/2017/08/19/jarka-naghi-ja-a-rumunsko-153cs.html": {
-    "mtime": 1792434588.6200047,
-    "seen": 1792436440.8955116,
+    "mtime": 1792510915.246622,
+    "seen": 1792511145.206778,
     "ast_hash": "c9776185e22717f91d9ab877b06be29a",
     "semantic_hash": ""
   },
   "content/news/2017/09/05/cinnost-spirituala-na-gymnaziu-srmr-ve-skutci-2017-18-154cs.html": {
-    "mtime": 1792434588.6200469,
-    "seen": 1792436440.8955138,
+    "mtime": 1792510915.2466702,
+    "seen": 1792511145.2067792,
     "ast_hash": "539cb657330ad6ac2e85ba1aa1fa26f8",
     "semantic_hash": ""
   },
   "content/news/2017/09/05/myslenky-dominika-pecky-nejen-pro-pedagogy-155cs.html": {
-    "mtime": 1792434588.6200755,
-    "seen": 1792436440.8955169,
+    "mtime": 1792510915.2467654,
+    "seen": 1792511145.2067807,
     "ast_hash": "f2dba9351286dbc71dfce2fc48273faa",
     "semantic_hash": ""
   },
   "content/news/2017/09/11/svetluska-2017-156cs.html": {
-    "mtime": 1792434588.6200755,
-    "seen": 1792436440.8955193,
+    "mtime": 1792510915.2467654,
+    "seen": 1792511145.2067819,
     "ast_hash": "608b0188f93e9943d16638cd807e25fa",
     "semantic_hash": ""
   },
   "content/news/2017/09/23/zahranicni-vymena-skutec-assen-nl-159cs.html": {
-    "mtime": 1792434588.6200755,
-    "seen": 1792436440.8955219,
+    "mtime": 1792510915.2467654,
+    "seen": 1792511145.2067835,
     "ast_hash": "bccdebd88520fa8bd7d5d561b777fb23",
     "semantic_hash": ""
   },
   "content/news/2017/10/03/studentske-volby-2013-160cs.html": {
-    "mtime": 1792434588.620197,
-    "seen": 1792436440.8955245,
+    "mtime": 1792510915.2468736,
+    "seen": 1792511145.2067852,
     "ast_hash": "2c2ade792d5a3dd2371c31515d4a7453",
     "semantic_hash": ""
   },
   "content/news/2017/10/03/studentske-volby-2017-161cs.html": {
-    "mtime": 1792434588.6202242,
-    "seen": 1792436440.8955274,
+    "mtime": 1792510915.246908,
+    "seen": 1792511145.2067869,
     "ast_hash": "72d7425482bb32bbefe738dcb4fa5355",
     "semantic_hash": ""
   },
   "content/news/2017/10/07/studentske-mse-svate-163cs.html": {
-    "mtime": 1792434588.6202242,
-    "seen": 1792436440.89553,
+    "mtime": 1792510915.246908,
+    "seen": 1792511145.206788,
     "ast_hash": "e03bd8c0f893083d5626f36396554540",
     "semantic_hash": ""
   },
   "content/news/2017/10/08/vysledky-studentskych-voleb-do-psp-cr-10-2017-164cs.html": {
-    "mtime": 1792434588.6202242,
-    "seen": 1792436440.8955324,
+    "mtime": 1792510915.246908,
+    "seen": 1792511145.2067897,
     "ast_hash": "41ad06bff6cbee7eb6ed324e004a5bb5",
     "semantic_hash": ""
   },
   "content/news/2017/10/10/sbirka-bila-pastelka-2017-165cs.html": {
-    "mtime": 1792434588.6202242,
-    "seen": 1792436440.8955343,
+    "mtime": 1792510915.246908,
+    "seen": 1792511145.2067912,
     "ast_hash": "50cafa0768e84195c46fffaebde50628",
     "semantic_hash": ""
   },
   "content/news/2017/11/13/prestiz-povolani-minipruzkum-sexty-v-ramci-sociologie-170cs.html": {
-    "mtime": 1792434588.6203437,
-    "seen": 1792436440.895537,
+    "mtime": 1792510915.247494,
+    "seen": 1792511145.2067924,
     "ast_hash": "74254ea940ff0facb6f6e0b8fe6b4bba",
     "semantic_hash": ""
   },
   "content/news/2017/11/29/sber-baterii-a-drobnych-elektrospotrebicu-2017-18-171cs.html": {
-    "mtime": 1792434588.6203437,
-    "seen": 1792436440.895539,
+    "mtime": 1792510915.247494,
+    "seen": 1792511145.206794,
     "ast_hash": "42282030061972e5dde1c0d2d70e6628",
     "semantic_hash": ""
   },
   "content/news/2017/12/10/projekt-krokus-2017-174cs.html": {
-    "mtime": 1792434588.6204214,
-    "seen": 1792436440.8955414,
+    "mtime": 1792510915.2476118,
+    "seen": 1792511145.2067955,
     "ast_hash": "b9ab8b6814e2a5f97407e6ad5e90b7e4",
     "semantic_hash": ""
   },
   "content/news/2017/12/14/advent-2017-175cs.html": {
-    "mtime": 1792434588.6204214,
-    "seen": 1792436440.8955438,
+    "mtime": 1792510915.2476118,
+    "seen": 1792511145.2067966,
     "ast_hash": "c80543cc20ba1418514fb640c362a850",
     "semantic_hash": ""
   },
   "content/news/2017/12/14/vysledky-prvniho-kola-studentskych-prezidentskych-voleb-2017-18-176cs.html": {
-    "mtime": 1792434588.6205697,
-    "seen": 1792436440.8955464,
+    "mtime": 1792510915.2477295,
+    "seen": 1792511145.2067983,
     "ast_hash": "13f02b35196a9757f0282a6683ddc790",
     "semantic_hash": ""
   },
   "content/news/2018/01/06/skolni-kaple-181cs.html": {
-    "mtime": 1792434588.6206074,
-    "seen": 1792436440.8955488,
+    "mtime": 1792510915.2478247,
+    "seen": 1792511145.2067993,
     "ast_hash": "6f507ae856ad8e4c371221e597d4c5ac",
     "semantic_hash": ""
   },
   "content/news/2018/01/17/projekt-programu-etwinning-prima-2017-18-182cs.html": {
-    "mtime": 1792434588.6206074,
-    "seen": 1792436440.8955514,
+    "mtime": 1792510915.2478247,
+    "seen": 1792511145.2068014,
     "ast_hash": "980b1a48272341e92be5b9b72b9cfe05",
     "semantic_hash": ""
   },
   "content/news/2018/01/18/vysledky-druheho-kola-studentskych-prezidentskych-voleb-183cs.html": {
-    "mtime": 1792434588.6206074,
-    "seen": 1792436440.8955538,
+    "mtime": 1792510915.2478247,
+    "seen": 1792511145.2068026,
     "ast_hash": "a54bc4944c27f581b2f6154db59afe37",
     "semantic_hash": ""
   },
   "content/news/2018/02/02/jeziskova-vnoucata-v-domove-senioru-drachtinka-186cs.html": {
-    "mtime": 1792434588.620725,
-    "seen": 1792436440.8955557,
+    "mtime": 1792510915.2479875,
+    "seen": 1792511145.2068045,
     "ast_hash": "6e15b9a26aff8511e2d9f19f1f70a0c1",
     "semantic_hash": ""
   },
   "content/news/2018/02/05/ze-skutce-do-assenu-unor-2018-187cs.html": {
-    "mtime": 1792434588.620725,
-    "seen": 1792436440.8955584,
+    "mtime": 1792510915.2479875,
+    "seen": 1792511145.206806,
     "ast_hash": "a12a818ebc45e1fc80a1286b13b661e6",
     "semantic_hash": ""
   },
   "content/news/2018/02/14/postni-doba-188cs.html": {
-    "mtime": 1792434588.620725,
-    "seen": 1792436440.8955607,
+    "mtime": 1792510915.2479875,
+    "seen": 1792511145.2068076,
     "ast_hash": "64f7fe93a86b3a7da573acdd0c0f2c27",
     "semantic_hash": ""
   },
   "content/news/2018/02/27/zakovsky-parlament-2017-18-193cs.html": {
-    "mtime": 1792434588.620725,
-    "seen": 1792436440.8955631,
+    "mtime": 1792510915.2479875,
+    "seen": 1792511145.206809,
     "ast_hash": "d841f0722aab5b1b15a22ece54c24b60",
     "semantic_hash": ""
   },
   "content/news/2018/03/15/tajny-zivot-mesta-seminar-ii-quest-199cs.html": {
-    "mtime": 1792434588.620903,
-    "seen": 1792436440.8955655,
+    "mtime": 1792510915.2481987,
+    "seen": 1792511145.2068105,
     "ast_hash": "67eb38ff6875afb771e23c330e0ef6b0",
     "semantic_hash": ""
   },
   "content/news/2018/03/18/bezpecnostni-a-strelecka-priprava-2-2018-204cs.html": {
-    "mtime": 1792434588.620903,
-    "seen": 1792436440.8955681,
+    "mtime": 1792510915.2481987,
+    "seen": 1792511145.206812,
     "ast_hash": "10185f4bfccc9bc22d2646bd23e90494",
     "semantic_hash": ""
   },
   "content/news/2018/03/26/velikonocni-207cs.html": {
-    "mtime": 1792434588.620903,
-    "seen": 1792436440.895571,
+    "mtime": 1792510915.2481987,
+    "seen": 1792511145.2068138,
     "ast_hash": "ed22309d28654659a22d4982d9ebf823",
     "semantic_hash": ""
   },
   "content/news/2018/04/14/z-assenu-do-skutce-duben-2018-217cs.html": {
-    "mtime": 1792434588.6210022,
-    "seen": 1792436440.8955736,
+    "mtime": 1792510915.2484844,
+    "seen": 1792511145.2068152,
     "ast_hash": "0b84f7917eb728bcb43667c4104b46b8",
     "semantic_hash": ""
   },
   "content/news/2018/05/01/casopis-bp-crew-224cs.html": {
-    "mtime": 1792434588.6210566,
-    "seen": 1792436440.895576,
+    "mtime": 1792510915.2485504,
+    "seen": 1792511145.206817,
     "ast_hash": "70e3606e4eb0fbfa08a122af863b4017",
     "semantic_hash": ""
   },
   "content/news/2018/05/01/casopis-random-225cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955789,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.2068186,
     "ast_hash": "f1423d823e6d6707aa7c23498e3a7f3a",
     "semantic_hash": ""
   },
   "content/news/2018/05/01/casopis-terror-223cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955815,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.2068198,
     "ast_hash": "a421a667ce001b46b5f9556b245eb8f9",
     "semantic_hash": ""
   },
   "content/news/2018/05/01/casopisy-oktavy-2014-15-222cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955834,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.2068212,
     "ast_hash": "53ae5d1faf27600ab3421ebab802aabf",
     "semantic_hash": ""
   },
   "content/news/2018/05/01/kvarticka-226cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.895586,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.2068226,
     "ast_hash": "68490a6732f44a0837239fe8027952df",
     "semantic_hash": ""
   },
   "content/news/2018/05/05/den-zeme-s-plntnetem-227cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955889,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.2068238,
     "ast_hash": "2978d332506b18a5a43efe04fb1a17b2",
     "semantic_hash": ""
   },
   "content/news/2018/05/09/nekolik-odpovedi-na-jednu-otazku-229cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955913,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.206826,
     "ast_hash": "697f99da3c018e21cae3658fdf6fbddb",
     "semantic_hash": ""
   },
   "content/news/2018/05/14/den-zeme-2018-231cs.html": {
-    "mtime": 1792434588.6210902,
-    "seen": 1792436440.8955944,
+    "mtime": 1792510915.2486248,
+    "seen": 1792511145.206827,
     "ast_hash": "88e78ddbfa70c778cc7248cff07d3479",
     "semantic_hash": ""
   },
   "content/news/2018/06/25/quest-pro-nizsi-gymnazium-254cs.html": {
-    "mtime": 1792434588.6212745,
-    "seen": 1792436440.895597,
+    "mtime": 1792510915.248779,
+    "seen": 1792511145.2068284,
     "ast_hash": "a03a10d71afb621f93670e6274d5f92d",
     "semantic_hash": ""
   },
   "content/news/2018/07/02/exkurze-domaci-hospic-duha-250cs.html": {
-    "mtime": 1792434588.6213155,
-    "seen": 1792436440.8955996,
+    "mtime": 1792510915.2488303,
+    "seen": 1792511145.2068295,
     "ast_hash": "2605674c49493a816b064ed0c24f59d6",
     "semantic_hash": ""
   },
   "content/news/2018/10/04/studentske-volby-do-zastupitelstva-obce-268cs.html": {
-    "mtime": 1792434588.6213677,
-    "seen": 1792436440.8956025,
+    "mtime": 1792510915.248869,
+    "seen": 1792511145.2068312,
     "ast_hash": "0f5d755fdc51433d92871e26726911e5",
     "semantic_hash": ""
   },
   "content/news/2018/10/10/sber-baterii-a-elektrospotrebicu-2018-19-272cs.html": {
-    "mtime": 1792434588.6213677,
-    "seen": 1792436440.895605,
+    "mtime": 1792510915.248869,
+    "seen": 1792511145.2068322,
     "ast_hash": "eed5f1713a729ed47f8ca51731858df5",
     "semantic_hash": ""
   },
   "content/news/2018/11/01/svetluska-2018-275cs.html": {
-    "mtime": 1792434588.6214364,
-    "seen": 1792436440.8956072,
+    "mtime": 1792510915.249243,
+    "seen": 1792511145.2068334,
     "ast_hash": "40d57b0ec80c2f71151ebdad734e34cb",
     "semantic_hash": ""
   },
   "content/news/2018/11/12/pribehy-bezpravi-2018-279cs.html": {
-    "mtime": 1792434588.6214364,
-    "seen": 1792436440.8956096,
+    "mtime": 1792510915.249243,
+    "seen": 1792511145.2068348,
     "ast_hash": "2966b7395208fd0ffed7c44261a0778c",
     "semantic_hash": ""
   },
   "content/news/2018/11/15/nove-uspechy-v-cambridge-zkouskach-284cs.html": {
-    "mtime": 1792434588.6214364,
-    "seen": 1792436440.8956122,
+    "mtime": 1792510915.249243,
+    "seen": 1792511145.2068357,
     "ast_hash": "b2fd4dd9f8898382064ce6942448d20c",
     "semantic_hash": ""
   },
   "content/news/2018/12/06/advent-2018-288cs.html": {
-    "mtime": 1792434588.621527,
-    "seen": 1792436440.8956141,
+    "mtime": 1792510915.2494,
+    "seen": 1792511145.206837,
     "ast_hash": "fb78b6c90160a2a1abae0a3eef58b44b",
     "semantic_hash": ""
   },
   "content/news/2018/12/07/literarni-projekt-bible-2018-291cs.html": {
-    "mtime": 1792434588.621527,
-    "seen": 1792436440.8956165,
+    "mtime": 1792510915.2494,
+    "seen": 1792511145.2068388,
     "ast_hash": "d8c2513d19118229ce57428eb9e39bb0",
     "semantic_hash": ""
   },
   "content/news/2018/12/21/zakovsky-parlament-2018-19-297cs.html": {
-    "mtime": 1792434588.621527,
-    "seen": 1792436440.8956187,
+    "mtime": 1792510915.2494,
+    "seen": 1792511145.2068398,
     "ast_hash": "61120a71d120d5a116f394e5201b1697",
     "semantic_hash": ""
   },
   "content/news/2019/01/12/best-in-english-best-in-deutsch-315cs.html": {
-    "mtime": 1792434588.6216333,
-    "seen": 1792436440.895621,
+    "mtime": 1792510915.2494872,
+    "seen": 1792511145.206841,
     "ast_hash": "e746ae47c57b8482735c140ba8093f08",
     "semantic_hash": ""
   },
   "content/news/2019/03/10/dalsi-cambridge-certifikat-pro-studenta-oktavy-a-vyhody-techto-zkousek-317cs.html": {
-    "mtime": 1792434588.6216848,
-    "seen": 1792436440.8956234,
+    "mtime": 1792510915.2495797,
+    "seen": 1792511145.2068424,
     "ast_hash": "851824665622ad60e03b20609ca89b6d",
     "semantic_hash": ""
   },
   "content/news/2019/03/22/charitativni-akce-primy-320cs.html": {
-    "mtime": 1792434588.6216848,
-    "seen": 1792436440.895626,
+    "mtime": 1792510915.2495797,
+    "seen": 1792511145.2068436,
     "ast_hash": "eb5cfc30bdca6d008ec9cf9f662c3934",
     "semantic_hash": ""
   },
   "content/news/2019/04/08/dalsi-charitativni-akce-primy-mobily-pro-gorily-325cs.html": {
-    "mtime": 1792434588.6217568,
-    "seen": 1792436440.8956282,
+    "mtime": 1792510915.2498329,
+    "seen": 1792511145.206845,
     "ast_hash": "5fbc4398eb9c0e49d74b5fe2218413a8",
     "semantic_hash": ""
   },
   "content/news/2019/04/17/fyzikalni-projekt-327cs.html": {
-    "mtime": 1792434588.6217568,
-    "seen": 1792436440.8956308,
+    "mtime": 1792510915.2498329,
+    "seen": 1792511145.206846,
     "ast_hash": "371616df13790658795f0228402a69e4",
     "semantic_hash": ""
   },
   "content/news/2019/05/13/studentske-volby-do-evropskeho-parlamentu-332cs.html": {
-    "mtime": 1792434588.621847,
-    "seen": 1792436440.8956728,
+    "mtime": 1792510915.2500458,
+    "seen": 1792511145.2068472,
     "ast_hash": "bd90d53906143f1347c8ccefae7c6611",
     "semantic_hash": ""
   },
   "content/news/2019/06/19/projekty-programu-etwinning-2018-19-335cs.html": {
-    "mtime": 1792434588.6218836,
-    "seen": 1792436440.8956764,
+    "mtime": 1792510915.2501028,
+    "seen": 1792511145.2068481,
     "ast_hash": "f808e0c302924aa386018ce9ee975ea8",
     "semantic_hash": ""
   },
   "content/news/2019/09/20/stredoskolsky-atleticky-pohar-370cs.html": {
-    "mtime": 1792434588.6219406,
-    "seen": 1792436440.8956785,
+    "mtime": 1792510915.2501621,
+    "seen": 1792511145.2068493,
     "ast_hash": "fcac23694f0bdd707569b5ec533e3cb2",
     "semantic_hash": ""
   },
   "content/news/2019/09/20/zakovsky-parlament-2019-20-371cs.html": {
-    "mtime": 1792434588.621993,
-    "seen": 1792436440.8956811,
+    "mtime": 1792510915.2502306,
+    "seen": 1792511145.2068505,
     "ast_hash": "01e1da841507786d5c13564ae11d8fae",
     "semantic_hash": ""
   },
   "content/news/2019/09/26/svatovaclavska-kavarna-367cs.html": {
-    "mtime": 1792434588.621993,
-    "seen": 1792436440.8956835,
+    "mtime": 1792510915.2502306,
+    "seen": 1792511145.2068515,
     "ast_hash": "86f4ef6545917899ef25158d9925127f",
     "semantic_hash": ""
   },
   "content/news/2019/09/27/zajezd-do-anglie-pro-zaky-nizsiho-gymnazia-366cs.html": {
-    "mtime": 1792434588.621993,
-    "seen": 1792436440.895687,
+    "mtime": 1792510915.2502306,
+    "seen": 1792511145.2068532,
     "ast_hash": "37a6abb73a7e73911405b7557ad4482a",
     "semantic_hash": ""
   },
   "content/news/2019/10/10/projekt-programu-etwinning-prima-2017-18-375cs.html": {
-    "mtime": 1792434588.6223462,
-    "seen": 1792436440.8956904,
+    "mtime": 1792510915.2503142,
+    "seen": 1792511145.2068546,
     "ast_hash": "1e7bc48367c6c9de23b2e7deeec2e526",
     "semantic_hash": ""
   },
   "content/news/2019/10/17/sber-baterii-a-elektrospotrebicu-2019-20-374cs.html": {
-    "mtime": 1792434588.6223462,
-    "seen": 1792436440.8956933,
+    "mtime": 1792510915.2503142,
+    "seen": 1792511145.206856,
     "ast_hash": "250f95281bf3a67a5ae294327e14ed14",
     "semantic_hash": ""
   },
   "content/news/2019/10/18/projekty-programu-etwinning-2018-19-376cs.html": {
-    "mtime": 1792434588.6223462,
-    "seen": 1792436440.895696,
+    "mtime": 1792510915.2503142,
+    "seen": 1792511145.2068572,
     "ast_hash": "bbcbdfca14a3072a0fed0e714a8357e0",
     "semantic_hash": ""
   },
   "content/news/2019/10/21/let-food-be-your-medicine-377cs.html": {
-    "mtime": 1792434588.6223462,
-    "seen": 1792436440.8956988,
+    "mtime": 1792510915.2503142,
+    "seen": 1792511145.2068584,
     "ast_hash": "69bcca2acdb205bdb024fadb68f1ee1a",
     "semantic_hash": ""
   },
   "content/news/2019/10/25/halloweenska-kavarna-378cs.html": {
-    "mtime": 1792434588.6223462,
-    "seen": 1792436440.895701,
+    "mtime": 1792510915.2503142,
+    "seen": 1792511145.2068598,
     "ast_hash": "132ed023c7b388f7c3949e5c4f4f9eae",
     "semantic_hash": ""
   },
   "content/news/2019/11/12/list-za-listem-bavi-me-cist-384cs.html": {
-    "mtime": 1792434588.6225133,
-    "seen": 1792436440.8957033,
+    "mtime": 1792510915.2505512,
+    "seen": 1792511145.2068613,
     "ast_hash": "ad44b5f41c5dc7f9d3745b25e755b8cf",
     "semantic_hash": ""
   },
   "content/news/2019/11/13/25-vyroci-ekoskoly-a-den-laskavosti-386cs.html": {
-    "mtime": 1792434588.6225133,
-    "seen": 1792436440.895706,
+    "mtime": 1792510915.2505512,
+    "seen": 1792511145.2068624,
     "ast_hash": "a62d647f9f49ad0f071a4eb44871dc62",
     "semantic_hash": ""
   },
   "content/news/2019/11/18/festival-svobody-373cs.html": {
-    "mtime": 1792434588.6225133,
-    "seen": 1792436440.895708,
+    "mtime": 1792510915.2505512,
+    "seen": 1792511145.2068639,
     "ast_hash": "504f873cb7bd8e8661304f8030ef738a",
     "semantic_hash": ""
   },
   "content/news/2019/11/22/casopis-bp-crew-387cs.html": {
-    "mtime": 1792434588.6225133,
-    "seen": 1792436440.8957105,
+    "mtime": 1792510915.2505512,
+    "seen": 1792511145.2068648,
     "ast_hash": "68853fae11bba9538f951351c99b1ce9",
     "semantic_hash": ""
   },
   "content/news/2019/11/22/casopis-korinek-388cs.html": {
-    "mtime": 1792434588.6226268,
-    "seen": 1792436440.8957129,
+    "mtime": 1792510915.2509317,
+    "seen": 1792511145.2068663,
     "ast_hash": "45fa346fda53c14c63572f65486e26e1",
     "semantic_hash": ""
   },
   "content/news/2019/12/12/prirodovedny-klokan-394cs.html": {
-    "mtime": 1792434588.6226575,
-    "seen": 1792436440.895715,
+    "mtime": 1792510915.250954,
+    "seen": 1792511145.2068675,
     "ast_hash": "a215b470c3a22103c4d3a50ac909e64b",
     "semantic_hash": ""
   },
   "content/news/2019/12/31/jeziskova-vnoucata-2020-400cs.html": {
-    "mtime": 1792434588.6226575,
-    "seen": 1792436440.8957179,
+    "mtime": 1792510915.250954,
+    "seen": 1792511145.2068682,
     "ast_hash": "4cbdeb6eebf846895210a77efd13a246",
     "semantic_hash": ""
   },
   "content/news/2019/12/31/sbirka-pro-azylovy-dum-v-chrudimi-401cs.html": {
-    "mtime": 1792434588.6227207,
-    "seen": 1792436440.89572,
+    "mtime": 1792510915.251006,
+    "seen": 1792511145.2068698,
     "ast_hash": "54b326102b36e63e0b5df07b42670235",
     "semantic_hash": ""
   },
   "content/news/2020/01/09/long-live-the-knights-404cs.html": {
-    "mtime": 1792434588.6229498,
-    "seen": 1792436440.8957224,
+    "mtime": 1792510915.251028,
+    "seen": 1792511145.2068708,
     "ast_hash": "a6ae99a8ee409bd40d83746275956ce4",
     "semantic_hash": ""
   },
   "content/news/2020/02/02/pololetni-kavarna-412cs.html": {
-    "mtime": 1792434588.6230183,
-    "seen": 1792436440.8957248,
+    "mtime": 1792510915.2511005,
+    "seen": 1792511145.2068722,
     "ast_hash": "9b1eda6b541a0cd0f24f71f95ec76ba3",
     "semantic_hash": ""
   },
   "content/news/2020/02/02/zakovsky-parlament-409cs.html": {
-    "mtime": 1792434588.6230505,
-    "seen": 1792436440.8957274,
+    "mtime": 1792510915.2511222,
+    "seen": 1792511145.206874,
     "ast_hash": "9516c500acdff2154eaba3d145729fd1",
     "semantic_hash": ""
   },
   "content/news/2020/09/02/prvni-schuzka-zakovskeho-parlamentu-436cs.html": {
-    "mtime": 1792434588.62308,
-    "seen": 1792436440.8957293,
+    "mtime": 1792510915.251142,
+    "seen": 1792511145.2068756,
     "ast_hash": "71c693cf10980d1cddbbb8e6ed33fe84",
     "semantic_hash": ""
   },
   "content/news/2020/09/07/recyklohrani-2019-20-441cs.html": {
-    "mtime": 1792434588.62308,
-    "seen": 1792436440.895732,
+    "mtime": 1792510915.251142,
+    "seen": 1792511145.2068772,
     "ast_hash": "bcc0e42f7b43db34c3f7be5885a52392",
     "semantic_hash": ""
   },
   "content/news/2020/09/07/svetlusky-sviti-v-zari-2020-440cs.html": {
-    "mtime": 1792434588.6231387,
-    "seen": 1792436440.895734,
+    "mtime": 1792510915.2512076,
+    "seen": 1792511145.2068784,
     "ast_hash": "80727fce6c941a2eb4cb55bfc7c714bf",
     "semantic_hash": ""
   },
   "content/news/2020/10/28/vodacky-kurz-2020-443cs.html": {
-    "mtime": 1792434588.6231737,
-    "seen": 1792436440.8957362,
+    "mtime": 1792510915.2512426,
+    "seen": 1792511145.20688,
     "ast_hash": "68cf4bb374b8d88b3c42c3ba908a6669",
     "semantic_hash": ""
   },
   "content/news/2020/12/03/strelecka-priprava-289cs.html": {
-    "mtime": 1792434588.6232214,
-    "seen": 1792436440.8957381,
+    "mtime": 1792510915.251479,
+    "seen": 1792511145.206881,
     "ast_hash": "e9002b6844f65150464e053cf46fde62",
     "semantic_hash": ""
   },
   "content/news/2020/12/30/pardubicke-stripky-2020-445cs.html": {
-    "mtime": 1792434588.6232214,
-    "seen": 1792436440.8957405,
+    "mtime": 1792510915.251479,
+    "seen": 1792511145.2068822,
     "ast_hash": "984e031291854d36486a8c37b983dd23",
     "semantic_hash": ""
   },
   "content/news/2021/02/03/zetko-449cs.html": {
-    "mtime": 1792434588.6232996,
-    "seen": 1792436440.895743,
+    "mtime": 1792510915.2515347,
+    "seen": 1792511145.2068837,
     "ast_hash": "a72027e206e1a7d9e7e74dfbb5d3b11b",
     "semantic_hash": ""
   },
   "content/news/2021/02/08/oceneni-451cs.html": {
-    "mtime": 1792434588.6232996,
-    "seen": 1792436440.8957453,
+    "mtime": 1792510915.2515347,
+    "seen": 1792511145.2068849,
     "ast_hash": "3dadb03726f46742248e6b1a4e0d0506",
     "semantic_hash": ""
   },
   "content/news/2021/03/16/lets-go-eco-456cs.html": {
-    "mtime": 1792434588.6233869,
-    "seen": 1792436440.8957474,
+    "mtime": 1792510915.2516243,
+    "seen": 1792511145.206886,
     "ast_hash": "f4f1a0b7e194f4e151bfe7426a3373e0",
     "semantic_hash": ""
   },
   "content/news/2021/05/08/zoo-dvur-kralove-nad-labem-461cs.html": {
-    "mtime": 1792434588.6234558,
-    "seen": 1792436440.8957498,
+    "mtime": 1792510915.251678,
+    "seen": 1792511145.2068877,
     "ast_hash": "0d66d37c0862fb4037f43d8b3f536a1a",
     "semantic_hash": ""
   },
   "content/news/2021/10/05/skvely-uspech-septimana-mateje-vostrcila-469cs.html": {
-    "mtime": 1792434588.6234918,
-    "seen": 1792436440.8957527,
+    "mtime": 1792510915.251729,
+    "seen": 1792511145.2068887,
     "ast_hash": "d8c54ae4956b1a57d8a8416adbee6d7f",
     "semantic_hash": ""
   },
   "content/news/2021/10/05/srdickove-dny-podzim-2021-468cs.html": {
-    "mtime": 1792434588.6235194,
-    "seen": 1792436440.895755,
+    "mtime": 1792510915.2517562,
+    "seen": 1792511145.2068903,
     "ast_hash": "81b1744ee0f5fd08b37f5da6e7383a9b",
     "semantic_hash": ""
   },
   "content/news/2021/11/03/mesic-laskavosti-472cs.html": {
-    "mtime": 1792434588.6235504,
-    "seen": 1792436440.8957577,
+    "mtime": 1792510915.251783,
+    "seen": 1792511145.2068913,
     "ast_hash": "f05a88c046827bc65129f5d8338d208b",
     "semantic_hash": ""
   },
   "content/news/2022/02/15/odborna-ucebna-kriminalistiky-190cs.html": {
-    "mtime": 1792434588.6235938,
-    "seen": 1792436440.8957605,
+    "mtime": 1792510915.2518122,
+    "seen": 1792511145.2068927,
     "ast_hash": "93e275aefaae2850c0edf7f8304662eb",
     "semantic_hash": ""
   },
   "content/news/2022/03/15/6-vydani-zetka-480cs.html": {
-    "mtime": 1792434588.6236458,
-    "seen": 1792436440.8957632,
+    "mtime": 1792510915.2520604,
+    "seen": 1792511145.206894,
     "ast_hash": "bdbf9544a39fdc2737ca144aa7e78808",
     "semantic_hash": ""
   },
   "content/news/2022/04/29/biologicka-olympiada-2022-486cs.html": {
-    "mtime": 1792434588.6236846,
-    "seen": 1792436440.8957653,
+    "mtime": 1792510915.2521164,
+    "seen": 1792511145.2068949,
     "ast_hash": "a455f05e2a440139e72f4ebd5c6c7bab",
     "semantic_hash": ""
   },
   "content/news/2022/04/30/jste-na-gymnaziu-477cs.html": {
-    "mtime": 1792434588.6236846,
-    "seen": 1792436440.895768,
+    "mtime": 1792510915.2521164,
+    "seen": 1792511145.2068958,
     "ast_hash": "9f2b29dcdec8f6f090ad584303ba13e9",
     "semantic_hash": ""
   },
   "content/news/2022/05/08/bucherwurm-2022-488cs.html": {
-    "mtime": 1792434588.6237566,
-    "seen": 1792436440.8957705,
+    "mtime": 1792510915.252203,
+    "seen": 1792511145.2068973,
     "ast_hash": "21560f36e6fc62cd1f6fb6e5d32d43b8",
     "semantic_hash": ""
   },
   "content/news/2022/05/17/rekultivace-skolniho-pozemku-489cs.html": {
-    "mtime": 1792434588.6237566,
-    "seen": 1792436440.895773,
+    "mtime": 1792510915.252203,
+    "seen": 1792511145.2068985,
     "ast_hash": "5a5b2337220ff032b23ce938526f932a",
     "semantic_hash": ""
   },
   "content/news/2023/01/12/z-ucebny-informatiky-533cs.html": {
-    "mtime": 1792434588.6238945,
-    "seen": 1792436440.8957756,
+    "mtime": 1792510915.2523322,
+    "seen": 1792511145.2068996,
     "ast_hash": "83d36cdb2842030d8eebc06d4bc504c3",
     "semantic_hash": ""
   },
   "content/news/2023/02/01/jazykova-ucebna-411cs.html": {
-    "mtime": 1792434588.6239536,
-    "seen": 1792436440.8957777,
+    "mtime": 1792510915.252411,
+    "seen": 1792511145.206901,
     "ast_hash": "6445b80dbdf987b4a90a3de71f3181ed",
     "semantic_hash": ""
   },
   "content/news/2023/03/01/airsoftova-strelnice-410cs.html": {
-    "mtime": 1792434588.6239982,
-    "seen": 1792436440.89578,
+    "mtime": 1792510915.2524416,
+    "seen": 1792511145.2069023,
     "ast_hash": "a272560da2e438cb2cbebf94dc0ba4cf",
     "semantic_hash": ""
   },
   "content/news/2023/03/23/krajske-kolo-wolkrova-prostejova-505cs.html": {
-    "mtime": 1792434588.6239982,
-    "seen": 1792436440.8957825,
+    "mtime": 1792510915.2524416,
+    "seen": 1792511145.2069035,
     "ast_hash": "ce089870093ff2ca153576eac8599818",
     "semantic_hash": ""
   },
   "content/news/2023/04/03/navsteva-velkoprevora-de-bizemont.html": {
-    "mtime": 1792434588.6240678,
-    "seen": 1792436440.8957844,
+    "mtime": 1792510915.2525375,
+    "seen": 1792511145.2069051,
     "ast_hash": "13360f9d70166d8cc465a5ab06c57927",
     "semantic_hash": ""
   },
   "content/news/2023/04/05/zakovsky-parlament-507cs.html": {
-    "mtime": 1792434588.6240678,
-    "seen": 1792436440.895787,
+    "mtime": 1792510915.2525375,
+    "seen": 1792511145.206906,
     "ast_hash": "744eae3dd6b0835ed3a31c3037b3cb19",
     "semantic_hash": ""
   },
   "content/news/2023/04/13/zajezd-do-anglie-2023-509cs.html": {
-    "mtime": 1792434588.6240678,
-    "seen": 1792436440.8957894,
+    "mtime": 1792510915.2525375,
+    "seen": 1792511145.206907,
     "ast_hash": "ed77e432744894b0252c9dc62bc206cb",
     "semantic_hash": ""
   },
   "content/news/2023/04/19/recyklace-elektrozarizeni-510cs.html": {
-    "mtime": 1792434588.6240678,
-    "seen": 1792436440.8957913,
+    "mtime": 1792510915.2525375,
+    "seen": 1792511145.2069085,
     "ast_hash": "91dd4c669159868de1c18a7c847fd1de",
     "semantic_hash": ""
   },
   "content/news/2023/05/04/bucherwurm-2023-511cs.html": {
-    "mtime": 1792434588.6242142,
-    "seen": 1792436440.8957934,
+    "mtime": 1792510915.2528157,
+    "seen": 1792511145.2069097,
     "ast_hash": "def4488ef3fb8f6945acf03c74b4a973",
     "semantic_hash": ""
   },
   "content/news/2023/05/09/biologicka-olympiada-512cs.html": {
-    "mtime": 1792434588.6242142,
-    "seen": 1792436440.895796,
+    "mtime": 1792510915.2528157,
+    "seen": 1792511145.2069106,
     "ast_hash": "296e6d78b71d61c913bc779906665e78",
     "semantic_hash": ""
   },
   "content/news/2023/08/01/nase-skola-vam-nabizi-392cs.html": {
-    "mtime": 1792434588.6242883,
-    "seen": 1792436440.895798,
+    "mtime": 1792510915.2529194,
+    "seen": 1792511145.206912,
     "ast_hash": "90a447b00399c6f9c9bd257b33a2697d",
     "semantic_hash": ""
   },
   "content/news/2024/01/12/soutez-o-nejlepsi-bunku-519cs.html": {
-    "mtime": 1792434588.6243377,
-    "seen": 1792436440.8958,
+    "mtime": 1792510915.2529562,
+    "seen": 1792511145.2069132,
     "ast_hash": "dba619206cfaeb7954f944b186aa712e",
     "semantic_hash": ""
   },
   "content/news/2024/03/12/prakticke-cviceni-z-kriminalistiky-206cs.html": {
-    "mtime": 1792434588.6243966,
-    "seen": 1792436440.8958023,
+    "mtime": 1792510915.2530015,
+    "seen": 1792511145.2069147,
     "ast_hash": "f4bc082584842e4cbf10e56d9ad65fcd",
     "semantic_hash": ""
   },
   "content/news/2024/04/11/sebeobrana-obrana-proti-nozi-215cs.html": {
-    "mtime": 1792434588.62443,
-    "seen": 1792436440.8958046,
+    "mtime": 1792510915.2530637,
+    "seen": 1792511145.2069159,
     "ast_hash": "c9d8828498f30cf47d3b82f64d3730cf",
     "semantic_hash": ""
   },
   "content/news/2024/04/11/sebeobrana-paka-na-rameno-a-poutani-216cs.html": {
-    "mtime": 1792434588.6244705,
-    "seen": 1792436440.8958073,
+    "mtime": 1792510915.2530973,
+    "seen": 1792511145.206917,
     "ast_hash": "a9e8ab75c062a5632d48472aae7185f6",
     "semantic_hash": ""
   },
   "content/news/2024/04/11/sebeobrana-pomucky-214cs.html": {
-    "mtime": 1792434588.6244705,
-    "seen": 1792436440.8958092,
+    "mtime": 1792510915.2530973,
+    "seen": 1792511145.2069182,
     "ast_hash": "c44edc496379ab3c83455e3cf5faddd8",
     "semantic_hash": ""
   },
   "content/news/2024/09/02/predvanocni-viden-12-25-563cs.html": {
-    "mtime": 1792434588.6245217,
-    "seen": 1792436440.8958113,
+    "mtime": 1792510915.2531528,
+    "seen": 1792511145.2069192,
     "ast_hash": "e3342798357b08d577069fb0dcf93ca7",
     "semantic_hash": ""
   },
   "content/news/2024/09/25/dobrocinna-svacinka-535cs.html": {
-    "mtime": 1792434588.6245217,
-    "seen": 1792436440.8958137,
+    "mtime": 1792510915.2531528,
+    "seen": 1792511145.2069204,
     "ast_hash": "41ce40bfbbf0aec63d47cc1b151f77d8",
     "semantic_hash": ""
   },
   "content/news/2024/10/02/expedice-skotsko-2024-530cs.html": {
-    "mtime": 1792434588.6246006,
-    "seen": 1792436440.895816,
+    "mtime": 1792510915.2534046,
+    "seen": 1792511145.2069216,
     "ast_hash": "0a2a73a33e24906abced35914118b134",
     "semantic_hash": ""
   },
   "content/news/2024/10/07/uvodni-schuzka-zakovskeho-parlamentu-2024-25-531cs.html": {
-    "mtime": 1792434588.6246006,
-    "seen": 1792436440.8958187,
+    "mtime": 1792510915.2534046,
+    "seen": 1792511145.2069228,
     "ast_hash": "07b330ce828cc88575d9160ef72674ef",
     "semantic_hash": ""
   },
   "content/news/2024/11/08/laskavec-2024-532cs.html": {
-    "mtime": 1792434588.6246738,
-    "seen": 1792436440.895821,
+    "mtime": 1792510915.2536561,
+    "seen": 1792511145.2069237,
     "ast_hash": "254d8823efaa18415117f12902e1c005",
     "semantic_hash": ""
   },
   "content/news/2024/11/08/na-strelnici-2022-23-534cs.html": {
-    "mtime": 1792434588.6247017,
-    "seen": 1792436440.8958237,
+    "mtime": 1792510915.253684,
+    "seen": 1792511145.206925,
     "ast_hash": "5e873601adf4fccb2ae1a73c7af95d18",
     "semantic_hash": ""
   },
   "content/news/2024/11/14/nase-absolventka-zabojovala-v-zenskem-hokeji-538cs.html": {
-    "mtime": 1792434588.6247017,
-    "seen": 1792436440.8958259,
+    "mtime": 1792510915.253684,
+    "seen": 1792511145.206926,
     "ast_hash": "93c3a46436fc3138ba1807dbe9e1b902",
     "semantic_hash": ""
   },
   "content/news/2024/11/20/branna-soutez-mise-reminiscence-2024-536cs.html": {
-    "mtime": 1792434588.6247017,
-    "seen": 1792436440.895828,
+    "mtime": 1792510915.253684,
+    "seen": 1792511145.2069275,
     "ast_hash": "47004354d3443f2451e96c66d7e0716b",
     "semantic_hash": ""
   },
   "content/news/2024/11/20/oslavy-17-listopadu-539cs.html": {
-    "mtime": 1792434588.6250072,
-    "seen": 1792436440.8958306,
+    "mtime": 1792510915.2537525,
+    "seen": 1792511145.2069287,
     "ast_hash": "ca0aaa94f8798c2cef920b72394504d5",
     "semantic_hash": ""
   },
   "content/news/2024/11/20/workshop-2024-den-s-policii-ceske-republiky-fyzicke-testy-537cs.html": {
-    "mtime": 1792434588.6250072,
-    "seen": 1792436440.8958328,
+    "mtime": 1792510915.2537525,
+    "seen": 1792511145.20693,
     "ast_hash": "379bec5c108204f1d0dda34c90672814",
     "semantic_hash": ""
   },
   "content/news/2024/12/10/den-lidskych-prav-nebesti-jezdci-540cs.html": {
-    "mtime": 1792434588.6251476,
-    "seen": 1792436440.8958352,
+    "mtime": 1792510915.2538009,
+    "seen": 1792511145.2069309,
     "ast_hash": "4cb64f6755c328167a97306c542eaf45",
     "semantic_hash": ""
   },
   "content/news/2024/12/20/finale-recyklohrani-543cs.html": {
-    "mtime": 1792434588.6251476,
-    "seen": 1792436440.8958378,
+    "mtime": 1792510915.2538009,
+    "seen": 1792511145.206932,
     "ast_hash": "abced5c5fec1ae09abfc1e07cd281e40",
     "semantic_hash": ""
   },
   "content/news/2025/03/10/v-boji-s-long-covid-545cs.html": {
-    "mtime": 1792434588.6252604,
-    "seen": 1792436440.8958402,
+    "mtime": 1792510915.2538958,
+    "seen": 1792511145.2069333,
     "ast_hash": "d386225e2c020b48b57ae1ca53b3c51d",
     "semantic_hash": ""
   },
   "content/news/2025/04/23/studentska-kavarna-548cs.html": {
-    "mtime": 1792434588.6253176,
-    "seen": 1792436440.8958426,
+    "mtime": 1792510915.2539337,
+    "seen": 1792511145.2069345,
     "ast_hash": "d9159308c25c407cfeef9ca816cb7104",
     "semantic_hash": ""
   },
   "content/news/2025/04/23/vojaci-na-gymnaziu-v-ramci-projektu-pokos-547cs.html": {
-    "mtime": 1792434588.6253514,
-    "seen": 1792436440.895845,
+    "mtime": 1792510915.2539577,
+    "seen": 1792511145.206936,
     "ast_hash": "563ff6e1be28017c23b66a3d162d82c4",
     "semantic_hash": ""
   },
   "content/news/2025/06/04/europass-549cs.html": {
-    "mtime": 1792436105.839848,
-    "seen": 1792436440.895847,
+    "mtime": 1792510915.2541447,
+    "seen": 1792511145.2069373,
     "ast_hash": "67ca39ae1c8a3a837a9cf55822380c8f",
     "semantic_hash": ""
   },
   "content/news/2025/09/04/plakatky-z-akci-578cs.html": {
-    "mtime": 1792434588.6254358,
-    "seen": 1792436440.89585,
+    "mtime": 1792510915.254429,
+    "seen": 1792511145.2069385,
     "ast_hash": "41e49adf288411c23c199e874de46882",
     "semantic_hash": ""
   },
   "content/news/2025/09/15/medailonky-absolventu-556cs.html": {
-    "mtime": 1792434588.6254358,
-    "seen": 1792436440.895852,
+    "mtime": 1792510915.254429,
+    "seen": 1792511145.2069397,
     "ast_hash": "607db152650f5d48604cb6798f569e84",
     "semantic_hash": ""
   },
   "content/news/2025/10/06/zajmove-krouzky-pri-skolnim-klubu-2025-26-498cs.html": {
-    "mtime": 1792434588.6255212,
-    "seen": 1792436440.895854,
+    "mtime": 1792510915.2545013,
+    "seen": 1792511145.2069407,
     "ast_hash": "fc713117c62ec8c208ce9c6e1eee4c84",
     "semantic_hash": ""
   },
   "content/news/2025/10/08/25-let-gymnazia-557cs.html": {
-    "mtime": 1792434588.6255212,
-    "seen": 1792436440.8958564,
+    "mtime": 1792510915.2545013,
+    "seen": 1792511145.2069416,
     "ast_hash": "9bfa2ac390e5a503a0bfaeda659c1e60",
     "semantic_hash": ""
   },
   "content/news/2025/10/15/zajezd-do-francie-2025-558cs.html": {
-    "mtime": 1792434588.6255212,
-    "seen": 1792436440.8958592,
+    "mtime": 1792510915.2545013,
+    "seen": 1792511145.2069428,
     "ast_hash": "bc80a091ef632bbeb861b13da346af6d",
     "semantic_hash": ""
   },
   "content/news/2025/11/06/branna-soutez-mise-reminiscence-2025-560cs.html": {
-    "mtime": 1792434588.6256435,
-    "seen": 1792436440.8958614,
+    "mtime": 1792510915.2546022,
+    "seen": 1792511145.2069442,
     "ast_hash": "ccddd61d690fd0a8a123977f8c943905",
     "semantic_hash": ""
   },
   "content/news/2025/11/06/stredoskolsky-atleticky-pohar-559cs.html": {
-    "mtime": 1792434588.6256752,
-    "seen": 1792436440.895864,
+    "mtime": 1792510915.254661,
+    "seen": 1792511145.2069452,
     "ast_hash": "30a1fff1ea369552ccf5a2cc7a3cc556",
     "semantic_hash": ""
   },
   "content/news/2025/12/01/prihlaska-k-maturitni-zkousce-385cs.html": {
-    "mtime": 1792436105.839848,
-    "seen": 1792436440.8958666,
+    "mtime": 1792510915.2546923,
+    "seen": 1792511145.2069464,
     "ast_hash": "b124d44f996e36dc02575831c92710cf",
     "semantic_hash": ""
   },
   "content/news/2025/12/01/slozeni-skolske-rady-323cs.html": {
-    "mtime": 1792436105.843848,
-    "seen": 1792436440.8958693,
+    "mtime": 1792510915.2547188,
+    "seen": 1792511145.2069473,
     "ast_hash": "492bcd5eb319c5d997a7d42525020fb9",
     "semantic_hash": ""
   },
   "content/news/2026/01/01/informace-pro-uchazece-z-ukrajiny-544cs.html": {
-    "mtime": 1792436105.843848,
-    "seen": 1792436440.8958714,
+    "mtime": 1792510915.25475,
+    "seen": 1792511145.2069488,
     "ast_hash": "9ff99a3a601c3300fe90db0b4dad4857",
     "semantic_hash": ""
   },
   "content/news/2026/01/01/skolni-prijimaci-zkouska-pro-uchazece-o-obor-bpc-474cs.html": {
-    "mtime": 1792434588.6258984,
-    "seen": 1792436440.8958738,
+    "mtime": 1792510915.2547855,
+    "seen": 1792511145.2069538,
     "ast_hash": "bb892f3d5870cf2c14359040bce2032b",
     "semantic_hash": ""
   },
   "content/news/2026/01/05/strelecky-vycvik-4-bp-562cs.html": {
-    "mtime": 1792434588.6258984,
-    "seen": 1792436440.8958764,
+    "mtime": 1792510915.2547855,
+    "seen": 1792511145.2069578,
     "ast_hash": "047d5e72afc5d2d71ae5f374e8792295",
     "semantic_hash": ""
   },
   "content/news/2026/01/08/rada-mladsich-568cs.html": {
-    "mtime": 1792434588.6258984,
-    "seen": 1792436440.8958783,
+    "mtime": 1792510915.2547855,
+    "seen": 1792511145.206959,
     "ast_hash": "4b9a7197c5e436fa33e5b3e9f1aefd71",
     "semantic_hash": ""
   },
   "content/news/2026/02/18/lyzarsky-kurz-2026-565cs.html": {
-    "mtime": 1792434588.626006,
-    "seen": 1792436440.895881,
+    "mtime": 1792510915.2550426,
+    "seen": 1792511145.2069604,
     "ast_hash": "df3823fa869bacb6e64a2a789d55ecf4",
     "semantic_hash": ""
   },
   "content/news/2026/03/20/festival-vedy-a-techniky-569cs.html": {
-    "mtime": 1792434588.6260517,
-    "seen": 1792436440.895883,
+    "mtime": 1792510915.2550855,
+    "seen": 1792511145.2069616,
     "ast_hash": "f088f516576187fc16943cb6e5fbdf18",
     "semantic_hash": ""
   },
   "content/news/2026/04/02/odborna-praxe-3-bp-566cs.html": {
-    "mtime": 1792436105.843848,
-    "seen": 1792436440.8958855,
+    "mtime": 1792510915.2551477,
+    "seen": 1792511145.2069626,
     "ast_hash": "6145f0105f794491d6eddffeacef5bcc",
     "semantic_hash": ""
   },
   "content/news/2026/04/07/kriteria-hodnoceni-mz-2026-567cs.html": {
-    "mtime": 1792436105.843848,
-    "seen": 1792436440.8958876,
+    "mtime": 1792510915.2551477,
+    "seen": 1792511145.206964,
     "ast_hash": "4d40a159f3a8849696f2fabe5270f4b1",
     "semantic_hash": ""
   },
   "content/news/2026/04/24/noc-s-andersenem-2026-570cs.html": {
-    "mtime": 1792434588.626099,
-    "seen": 1792436440.8958902,
+    "mtime": 1792510915.2551477,
+    "seen": 1792511145.206965,
     "ast_hash": "88dfe71d8b32c67ae34b0c87c71867a8",
     "semantic_hash": ""
   },
   "content/news/2026/04/27/larischova-vila-572cs.html": {
-    "mtime": 1792434588.626099,
-    "seen": 1792436440.8958921,
+    "mtime": 1792510915.2551477,
+    "seen": 1792511145.206966,
     "ast_hash": "efc744ac67417bde63cb3b8bf3f29028",
     "semantic_hash": ""
   },
   "content/news/2026/06/25/kurz-preziti-ve-zbraslavicich-576cs.html": {
-    "mtime": 1792434588.6266174,
-    "seen": 1792436440.895895,
+    "mtime": 1792510915.2553055,
+    "seen": 1792511145.2069674,
     "ast_hash": "04bc403c6f556ba27583d6e224cf2841",
     "semantic_hash": ""
   },
   "content/news/2026/08/28/prijimaci-rizeni-542cs.html": {
-    "mtime": 1792436105.843848,
-    "seen": 1792436440.8958974,
+    "mtime": 1792510915.2553413,
+    "seen": 1792511145.2069688,
     "ast_hash": "96d11f4bf4f11118810a108e85afd6a4",
     "semantic_hash": ""
   },
   "content/news/2026/08/31/harmonogram-skolniho-roku-2026-27-434cs.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8959005,
+    "mtime": 1792510915.2553413,
+    "seen": 1792511145.2069705,
     "ast_hash": "3653d06a7d61a6dda794fb7fb93f7522",
     "semantic_hash": ""
   },
   "content/news/2026/08/31/maturitni-zkouska-2027-gymnazium-553cs.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8959036,
+    "mtime": 1792510915.2553928,
+    "seen": 1792511145.206972,
     "ast_hash": "cc5c30da378ed74e7a62fa0d12b9e231",
     "semantic_hash": ""
   },
   "content/news/2026/08/31/maturitni-zkouska2027-bezpecnostne-pravni-cinnost-554cs.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.895906,
+    "mtime": 1792510915.2553928,
+    "seen": 1792511145.2069736,
     "ast_hash": "6af4b64c9e6447b7772bb2683410a621",
     "semantic_hash": ""
   },
   "content/news/2026/09/01/informace-o-nabizenych-oborech-408cs.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.895909,
+    "mtime": 1792510915.2555144,
+    "seen": 1792511145.206975,
     "ast_hash": "b9017bf1f73a1ce360325cc2b976177f",
     "semantic_hash": ""
   },
   "content/news/2026/09/03/pozvani-spirituala-577cs.html": {
-    "mtime": 1792434588.6268625,
-    "seen": 1792436440.8959117,
+    "mtime": 1792510915.2555144,
+    "seen": 1792511145.206976,
     "ast_hash": "9bbd849800e24ac428e500564d0d6705",
     "semantic_hash": ""
   },
   "content/news/2026/09/03/slavnostni-zahajeni-skolniho-roku-580cs.html": {
-    "mtime": 1792434588.6269398,
-    "seen": 1792436440.8959146,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.2069776,
     "ast_hash": "a129c5d7ea4e28a1ff070c33954aa0f0",
     "semantic_hash": ""
   },
   "content/news/2026/09/07/odborna-praxe-4bp-552cs.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8959167,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.2069788,
     "ast_hash": "8834e096b30727866a7ba111a5a64700",
     "semantic_hash": ""
   },
   "content/news/2026/09/13/novy-zakovsky-parlament-579cs.html": {
-    "mtime": 1792434588.6269398,
-    "seen": 1792436440.8959193,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.2069798,
     "ast_hash": "66407451ddae93813eb1b129d7b60f78",
     "semantic_hash": ""
   },
   "content/news/2026/09/16/stredoskolsky-atleticky-pohar-581cs.html": {
-    "mtime": 1792434588.6269398,
-    "seen": 1792436440.8959222,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.206981,
     "ast_hash": "d47735ccae88fb501af2a3bfa8da0a76",
     "semantic_hash": ""
   },
   "content/news/2026/09/17/informace-o-studiu-zive-582cs.html": {
-    "mtime": 1792434588.6269398,
-    "seen": 1792436440.8959246,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.206982,
     "ast_hash": "44b48d177ebc25a408772f3fd3217a44",
     "semantic_hash": ""
   },
   "content/news/2026/09/23/podzimni-duchovni-obnova-583cs.html": {
-    "mtime": 1792434588.6269398,
-    "seen": 1792436440.8959267,
+    "mtime": 1792510915.2557452,
+    "seen": 1792511145.206983,
     "ast_hash": "b32ac223415d91616f5c1c0a798529ec",
     "semantic_hash": ""
   },
   "content/news/2026/09/23/seznamovaci-kurz-584cs.html": {
-    "mtime": 1792434588.6271322,
-    "seen": 1792436440.8959293,
+    "mtime": 1792510915.255911,
+    "seen": 1792511145.206984,
     "ast_hash": "fdaa15756a5b0a60bda076ff4181580c",
     "semantic_hash": ""
   },
   "content/news/2026/10/14/cesty-k-vede-a-vyzkumu-585cs.html": {
-    "mtime": 1792434588.627166,
-    "seen": 1792436440.895932,
+    "mtime": 1792510915.255958,
+    "seen": 1792511145.2069852,
     "ast_hash": "5526786c3a51174d9f71278dd1f0ba51",
     "semantic_hash": ""
   },
   "content/news/2026/10/14/finale-souteze-mas-na-to-586cs.html": {
-    "mtime": 1792434588.627197,
-    "seen": 1792436440.8959346,
+    "mtime": 1792510915.2559857,
+    "seen": 1792511145.2069862,
     "ast_hash": "e00629f7e29d6ccec96360969d0da0c3",
     "semantic_hash": ""
   },
   "content/pages/kontakty/index.html": {
-    "mtime": 1792434588.6272337,
-    "seen": 1792436440.8959367,
+    "mtime": 1792510915.2560194,
+    "seen": 1792511145.2069876,
     "ast_hash": "a7353e8451d4cea42fea500513b17566",
     "semantic_hash": ""
   },
   "content/pages/kontakty/kontaktni-informace/index.html": {
-    "mtime": 1792434588.627265,
-    "seen": 1792436440.895939,
+    "mtime": 1792510915.2560475,
+    "seen": 1792511145.2069886,
     "ast_hash": "a721a424371871e17551aa76211ed062",
     "semantic_hash": ""
   },
   "content/pages/kontakty/napiste-nam/index.html": {
-    "mtime": 1792434588.627265,
-    "seen": 1792436440.8959413,
+    "mtime": 1792510915.2560475,
+    "seen": 1792511145.2069898,
     "ast_hash": "1c58e7393eeacb83b003bbc2802db8b5",
     "semantic_hash": ""
   },
   "content/pages/o-skole/absolventi-a-uspechy-1/index.html": {
-    "mtime": 1792434588.627347,
-    "seen": 1792436440.8959439,
+    "mtime": 1792510915.2561517,
+    "seen": 1792511145.206991,
     "ast_hash": "9ea04f14b44338a3b1fd273797be644e",
     "semantic_hash": ""
   },
   "content/pages/o-skole/dokumenty-skoly/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8959463,
+    "mtime": 1792510915.2561517,
+    "seen": 1792511145.2069921,
     "ast_hash": "89667639ef50bf305156ede12c52df5f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/domov-mladeze/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8959491,
+    "mtime": 1792510915.2561517,
+    "seen": 1792511145.206993,
     "ast_hash": "73ae764cb6b22cf0b18e83d19e1b214a",
     "semantic_hash": ""
   },
   "content/pages/o-skole/e-podatelna/index.html": {
-    "mtime": 1792434588.627347,
-    "seen": 1792436440.8959513,
+    "mtime": 1792510915.2561517,
+    "seen": 1792511145.2069945,
     "ast_hash": "932efca5d49c1672558342256421920b",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/3-fairtradeova-kavarna/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959537,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2069955,
     "ast_hash": "2be0b0baba1871352112d5c502a9c5e7",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/cteni-v-ms/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959618,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.206997,
     "ast_hash": "7b87038205199866137f3da521b65cab",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/detska-majalesova-olympiada-2014/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959644,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2069988,
     "ast_hash": "ba2d34e6bdbf4565ca9fe99543147f66",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/diplomy-a-oceneni/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959677,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.207,
     "ast_hash": "6d3a3f7fbeefed4603840269b2e0222f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959706,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070014,
     "ast_hash": "57ae0b5283cfe7cce7c6e27bb4d5142b",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/majales-2014/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959734,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070024,
     "ast_hash": "c295c55812cc0b9964e963634c39c35b",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/majales-2015/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959765,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070038,
     "ast_hash": "462290b240f917f6bb405144e9cd1f38",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/maturitni-ples-2015/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.895979,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.207005,
     "ast_hash": "6a86b3cb7f7d4d4c325dba86ae3136a1",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/prodejni-vystava-zalozek/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959816,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070065,
     "ast_hash": "be4ab0abbcb20f5d80ed121e47115a7e",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/seznamovaci-kurz-2014/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959846,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070076,
     "ast_hash": "6f464c8303e5cb373db35e8576a1874f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/archiv/skolni-budova/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.895987,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.207009,
     "ast_hash": "ef590b56e5ebe4bbe9a93fca7c0b5a22",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/galerie-pozvanek/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959897,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070103,
     "ast_hash": "8f6a6c1b0ec57a7287e11686179789e2",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.895992,
-    "ast_hash": "cb441fd9ea96dfd4f3191cf0fe7ecb8c",
+    "mtime": 1792568613.7368865,
+    "seen": 1792569551.073657,
+    "ast_hash": "37ebd624ec0e0ce02c4ba071f17aa676",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/ucebny/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959944,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070127,
     "ast_hash": "5965ceb66bcaca7da6e29a8becfd034a",
     "semantic_hash": ""
   },
   "content/pages/o-skole/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959966,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070136,
     "ast_hash": "78854d3ca7d073afe078ecc5626d8579",
     "semantic_hash": ""
   },
   "content/pages/o-skole/povinne-informace/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8959987,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070146,
     "ast_hash": "7ca5b7d6d738aa705f1e9a4b0d1e6312",
     "semantic_hash": ""
   },
   "content/pages/o-skole/pro-darce-a-sponzory/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8960013,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.207016,
     "ast_hash": "ef49034f7ff3044278b918ab8df3eb4a",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/index.html": {
-    "mtime": 1792434588.6275082,
-    "seen": 1792436440.8960042,
+    "mtime": 1792510915.2565129,
+    "seen": 1792511145.2070172,
     "ast_hash": "613afdf2180f52aacc0640a09f86dcb7",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu-sablony/2017-18/index.html": {
-    "mtime": 1792434588.6281965,
-    "seen": 1792436440.8960066,
+    "mtime": 1792510915.2576923,
+    "seen": 1792511145.207019,
     "ast_hash": "75b7f10a9ee991e695a19178cff34a33",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu-sablony/2020-21/index.html": {
-    "mtime": 1792434588.6281965,
-    "seen": 1792436440.8960087,
+    "mtime": 1792510915.2576923,
+    "seen": 1792511145.2070203,
     "ast_hash": "9ee494bcbb90d9ac06c233e717dfa6a3",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu-sablony/2022-24/index.html": {
-    "mtime": 1792434588.6281965,
-    "seen": 1792436440.8960106,
+    "mtime": 1792510915.2576923,
+    "seen": 1792511145.2070215,
     "ast_hash": "dcc8775139114e1e350a5d797dda608a",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu-sablony/index.html": {
-    "mtime": 1792434588.6281965,
-    "seen": 1792436440.8960133,
+    "mtime": 1792510915.2576923,
+    "seen": 1792511145.207023,
     "ast_hash": "e469f172b6a0e559fce71a2592173539",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu/anglie-2015/index.html": {
-    "mtime": 1792434588.6286292,
-    "seen": 1792436440.8960156,
+    "mtime": 1792510915.2578113,
+    "seen": 1792511145.2070243,
     "ast_hash": "bc070605508a268b906577b4af2b2c02",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/projekty-eu/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8960176,
+    "mtime": 1792510915.2578113,
+    "seen": 1792511145.2070253,
     "ast_hash": "d98c3e5db84250ae2d301c75b2f80f9f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/adopce-na-dalku/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960204,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070267,
     "ast_hash": "24654fb5b23686c9cf8c512ac9165ecf",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/bila-pastelka/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960228,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.207028,
     "ast_hash": "c2fdee01e6997a61ad00c6eb2424d8c6",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/dalsi-charitativni-akce/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960254,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070293,
     "ast_hash": "8600ed44388b8841dd734a9afd4bd596",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960278,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070305,
     "ast_hash": "17c53bf692679f1513c5cdd26b1836e6",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/srdickove-dny/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960302,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070317,
     "ast_hash": "be9d0a26c317732ca3a4b5bf4f2d9589",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/charitativni-akce/svetluska-1/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960328,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070494,
     "ast_hash": "04f29ec7267f24b4ac4c37ca053b2226",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/ekoskola/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960354,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.207051,
     "ast_hash": "6355ed22958146fdfe7dd9c356c28695",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/etwinning/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960378,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070525,
     "ast_hash": "a560943691dbfda2c30575b91b3ae4d3",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/fyzika-trochu-jinak/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960404,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070537,
     "ast_hash": "58d735f88451c65101d39411060c5906",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.896043,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070546,
     "ast_hash": "3db551a4f906e8bfdf6a1ae07206467a",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/literarni-projekt-bible/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960452,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070558,
     "ast_hash": "4630e314752ffd8d388226ade91d623c",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/maraton-psani-dopisu-1/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.896048,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070572,
     "ast_hash": "5be770af788a79a3b6f816976784a28c",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pamet-naroda/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960505,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070587,
     "ast_hash": "739eecf12feab9f5348525146583aa6f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pribehy-bezpravi-1/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960528,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070603,
     "ast_hash": "a93a88a1c90e33578822d3179de12cc0",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/projekt-krokus/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960555,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070615,
     "ast_hash": "4509e9652b91943ac49cdf91d3422cba",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/index.html": {
-    "mtime": 1792434588.6287212,
-    "seen": 1792436440.8960578,
+    "mtime": 1792510915.257923,
+    "seen": 1792511145.2070625,
     "ast_hash": "a11bb70eab1f68df6c46ab91596090a3",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/modlitebni-pulhodinka/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960605,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.207064,
     "ast_hash": "173dd0714e4e3f1cb8b8c5eb9655b6aa",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-blahoslavenstvim/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960626,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070649,
     "ast_hash": "9faf1a0c8c58932224aaeeadcb2e42f4",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-cirkvi-a-dalsi-cinnost-spirituala/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960655,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070663,
     "ast_hash": "ec0f3984aeb49fea2d4b816f5c5eb847",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-s-desaterem/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.896068,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070675,
     "ast_hash": "699225e71a9495e632b95d7b73baaaae",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/pulhodinky/pulhodinka-se-sv-janem-pavlem-ii/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960705,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070687,
     "ast_hash": "8c5225cffed6926d0a4bd373812da29e",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/putovni-vystavy-zidovskeho-muzea-v-praze/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.896073,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070696,
     "ast_hash": "00a246c9b27946a9f573fd9f275f43c0",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/recyklohrani/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960757,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070713,
     "ast_hash": "0a16a7b8eef58e98950c19a6751dbf53",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/sdruzeni-tereza-tajny-zivot-mesta/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960779,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070727,
     "ast_hash": "78d45ec2e7a55c1273135f4716bb1035",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/soutez-pri-vyuce-biologie/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.89608,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070746,
     "ast_hash": "53428dd0b005d061222d6d3b1a5e29d5",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/studentske-volby-1/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960826,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.207076,
     "ast_hash": "ca0d6c09ff5a3ea4860b757b8f122664",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/tridni-casopisy-1/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.896085,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.207078,
     "ast_hash": "b4edadf426c9867166991c53be13cc15",
     "semantic_hash": ""
   },
   "content/pages/o-skole/projekty/skolni-projekty/zahranicni-vymena/index.html": {
-    "mtime": 1792434588.6294563,
-    "seen": 1792436440.8960874,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070794,
     "ast_hash": "d3c2f81a44cbff60b25643744269e8da",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolni-jidelna/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8960898,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070808,
     "ast_hash": "895a48bcb9ec27e0937d2f4b8ce8c16f",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolni-poradenske-pracoviste/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8961132,
+    "mtime": 1792510915.259208,
+    "seen": 1792511145.2070823,
     "ast_hash": "fc6db62194874da41f035ae11d4e2340",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolni-poradenske-pracoviste/informace-pro-rodice/index.html": {
-    "mtime": 1792436105.847848,
-    "seen": 1792436440.8961177,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070837,
     "ast_hash": "95665eff72b3b25974e97e88683a1b47",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolni-poradenske-pracoviste/minimalni-preventivni-program/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.8961208,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070851,
     "ast_hash": "2c730b3b9b09a3b3b3740fa59a077897",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolni-poradenske-pracoviste/psychologicke-poradenstvi/index.html": {
-    "mtime": 1792434588.630239,
-    "seen": 1792436440.8961236,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070866,
     "ast_hash": "616b733d67e71ce9fc43604b6fc5adf3",
     "semantic_hash": ""
   },
   "content/pages/o-skole/skolska-rada/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.8961267,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070875,
     "ast_hash": "faca359021a409d8536fd1f9acfea069",
     "semantic_hash": ""
   },
   "content/pages/o-skole/spiritual-skoly/index.html": {
-    "mtime": 1792434588.630239,
-    "seen": 1792436440.8961294,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070892,
     "ast_hash": "76daae94fada317a4ddc31e168cd8c6b",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zakladni-informace/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.8961318,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070904,
     "ast_hash": "0735cc6d580ed01c77d6ab2325a83443",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zakovsky-parlament/index.html": {
-    "mtime": 1792434588.630239,
-    "seen": 1792436440.8961344,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070918,
     "ast_hash": "0f65c322a88c501be10ba1a413b72774",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zamestnanci-skoly/index.html": {
-    "mtime": 1792434588.630239,
-    "seen": 1792436440.896137,
+    "mtime": 1792510915.2603087,
+    "seen": 1792511145.2070935,
     "ast_hash": "7cf4e1ce7187caad562a64ed13866a36",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zamestnanci-skoly/pedagogicky-sbor/index.html": {
-    "mtime": 1792434588.6306896,
-    "seen": 1792436440.8961391,
+    "mtime": 1792510915.2611098,
+    "seen": 1792511145.2070954,
     "ast_hash": "1602bab5e47223f2d5d3926b68152b2c",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zamestnanci-skoly/provozni-zamestnanci/index.html": {
-    "mtime": 1792434588.6306896,
-    "seen": 1792436440.8961415,
+    "mtime": 1792510915.2611098,
+    "seen": 1792511145.2070966,
     "ast_hash": "6c73e92aa54eb711e8a839c57a804191",
     "semantic_hash": ""
   },
   "content/pages/o-skole/zamestnanci-skoly/vedeni-skoly/index.html": {
-    "mtime": 1792434588.6306896,
-    "seen": 1792436440.896144,
+    "mtime": 1792510915.2611098,
+    "seen": 1792511145.2070978,
     "ast_hash": "30fd1c18599022096e57ee33d8e9c180",
     "semantic_hash": ""
   },
   "content/pages/pro-zaky-a-rodice/index.html": {
-    "mtime": 1792434588.6306896,
-    "seen": 1792436440.8961458,
+    "mtime": 1792510915.2611098,
+    "seen": 1792511145.2070994,
     "ast_hash": "eded8df646e0bc4c9132c2e0cc75beca",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/index.html": {
-    "mtime": 1792434588.6306896,
-    "seen": 1792436440.8961484,
+    "mtime": 1792510915.2611098,
+    "seen": 1792511145.2071006,
     "ast_hash": "c68604610102260270ec57f29f2459a8",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/index.html": {
-    "mtime": 1792434588.6309192,
-    "seen": 1792436440.896151,
+    "mtime": 1792510915.261411,
+    "seen": 1792511145.207102,
     "ast_hash": "4d6fd647559dc4285a063f4d6fc3c0db",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/projekty-eu/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.896154,
+    "mtime": 1792510915.2614372,
+    "seen": 1792511145.207103,
     "ast_hash": "cc50b1d77b9c8e46d5d5b4c3d4fc3561",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/charitativni-projekty/dalsi/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.896156,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.207104,
     "ast_hash": "5cb34f7ed39c9822f82125c386027e7c",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/charitativni-projekty/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961585,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071056,
     "ast_hash": "486ca19181156c795e314ba94f47632b",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/charitativni-projekty/jeziskova-vnoucata/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961613,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.207107,
     "ast_hash": "94c4947c93232ba8a92d19a751265a8c",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/ekoskola/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961632,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.207109,
     "ast_hash": "c2008f56369960b303fc602e427c69a5",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/etwinning/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961658,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071104,
     "ast_hash": "31d5642980b0bd12f1e855ddbe18bfdb",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961682,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071118,
     "ast_hash": "f557f2e6a0cb39587aa3cbe517ec78b9",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/projektove-dny/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961704,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071133,
     "ast_hash": "a24f0ea80c725edd72c23960956be407",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/recyklohrani/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961728,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071145,
     "ast_hash": "1ef4a4e91103f2d744a077aa07aff52b",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/tridni-casopisy/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961756,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071154,
     "ast_hash": "aa0be1c778aca7f315fb9700250cd165",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/projekty/skolni-projekty/zalozka-do-knihy/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961785,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071168,
     "ast_hash": "ba69d603ea9166a0c3a9881a52ce4285",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/skolni-akce-galerie/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961804,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071178,
     "ast_hash": "a682129d569ea9942ee916f5b3fe652d",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/index.html": {
-    "mtime": 1792434588.630992,
-    "seen": 1792436440.8961833,
+    "mtime": 1792510915.2614892,
+    "seen": 1792511145.2071187,
     "ast_hash": "b8041ceb52ade683ae11cb6b27f70f8e",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/jazykove-souteze-1/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961856,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071202,
     "ast_hash": "191381ad316e6a8f91d8c269073c1575",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/konference/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.896188,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071216,
     "ast_hash": "88d20351e18f7cddca62f074a6af3e5d",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/prirodovedne-souteze/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961902,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.207123,
     "ast_hash": "772ff0184c6ec8bafbb8d81bb08dd30e",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/sportovni-souteze-1/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961926,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071242,
     "ast_hash": "a026776b89f17ca14c9a36dd58b4987f",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/souteze/umelecke-souteze-1/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961952,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071252,
     "ast_hash": "d6554d09c4e149c035ab8ec7447350fa",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/sportovni-akce/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961973,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071269,
     "ast_hash": "f0c50b5b51d6f13c5a305531dbc8b02c",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/studentske-kavarny/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8961997,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071278,
     "ast_hash": "03c8386abff0fde8555fb849a46ab8e7",
     "semantic_hash": ""
   },
   "content/pages/skolni-akce/zahranicni-zajezdy/index.html": {
-    "mtime": 1792434588.6315932,
-    "seen": 1792436440.8962023,
+    "mtime": 1792510915.2621086,
+    "seen": 1792511145.2071288,
     "ast_hash": "c00d6cee7b44dbcfa6e5a729fbf9e6f4",
     "semantic_hash": ""
   },
   "content/pages/studium/europass/index.html": {
-    "mtime": 1792434588.6318753,
-    "seen": 1792436440.8962045,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.20713,
     "ast_hash": "98e76540f1d196c3990a22a824298aa4",
     "semantic_hash": ""
   },
   "content/pages/studium/formulare-ke-stazeni/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.896207,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071311,
     "ast_hash": "fde291e415486731112a29bb08bdd41b",
     "semantic_hash": ""
   },
   "content/pages/studium/harmonogram-skolniho-roku/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.89621,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071323,
     "ast_hash": "fcc8889ffc0fe86868e2444023eeeb41",
     "semantic_hash": ""
   },
   "content/pages/studium/index.html": {
-    "mtime": 1792434588.6318753,
-    "seen": 1792436440.8962128,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071338,
     "ast_hash": "91e48cb6af90aa5b5e4a09c582f6c5fe",
     "semantic_hash": ""
   },
   "content/pages/studium/maturitni-zkouska/index.html": {
-    "mtime": 1792434588.6318753,
-    "seen": 1792436440.896215,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071352,
     "ast_hash": "727874c35cd9e1ae0a53f31692d3e960",
     "semantic_hash": ""
   },
   "content/pages/studium/nepovinne-predmety-a-zajmove-krouzky/index.html": {
-    "mtime": 1792434588.6318753,
-    "seen": 1792436440.8962176,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071369,
     "ast_hash": "dbca8047177fe68ac1268a5df71ff0a9",
     "semantic_hash": ""
   },
   "content/pages/studium/odborna-praxe-bpc/index.html": {
-    "mtime": 1792434588.6318753,
-    "seen": 1792436440.89622,
+    "mtime": 1792510915.2634656,
+    "seen": 1792511145.2071376,
     "ast_hash": "c9ee929396d279e42af18540a282c4df",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/anglicky-jazyk/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.896222,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.207139,
     "ast_hash": "703cd02611931cf46ba823687320c55e",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/biologie/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.8962245,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.2071402,
     "ast_hash": "c88947fc6f5d1b77c618309253f1959e",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/cesky-jazyk-a-literatura/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.8962271,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.207142,
     "ast_hash": "72e913bb1c48bf83e70001667fa127d3",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/dejepis/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.8962297,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.2071433,
     "ast_hash": "f1cdf1c2e0fef5db12de7cf86e228e94",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.896232,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.2071445,
     "ast_hash": "165819af6b61d9a071c32b87d0d89e83",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/latina/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.896234,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.207146,
     "ast_hash": "c5b4fee83a895f5f5dfc377729becae5",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/matematika/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.896237,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.2071471,
     "ast_hash": "1f703b044074e805e55337dd6734d929",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/nemecky-jazyk/index.html": {
-    "mtime": 1792434588.6322596,
-    "seen": 1792436440.8962393,
+    "mtime": 1792510915.2636876,
+    "seen": 1792511145.2071483,
     "ast_hash": "15b3c63ded8fcc95db31d0ae12e3bd38",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/odborne-predmety-bpc/bezpecnostni-a-strelecka-priprava/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962417,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071495,
     "ast_hash": "52cef904822e3d3e0221f1af566c719a",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/odborne-predmety-bpc/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.896244,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.207151,
     "ast_hash": "d540741e1a3fa7c9db2d40a12f8ab8f2",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/odborne-predmety-bpc/kriminalistika-a-kriminologie/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962462,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071521,
     "ast_hash": "84c86448fe240d04cec4c9d0a59e3a18",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/odborne-predmety-bpc/pedagogika-a-psychologie/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962488,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.207153,
     "ast_hash": "832dafcd31325194c132ae732d01bae3",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/odborne-predmety-bpc/sebeobrana/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962517,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071548,
     "ast_hash": "9253579f5762609f3cd667a5207f7632",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/svetova-nabozenstvi/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.896254,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.207156,
     "ast_hash": "92577f2e6fafa0f29d45a6bfe209beb1",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/zaklady-krestanske-kultury/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962562,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071571,
     "ast_hash": "56efbaba1d74298d87f6d869cc805949",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/zaklady-spolecenskych-ved/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962586,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071583,
     "ast_hash": "b762569ad17b31d2fede70916fc2fbbc",
     "semantic_hash": ""
   },
   "content/pages/studium/predmety/zemepis/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.896261,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071595,
     "ast_hash": "69b0121c89fa0ca23377ad27151da209",
     "semantic_hash": ""
   },
   "content/pages/studium/pro-uchazece-1/index.html": {
-    "mtime": 1792436105.8518481,
-    "seen": 1792436440.8962631,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071605,
     "ast_hash": "4fe04d1fd13e5a608d542dce5fc545e5",
     "semantic_hash": ""
   },
   "content/pages/studium/suplovani/index.html": {
-    "mtime": 1792434588.6325252,
-    "seen": 1792436440.8962655,
+    "mtime": 1792510915.264541,
+    "seen": 1792511145.2071617,
     "ast_hash": "84b6a46f7529dbb157033693cde782e7",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/almanach-sexty-2015-16/index.html": {
-    "mtime": 1792436105.855848,
-    "seen": 1792436440.8962681,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071626,
     "ast_hash": "7896046d7222d2863a6b633e0ef179f0",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/dalsi-studentske-prace/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.8962708,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071638,
     "ast_hash": "6817ffae745ddaa33abb2d61de143cbc",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.8962736,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.207165,
     "ast_hash": "85a31ff1f9609c3cba87573a3b3f68df",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/jarka-naghi-ja-a-rumunsko/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.896276,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071662,
     "ast_hash": "2308e75413d9f8043230da6d1f66b0b1",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/m-hrubantova-od-fotografie-k-filmu/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.896278,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.207168,
     "ast_hash": "d894c659b41a75724654fe75829f08a3",
     "semantic_hash": ""
   },
   "content/pages/studium/uspechy-a-aktivity-zaku-i-absolventu/s-rudou-pozarem-nejen-o-hudbe/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.8962805,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071693,
     "ast_hash": "c6572619864d539c46318596426b098c",
     "semantic_hash": ""
   },
   "content/pages/studium/zajimave-odkazy/index.html": {
-    "mtime": 1792434588.6331155,
-    "seen": 1792436440.896283,
-    "ast_hash": "8095d0ba6a18504fd5d79d1a9720dbd7",
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071707,
+    "ast_hash": "2270cd7e84eae533f2ac8e03b8f71d32",
     "semantic_hash": ""
   },
   "content/privacy.html": {
-    "mtime": 1792436105.855848,
-    "seen": 1792436440.8962858,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.2071722,
     "ast_hash": "58f9d77a95c5071bb5170125fdc6d9e5",
     "semantic_hash": ""
   },
   "docs/PLAN.md": {
-    "mtime": 1792434588.633127,
-    "seen": 1792436440.8962884,
+    "mtime": 1792510915.265096,
+    "seen": 1792511145.207173,
     "ast_hash": "1e5cf57727875b4fce8d237192e178ea",
     "semantic_hash": ""
   },
   "docs/brand-compliance.md": {
-    "mtime": 1792434588.634465,
-    "seen": 1792436440.8962908,
+    "mtime": 1792510915.2657933,
+    "seen": 1792511145.207174,
     "ast_hash": "da50ebf302f014330d25d8d1d4b90055",
     "semantic_hash": ""
   },
   "docs/qa-report.md": {
-    "mtime": 1792434588.634465,
-    "seen": 1792436440.8962975,
-    "ast_hash": "c1dc092bc36dff1c4e6b67a8ed659970",
+    "mtime": 1792569530.8796785,
+    "seen": 1792569551.0796502,
+    "ast_hash": "77e58f777da5327783cae78c734cc2bc",
     "semantic_hash": ""
   },
   "docs/source-inventory-2.md": {
-    "mtime": 1792434588.634465,
-    "seen": 1792436440.8963003,
+    "mtime": 1792510915.2657933,
+    "seen": 1792511145.2071784,
     "ast_hash": "9bd3570f4e43d251b70e46e9f0ce14c1",
     "semantic_hash": ""
   },
   "docs/source-inventory.md": {
-    "mtime": 1792434588.634465,
-    "seen": 1792436440.896303,
+    "mtime": 1792510915.2657933,
+    "seen": 1792511145.2071793,
     "ast_hash": "67ccefa6feeebfabf33ae3d992e2c39f",
     "semantic_hash": ""
   },
   "docs/url-map.md": {
-    "mtime": 1792434588.634465,
-    "seen": 1792436440.8963048,
+    "mtime": 1792510915.2657933,
+    "seen": 1792511145.2071807,
     "ast_hash": "81a0df01b5e46c7074347843dcade019",
     "semantic_hash": ""
   },
-  "tools/news-editor.html": {
-    "mtime": 1792436966.8885283,
-    "seen": 1792437047.5437438,
-    "ast_hash": "477813a38be88af6d710caf9603a065e",
-    "semantic_hash": ""
-  },
   "static/img/banner/banner-photo.webp": {
-    "mtime": 1792434588.6537669,
-    "seen": 1792436440.8965614,
+    "mtime": 1792510915.2917755,
+    "seen": 1792511145.2073734,
     "ast_hash": "0ee496630581e239d2229f15622c08dc",
     "semantic_hash": ""
   },
   "static/img/favicon/android-chrome-192x192.png": {
-    "mtime": 1792434588.6538575,
-    "seen": 1792436440.8965638,
+    "mtime": 1792510915.2918944,
+    "seen": 1792511145.2073748,
     "ast_hash": "c4fa58c9b22956c07bc74443c6bf6206",
     "semantic_hash": ""
   },
   "static/img/favicon/apple-touch-icon-180x180.png": {
-    "mtime": 1792434588.6539822,
-    "seen": 1792436440.896566,
+    "mtime": 1792510915.2920287,
+    "seen": 1792511145.2073762,
     "ast_hash": "da0efe9e369a9f377bcb2b4142add930",
     "semantic_hash": ""
   },
   "static/img/favicon/favicon-16x16.png": {
-    "mtime": 1792434588.6539822,
-    "seen": 1792436440.896568,
+    "mtime": 1792510915.2920287,
+    "seen": 1792511145.2073772,
     "ast_hash": "6cbbd016bf87ac5b744e2a620acde8c1",
     "semantic_hash": ""
   },
   "static/img/favicon/favicon-32x32.png": {
-    "mtime": 1792434588.6539822,
-    "seen": 1792436440.8965702,
+    "mtime": 1792510915.2920287,
+    "seen": 1792511145.2073784,
     "ast_hash": "e7b39e37eb288debb4ba72409b921c56",
     "semantic_hash": ""
   },
   "static/img/logo/logo-compact.svg": {
-    "mtime": 1792434588.6539822,
-    "seen": 1792436440.896572,
+    "mtime": 1792510915.2920287,
+    "seen": 1792511145.2073793,
     "ast_hash": "38267daf4d5ec5b4433517024988e090",
     "semantic_hash": ""
   },
   "static/img/logo/logo-mono-black.svg": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.8965747,
+    "mtime": 1792510915.2928343,
+    "seen": 1792511145.2073808,
     "ast_hash": "f9ad834502c1733b0d7107e84d8b6b9b",
     "semantic_hash": ""
   },
   "static/img/logo/logo-primary.svg": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.8965764,
+    "mtime": 1792510915.2928343,
+    "seen": 1792511145.2073822,
     "ast_hash": "721acb1142aa51ae075c81d9a03c8ca7",
     "semantic_hash": ""
   },
   "static/img/logo/logo-red-on-dark.svg": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.8965788,
+    "mtime": 1792510915.2928343,
+    "seen": 1792511145.2073884,
     "ast_hash": "c382484ba03d42926def6866197851b8",
     "semantic_hash": ""
   },
   "static/img/logo/logo-white.svg": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.8965812,
+    "mtime": 1792510915.2928343,
+    "seen": 1792511145.2073913,
     "ast_hash": "dfb090ba8fbd2bfe8955780c124ca5fd",
     "semantic_hash": ""
   },
   "static/img/logo/shield.svg": {
-    "mtime": 1792434588.6546977,
-    "seen": 1792436440.896583,
+    "mtime": 1792510915.2935495,
+    "seen": 1792511145.2073927,
     "ast_hash": "bc279e1286b38b2ea5d9a000bea8822e",
     "semantic_hash": ""
   },
   "static/media/2023/04/Skutec_01-1024x519.jpg": {
-    "mtime": 1792434588.6570373,
-    "seen": 1792436440.8965852,
+    "mtime": 1792510915.6096556,
+    "seen": 1792511145.207394,
     "ast_hash": "2bbf1f7f737dd44a2f50b973703b6702",
     "semantic_hash": ""
   },
   "static/media/2023/04/Skutec_02-1024x768.jpg": {
-    "mtime": 1792434588.657288,
-    "seen": 1792436440.8965874,
+    "mtime": 1792510915.610262,
+    "seen": 1792511145.2073948,
     "ast_hash": "d739af870929be4063aba2e27cbc7ff4",
     "semantic_hash": ""
   },
   "static/media/2023/04/Skutec_03-1024x768.jpg": {
-    "mtime": 1792434588.657288,
-    "seen": 1792436440.8965895,
+    "mtime": 1792510915.610262,
+    "seen": 1792511145.207396,
     "ast_hash": "beb6707eb2b104e525e1370459a00f7b",
     "semantic_hash": ""
   },
   "tools/source/order-lockup-cs.svg": {
-    "mtime": 1792434588.6595044,
-    "seen": 1792436440.8965936,
+    "mtime": 1792510916.6495183,
+    "seen": 1792511145.2073987,
     "ast_hash": "6d78fc4c6f2fa27e4444c689bd605731",
     "semantic_hash": ""
   },
   "static/media/legacy/001a49f8.pdf": {
-    "mtime": 1792436105.859848,
-    "seen": 1792436440.896311,
+    "mtime": 1792510915.610262,
+    "seen": 1792511145.2071855,
     "ast_hash": "83032f4a2a961736637b107075ede116",
     "semantic_hash": ""
   },
   "static/media/legacy/09b89138.pdf": {
-    "mtime": 1792436105.864893,
-    "seen": 1792436440.8963141,
+    "mtime": 1792510915.6116872,
+    "seen": 1792511145.2071865,
     "ast_hash": "6074b93cb962cf7f1edf844dd0d13583",
     "semantic_hash": ""
   },
   "static/media/legacy/0d7cdcc1.pdf": {
-    "mtime": 1792436105.864893,
-    "seen": 1792436440.8963168,
+    "mtime": 1792510915.6116872,
+    "seen": 1792511145.207188,
     "ast_hash": "b7fedce672a6d55a2a96ab16bdacf6d4",
     "semantic_hash": ""
   },
   "static/media/legacy/10541653.pdf": {
-    "mtime": 1792436105.864893,
-    "seen": 1792436440.8963192,
+    "mtime": 1792510915.6135495,
+    "seen": 1792511145.207189,
     "ast_hash": "703dc3eecb35147b0c0718cdef61b491",
     "semantic_hash": ""
   },
   "static/media/legacy/117649d0.pdf": {
-    "mtime": 1792436105.864893,
-    "seen": 1792436440.896322,
+    "mtime": 1792510915.6135495,
+    "seen": 1792511145.2071905,
     "ast_hash": "d8d0b55eaae286c15be43995e843c1d8",
     "semantic_hash": ""
   },
   "static/media/legacy/129c8ae5.pdf": {
-    "mtime": 1792436105.864893,
-    "seen": 1792436440.8963249,
+    "mtime": 1792510915.6175494,
+    "seen": 1792511145.2071922,
     "ast_hash": "0473a82e55cc021960ebaee063519d07",
     "semantic_hash": ""
   },
   "static/media/legacy/1465079d.pdf": {
-    "mtime": 1792436105.871848,
-    "seen": 1792436440.8963275,
+    "mtime": 1792510915.6255496,
+    "seen": 1792511145.2071936,
     "ast_hash": "40e3bd3da8a6e8468b537aa57e8b633d",
     "semantic_hash": ""
   },
   "static/media/legacy/18a7509e.pdf": {
-    "mtime": 1792436105.871848,
-    "seen": 1792436440.8963296,
+    "mtime": 1792510915.6255496,
+    "seen": 1792511145.2071948,
     "ast_hash": "d32a8644a1dd2472dc649ee18d69bfdf",
     "semantic_hash": ""
   },
   "static/media/legacy/2019sj01-volebni-rad-sr-3fe90b9d.pdf": {
-    "mtime": 1792436105.875848,
-    "seen": 1792436440.896332,
+    "mtime": 1792510915.6255496,
+    "seen": 1792511145.2071965,
     "ast_hash": "5c33cd2825d32a93dbe9fff2477b3d35",
     "semantic_hash": ""
   },
   "static/media/legacy/2026sj08-vnitrni-rad-domova-mladeze-uprava-4d1b2108.pdf": {
-    "mtime": 1792436105.875848,
-    "seen": 1792436440.896335,
+    "mtime": 1792510915.6295495,
+    "seen": 1792511145.2071977,
     "ast_hash": "62dfe76ec05f5cf94cfbed54eeb1ad53",
     "semantic_hash": ""
   },
   "static/media/legacy/234b74b8.pdf": {
-    "mtime": 1792436105.875848,
-    "seen": 1792436440.8963368,
+    "mtime": 1792510915.6295495,
+    "seen": 1792511145.2071986,
     "ast_hash": "21fa62b6c96b148ee1d9052b785d4829",
     "semantic_hash": ""
   },
   "static/media/legacy/25508614.pdf": {
-    "mtime": 1792436105.883848,
-    "seen": 1792436440.8963392,
+    "mtime": 1792510915.6335495,
+    "seen": 1792511145.2072,
     "ast_hash": "5b81d8a9d6d40e553ee817d88624a692",
     "semantic_hash": ""
   },
   "static/media/legacy/2d84afe1.pdf": {
-    "mtime": 1792436105.883848,
-    "seen": 1792436440.8963418,
+    "mtime": 1792510915.6375494,
+    "seen": 1792511145.207201,
     "ast_hash": "f024c8c53160d04a267129f9bf0a8d43",
     "semantic_hash": ""
   },
   "static/media/legacy/2ea88f09.pdf": {
-    "mtime": 1792436105.887848,
-    "seen": 1792436440.8963444,
+    "mtime": 1792510915.6375494,
+    "seen": 1792511145.2072022,
     "ast_hash": "3525eb86a9f8d9f63610e06f0793b2a1",
     "semantic_hash": ""
   },
   "static/media/legacy/31df4fbb.pdf": {
-    "mtime": 1792436105.887848,
-    "seen": 1792436440.8963466,
+    "mtime": 1792510915.6455495,
+    "seen": 1792511145.2072036,
     "ast_hash": "68f32392a7ee69c331791b549a8017fd",
     "semantic_hash": ""
   },
   "static/media/legacy/3b39a2b2.pdf": {
-    "mtime": 1792436105.887848,
-    "seen": 1792436440.8963487,
+    "mtime": 1792510915.6455495,
+    "seen": 1792511145.2072046,
     "ast_hash": "8f550a7a52b98a073a31f1373c198473",
     "semantic_hash": ""
   },
   "static/media/legacy/3ee27a0a.pdf": {
-    "mtime": 1792436105.891848,
-    "seen": 1792436440.8963513,
+    "mtime": 1792510915.6495495,
+    "seen": 1792511145.2072058,
     "ast_hash": "6225eb59075f45e4d3264a70b3a67637",
     "semantic_hash": ""
   },
   "static/media/legacy/3f080d2c.pdf": {
-    "mtime": 1792436105.891848,
-    "seen": 1792436440.8963568,
+    "mtime": 1792510915.6495495,
+    "seen": 1792511145.2072074,
     "ast_hash": "6aece67142fff1fb0d945ae1e786e743",
     "semantic_hash": ""
   },
   "static/media/legacy/3ff3ae7f.pdf": {
-    "mtime": 1792436105.891848,
-    "seen": 1792436440.8963592,
+    "mtime": 1792510915.6535494,
+    "seen": 1792511145.2072086,
     "ast_hash": "a809f741543f8e828ff6f9924face0ea",
     "semantic_hash": ""
   },
   "static/media/legacy/4bec8a73.pdf": {
-    "mtime": 1792436105.891848,
-    "seen": 1792436440.8963616,
+    "mtime": 1792510915.6535494,
+    "seen": 1792511145.2072103,
     "ast_hash": "a0fa024c0bf03687f59fa2907f80f15b",
     "semantic_hash": ""
   },
   "static/media/legacy/4e557bf6.pdf": {
-    "mtime": 1792436105.895848,
-    "seen": 1792436440.8963635,
+    "mtime": 1792510915.6535494,
+    "seen": 1792511145.2072113,
     "ast_hash": "5cb7fa9e59741a63836acd89b4e41921",
     "semantic_hash": ""
   },
   "static/media/legacy/51646136.pdf": {
-    "mtime": 1792436105.895848,
-    "seen": 1792436440.896366,
+    "mtime": 1792510915.6535494,
+    "seen": 1792511145.2072124,
     "ast_hash": "2428eb1aea547888634aad2c89b4d590",
     "semantic_hash": ""
   },
   "static/media/legacy/588fe37c.pdf": {
-    "mtime": 1792436105.895848,
-    "seen": 1792436440.8963678,
+    "mtime": 1792510915.6575494,
+    "seen": 1792511145.2072139,
     "ast_hash": "005f52ba37169f4ca7496b9ae78c2b05",
     "semantic_hash": ""
   },
   "static/media/legacy/599ee1de.pdf": {
-    "mtime": 1792436105.895848,
-    "seen": 1792436440.89637,
+    "mtime": 1792510915.6575494,
+    "seen": 1792511145.2072148,
     "ast_hash": "7e95254e5770634a0425f07dcab62935",
     "semantic_hash": ""
   },
   "static/media/legacy/5bb93494.pdf": {
-    "mtime": 1792436105.895848,
-    "seen": 1792436440.8963723,
+    "mtime": 1792510915.6575494,
+    "seen": 1792511145.2072155,
     "ast_hash": "470ff792dd9a2ea24f72e3fc0e7e72b4",
     "semantic_hash": ""
   },
   "static/media/legacy/61fa4b3d.pdf": {
-    "mtime": 1792436105.899848,
-    "seen": 1792436440.8963745,
+    "mtime": 1792510915.6615496,
+    "seen": 1792511145.2072172,
     "ast_hash": "ee695ad9bdb58ac8b4bc9051c550cd56",
     "semantic_hash": ""
   },
   "static/media/legacy/68b92cd8.pdf": {
-    "mtime": 1792436105.903848,
-    "seen": 1792436440.8963766,
+    "mtime": 1792510915.6615496,
+    "seen": 1792511145.2072182,
     "ast_hash": "b100aa4640b0a0326e04241a0126946c",
     "semantic_hash": ""
   },
   "static/media/legacy/69405416.pdf": {
-    "mtime": 1792436105.903848,
-    "seen": 1792436440.896379,
+    "mtime": 1792510915.6655495,
+    "seen": 1792511145.2072191,
     "ast_hash": "e00c44c61e4f2b482b083617ffdb9e00",
     "semantic_hash": ""
   },
   "static/media/legacy/6b0ba3a7.pdf": {
-    "mtime": 1792436105.903848,
-    "seen": 1792436440.896381,
+    "mtime": 1792510915.6655495,
+    "seen": 1792511145.2072206,
     "ast_hash": "629a396c081291d4499a6665d8c95303",
     "semantic_hash": ""
   },
   "static/media/legacy/6eee2e48.pdf": {
-    "mtime": 1792436105.903848,
-    "seen": 1792436440.8963835,
+    "mtime": 1792510915.6695495,
+    "seen": 1792511145.2072215,
     "ast_hash": "dcc15c7a1713c5358cdf75034bc6c8cf",
     "semantic_hash": ""
   },
   "static/media/legacy/7045634f.pdf": {
-    "mtime": 1792436105.903848,
-    "seen": 1792436440.8963854,
+    "mtime": 1792510915.6735494,
+    "seen": 1792511145.2072227,
     "ast_hash": "01204ce58573dcb09b0e9c4da54c43f2",
     "semantic_hash": ""
   },
   "static/media/legacy/70d4153a.pdf": {
-    "mtime": 1792436105.911848,
-    "seen": 1792436440.8963876,
+    "mtime": 1792510915.6815495,
+    "seen": 1792511145.2072237,
     "ast_hash": "0dc732cf9ffa9090ffa6b3f65622fe78",
     "semantic_hash": ""
   },
   "static/media/legacy/738769e6.pdf": {
-    "mtime": 1792436105.911848,
-    "seen": 1792436440.89639,
+    "mtime": 1792510915.6855495,
+    "seen": 1792511145.2072248,
     "ast_hash": "466773533058e44ddb4c059e36244b50",
     "semantic_hash": ""
   },
   "static/media/legacy/76845261.pdf": {
-    "mtime": 1792436105.915848,
-    "seen": 1792436440.896392,
+    "mtime": 1792510915.6895494,
+    "seen": 1792511145.207226,
     "ast_hash": "3c86c874ac77a3b728b92e2895066f55",
     "semantic_hash": ""
   },
   "static/media/legacy/7b2f0c52.pdf": {
-    "mtime": 1792436105.915848,
-    "seen": 1792436440.8963943,
+    "mtime": 1792510915.6975496,
+    "seen": 1792511145.2072275,
     "ast_hash": "5d1eba8f05c0b502d421756b4e97c7c5",
     "semantic_hash": ""
   },
   "static/media/legacy/7c180d98.pdf": {
-    "mtime": 1792436105.915848,
-    "seen": 1792436440.8963964,
+    "mtime": 1792510915.6975496,
+    "seen": 1792511145.2072287,
     "ast_hash": "a254bee157e94c418f6e501e3e9328d9",
     "semantic_hash": ""
   },
   "static/media/legacy/7c520bcd.pdf": {
-    "mtime": 1792436105.931848,
-    "seen": 1792436440.8963983,
+    "mtime": 1792510915.7255495,
+    "seen": 1792511145.2072606,
     "ast_hash": "404e053c04051c496aec80f2ff8c76b6",
     "semantic_hash": ""
   },
   "static/media/legacy/7e1af365.pdf": {
-    "mtime": 1792436105.935848,
-    "seen": 1792436440.896401,
+    "mtime": 1792510915.7255495,
+    "seen": 1792511145.2072644,
     "ast_hash": "b8b108c9271bbbf63705164df9cd1023",
     "semantic_hash": ""
   },
   "static/media/legacy/84e96193.pdf": {
-    "mtime": 1792436105.935848,
-    "seen": 1792436440.8964028,
+    "mtime": 1792510915.7295494,
+    "seen": 1792511145.2072673,
     "ast_hash": "242209097960202b0e825e4e6f603a7b",
     "semantic_hash": ""
   },
   "static/media/legacy/87697093.pdf": {
-    "mtime": 1792436105.935848,
-    "seen": 1792436440.896405,
+    "mtime": 1792510915.7295494,
+    "seen": 1792511145.2072704,
     "ast_hash": "dda27cbe124684d02f9174df86c967e9",
     "semantic_hash": ""
   },
   "static/media/legacy/904ab067.pdf": {
-    "mtime": 1792436105.935848,
-    "seen": 1792436440.896407,
+    "mtime": 1792510915.7375495,
+    "seen": 1792511145.2072735,
     "ast_hash": "6ca51bb0aa8095bb67433759615b6ff6",
     "semantic_hash": ""
   },
   "static/media/legacy/93072815.pdf": {
-    "mtime": 1792436105.939848,
-    "seen": 1792436440.896409,
+    "mtime": 1792510915.7375495,
+    "seen": 1792511145.2072752,
     "ast_hash": "dc0a13f6330c580fa9e1035f85db6295",
     "semantic_hash": ""
   },
   "static/media/legacy/939d94c4.pdf": {
-    "mtime": 1792436105.939848,
-    "seen": 1792436440.8964114,
+    "mtime": 1792510915.7375495,
+    "seen": 1792511145.207277,
     "ast_hash": "2a0c92704beb774e4bcc0e56eb22b569",
     "semantic_hash": ""
   },
   "static/media/legacy/96b9dcb9.pdf": {
-    "mtime": 1792436105.939848,
-    "seen": 1792436440.8964133,
+    "mtime": 1792510915.7415495,
+    "seen": 1792511145.207279,
     "ast_hash": "0ff2d2afbfa99875e7df41586aac0513",
     "semantic_hash": ""
   },
   "static/media/legacy/9afe8198.pdf": {
-    "mtime": 1792436105.9438481,
-    "seen": 1792436440.8964155,
+    "mtime": 1792510915.7495494,
+    "seen": 1792511145.2072802,
     "ast_hash": "7946223c9c86f7f4666dd694961c3d73",
     "semantic_hash": ""
   },
   "static/media/legacy/9c83d734.pdf": {
-    "mtime": 1792436105.9438481,
-    "seen": 1792436440.8964176,
+    "mtime": 1792510915.7535496,
+    "seen": 1792511145.207281,
     "ast_hash": "ec627fc65a0a60cdf0bcd20907584f46",
     "semantic_hash": ""
   },
   "static/media/legacy/a2f6fb8f.pdf": {
-    "mtime": 1792436105.9438481,
-    "seen": 1792436440.8964195,
+    "mtime": 1792510915.7575495,
+    "seen": 1792511145.2072828,
     "ast_hash": "3219a43f41ce9b6e83308545116389a2",
     "semantic_hash": ""
   },
   "static/media/legacy/ae2a2eb3.pdf": {
-    "mtime": 1792436105.947848,
-    "seen": 1792436440.8964217,
+    "mtime": 1792510915.7615495,
+    "seen": 1792511145.207284,
     "ast_hash": "f2303c2ca47d16615504f5144bff38bf",
     "semantic_hash": ""
   },
   "static/media/legacy/af7cb62a.pdf": {
-    "mtime": 1792436105.947848,
-    "seen": 1792436440.8964236,
+    "mtime": 1792510915.7615495,
+    "seen": 1792511145.2072852,
     "ast_hash": "e9ade66eea1d486f7732956747d40c2f",
     "semantic_hash": ""
   },
   "static/media/legacy/afb1528a.pdf": {
-    "mtime": 1792436105.947848,
-    "seen": 1792436440.8964257,
+    "mtime": 1792510915.7655494,
+    "seen": 1792511145.207287,
     "ast_hash": "85133d24d4b3b67718ec87b527b9c27e",
     "semantic_hash": ""
   },
   "static/media/legacy/almanach2-1-b379bc74.pdf": {
-    "mtime": 1792436105.955848,
-    "seen": 1792436440.8964283,
+    "mtime": 1792510915.7895496,
+    "seen": 1792511145.2072885,
     "ast_hash": "65c66cc0ef857c1c344c4d0c95d57cde",
     "semantic_hash": ""
   },
   "static/media/legacy/b96b7905.pdf": {
-    "mtime": 1792436105.955848,
-    "seen": 1792436440.89643,
+    "mtime": 1792510915.7935495,
+    "seen": 1792511145.2072902,
     "ast_hash": "7b7524f60b866ba05fdbf02de4ef134b",
     "semantic_hash": ""
   },
   "static/media/legacy/ba847cf2.pdf": {
-    "mtime": 1792436105.955848,
-    "seen": 1792436440.8964322,
+    "mtime": 1792510915.7935495,
+    "seen": 1792511145.2072914,
     "ast_hash": "0662c99a4bd7ec1a3448c7dec622548f",
     "semantic_hash": ""
   },
   "static/media/legacy/badcf4e6.pdf": {
-    "mtime": 1792436105.955848,
-    "seen": 1792436440.896434,
+    "mtime": 1792510915.7975495,
+    "seen": 1792511145.2072923,
     "ast_hash": "dfdd969168ecca50f1d1a39c29002614",
     "semantic_hash": ""
   },
   "static/media/legacy/bc2adf7c.pdf": {
-    "mtime": 1792436105.955848,
-    "seen": 1792436440.8964367,
+    "mtime": 1792510915.7975495,
+    "seen": 1792511145.2072937,
     "ast_hash": "6614fb2c2e6c3800f41c0d09aa1c1d53",
     "semantic_hash": ""
   },
   "static/media/legacy/bd169bbd.pdf": {
-    "mtime": 1792436105.959848,
-    "seen": 1792436440.896439,
+    "mtime": 1792510915.8095496,
+    "seen": 1792511145.207295,
     "ast_hash": "5b52a9231a6c85e69de83c9f9488bc21",
     "semantic_hash": ""
   },
   "static/media/legacy/bd563c56.pdf": {
-    "mtime": 1792436105.963848,
-    "seen": 1792436440.8964415,
+    "mtime": 1792510915.8135495,
+    "seen": 1792511145.207296,
     "ast_hash": "1a5081c11c5df7a3eb2dfa2d4860a040",
     "semantic_hash": ""
   },
   "static/media/legacy/bf03683e.pdf": {
-    "mtime": 1792436105.963848,
-    "seen": 1792436440.8964434,
+    "mtime": 1792510915.8175495,
+    "seen": 1792511145.2072973,
     "ast_hash": "9502442aee7ebef1aae0b6fc1c0ee0eb",
     "semantic_hash": ""
   },
   "static/media/legacy/c1bea654.pdf": {
-    "mtime": 1792436105.963848,
-    "seen": 1792436440.8964455,
+    "mtime": 1792510915.8175495,
+    "seen": 1792511145.2072983,
     "ast_hash": "3dd306988b9a1e42e4944f4814f85900",
     "semantic_hash": ""
   },
   "static/media/legacy/c5d2fe99.pdf": {
-    "mtime": 1792436105.963848,
-    "seen": 1792436440.8964474,
+    "mtime": 1792510915.8215494,
+    "seen": 1792511145.2072995,
     "ast_hash": "a744cfc36e8fcd42fd3fb1ab2249a888",
     "semantic_hash": ""
   },
   "static/media/legacy/c75418cd.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964496,
+    "mtime": 1792510915.8215494,
+    "seen": 1792511145.207301,
     "ast_hash": "3ebdb7cec17fdc036cd8d2aec833c33e",
     "semantic_hash": ""
   },
   "static/media/legacy/c85ade65.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964512,
+    "mtime": 1792510915.8295496,
+    "seen": 1792511145.207302,
     "ast_hash": "3aa87ebe57c40ca00ec634a6bda75195",
     "semantic_hash": ""
   },
   "static/media/legacy/d78e06ee.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964534,
+    "mtime": 1792510915.9295495,
+    "seen": 1792511145.2073052,
     "ast_hash": "401fbe97e48e94b4a155dcce07120f0b",
     "semantic_hash": ""
   },
   "static/media/legacy/darovaci-smlouva-06fac4b9.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964555,
+    "mtime": 1792510915.9295495,
+    "seen": 1792511145.2073064,
     "ast_hash": "963ce4626e101022ed3de6b1b9da1a07",
     "semantic_hash": ""
   },
   "static/media/legacy/dbbc9e2d.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964574,
+    "mtime": 1792510915.9295495,
+    "seen": 1792511145.2073076,
     "ast_hash": "45bbba77bd1f84b30e2e47567608638c",
     "semantic_hash": ""
   },
   "static/media/legacy/dodatky-bpc-35911aca.pdf": {
-    "mtime": 1792436105.967848,
-    "seen": 1792436440.8964598,
+    "mtime": 1792510915.9295495,
+    "seen": 1792511145.2073092,
     "ast_hash": "f8c669ff4dbdf24acfb6a4ac5da94d98",
     "semantic_hash": ""
   },
   "static/media/legacy/dodatky-gymnazium-7e26b183.pdf": {
-    "mtime": 1792436105.971848,
-    "seen": 1792436440.896462,
+    "mtime": 1792510915.9335494,
+    "seen": 1792511145.2073104,
     "ast_hash": "341c90811eb34722844e6122e6ff6ba7",
     "semantic_hash": ""
   },
   "static/media/legacy/e-download-dc5cc502.pdf": {
-    "mtime": 1792436105.983848,
-    "seen": 1792436440.8964643,
+    "mtime": 1792510915.9575496,
+    "seen": 1792511145.2073119,
     "ast_hash": "85771092a842cb33a1dd410ddda06634",
     "semantic_hash": ""
   },
   "static/media/legacy/e4007198.pdf": {
-    "mtime": 1792436105.983848,
-    "seen": 1792436440.8964665,
+    "mtime": 1792510915.9575496,
+    "seen": 1792511145.207313,
     "ast_hash": "e8e5c982025ceb17c433e346690325c4",
     "semantic_hash": ""
   },
   "static/media/legacy/e534ad48.pdf": {
-    "mtime": 1792436105.987848,
-    "seen": 1792436440.8964686,
+    "mtime": 1792510915.9615495,
+    "seen": 1792511145.2073143,
     "ast_hash": "42bd18db01b103c631b3263a6327cbf6",
     "semantic_hash": ""
   },
   "static/media/legacy/e7f99a08.pdf": {
-    "mtime": 1792436105.991848,
-    "seen": 1792436440.8964708,
+    "mtime": 1792510915.9735496,
+    "seen": 1792511145.2073152,
     "ast_hash": "ec1baba81c80b308e707f4474f88b1d7",
     "semantic_hash": ""
   },
   "static/media/legacy/f3567689.pdf": {
-    "mtime": 1792436105.991848,
-    "seen": 1792436440.896473,
+    "mtime": 1792510915.9775496,
+    "seen": 1792511145.2073164,
     "ast_hash": "a5a7ab3748f2a7f995fb9ae5543f8fd1",
     "semantic_hash": ""
   },
   "static/media/legacy/f92258b9.pdf": {
-    "mtime": 1792436105.991848,
-    "seen": 1792436440.8964748,
+    "mtime": 1792510915.9815495,
+    "seen": 1792511145.2073176,
     "ast_hash": "7fbfc83d2b84f8a908e02cf93bf8081c",
     "semantic_hash": ""
   },
   "static/media/legacy/fe2e912e.pdf": {
-    "mtime": 1792436105.995848,
-    "seen": 1792436440.8964767,
+    "mtime": 1792510915.9935496,
+    "seen": 1792511145.2073188,
     "ast_hash": "3b088c12c3d8ebf56a10abfba0736b25",
     "semantic_hash": ""
   },
   "static/media/legacy/gymnazium-suverenniho-radu-maltezskych-rytiru-ve-skutci-3ad87d3f.pdf": {
-    "mtime": 1792436106.111848,
-    "seen": 1792436440.8964787,
+    "mtime": 1792510916.1295495,
+    "seen": 1792511145.2073197,
     "ast_hash": "c5f31cb3328a7c0f4ae0a03099a539f4",
     "semantic_hash": ""
   },
   "static/media/legacy/harmonogram-bb6e8be9.pdf": {
-    "mtime": 1792436106.111848,
-    "seen": 1792436440.896481,
+    "mtime": 1792510916.1295495,
+    "seen": 1792511145.2073212,
     "ast_hash": "d8d0b55eaae286c15be43995e843c1d8",
     "semantic_hash": ""
   },
   "static/media/legacy/hodnoceni-mz-profil-bpc-5b681a07.pdf": {
-    "mtime": 1792436106.115848,
-    "seen": 1792436440.8964832,
+    "mtime": 1792510916.1375496,
+    "seen": 1792511145.2073221,
     "ast_hash": "10b64cc33a3a6e113240e9a8650563cd",
     "semantic_hash": ""
   },
   "static/media/legacy/hodnoceni-mz-profil-g-269b67b0.pdf": {
-    "mtime": 1792436106.115848,
-    "seen": 1792436440.896485,
+    "mtime": 1792510916.1415496,
+    "seen": 1792511145.2073238,
     "ast_hash": "265c2263a278c70a6782da62bc88e94f",
     "semantic_hash": ""
   },
   "static/media/legacy/isic-822e53af.pdf": {
-    "mtime": 1792436106.131848,
-    "seen": 1792436440.8964875,
+    "mtime": 1792510916.1655495,
+    "seen": 1792511145.207325,
     "ast_hash": "404e053c04051c496aec80f2ff8c76b6",
     "semantic_hash": ""
   },
   "static/media/legacy/minimalni-preventivni-program-2026-27-45ffacd1.pdf": {
-    "mtime": 1792436106.135848,
-    "seen": 1792436440.8964896,
+    "mtime": 1792510916.1695495,
+    "seen": 1792511145.2073267,
     "ast_hash": "8428201aa0ab3502abc41934fdd08e28",
     "semantic_hash": ""
   },
   "static/media/legacy/obecne-narizeni-o-ochrane-osobnich-udaju-146f0461.pdf": {
-    "mtime": 1792436106.139848,
-    "seen": 1792436440.896492,
+    "mtime": 1792510916.1775496,
+    "seen": 1792511145.2073283,
     "ast_hash": "eba091f41a405a3156a967a4fa52cde9",
     "semantic_hash": ""
   },
   "static/media/legacy/pokyny-bpc-c59dcebc.pdf": {
-    "mtime": 1792436106.139848,
-    "seen": 1792436440.8964942,
+    "mtime": 1792510916.1775496,
+    "seen": 1792511145.2073298,
     "ast_hash": "e7c5dd3c9cc57d7642ab3deb6cad463f",
     "semantic_hash": ""
   },
   "static/media/legacy/pokyny-g-e8f644a3.pdf": {
-    "mtime": 1792436106.139848,
-    "seen": 1792436440.896496,
+    "mtime": 1792510916.1815495,
+    "seen": 1792511145.2073307,
     "ast_hash": "0125bbc58c37365c020a2e1409a728b3",
     "semantic_hash": ""
   },
   "static/media/legacy/pravidla-ai-9-25-c04fe3f9.pdf": {
-    "mtime": 1792436106.143848,
-    "seen": 1792436440.8964987,
+    "mtime": 1792510916.1855495,
+    "seen": 1792511145.2073324,
     "ast_hash": "1f74597dc37d4f592470377b6e45b7d3",
     "semantic_hash": ""
   },
   "static/media/legacy/prihlaska-dm-de3d7191.pdf": {
-    "mtime": 1792436106.151848,
-    "seen": 1792436440.8965008,
+    "mtime": 1792510916.1975496,
+    "seen": 1792511145.2073345,
     "ast_hash": "5090cf56bc50ad3cb0c8755ecd3b8368",
     "semantic_hash": ""
   },
   "static/media/legacy/priloha-c.-1-8d1f22fc.pdf": {
-    "mtime": 1792436106.151848,
-    "seen": 1792436440.8965027,
+    "mtime": 1792510916.1975496,
+    "seen": 1792511145.207336,
     "ast_hash": "fb7b5463d54933ff129bf3b09297e5c7",
     "semantic_hash": ""
   },
   "static/media/legacy/protokol-o-prubehu-voleb-0d2972f7.pdf": {
-    "mtime": 1792436106.151848,
-    "seen": 1792436440.8965046,
+    "mtime": 1792510916.2015495,
+    "seen": 1792511145.2073371,
     "ast_hash": "00e07a7bcccef373685cc4e9dd2239e6",
     "semantic_hash": ""
   },
   "static/media/legacy/seznam-doporucene-cetby-k-mzk-2027-119dd0b1.pdf": {
-    "mtime": 1792436106.155848,
-    "seen": 1792436440.8965065,
+    "mtime": 1792510916.2055495,
+    "seen": 1792511145.2073386,
     "ast_hash": "e6bb7932949fa740be58a14b4d632a8b",
     "semantic_hash": ""
   },
   "static/media/legacy/seznam-el.-zdroju-cjl-a970d186.pdf": {
-    "mtime": 1792436106.159848,
-    "seen": 1792436440.8965094,
+    "mtime": 1792510916.2095494,
+    "seen": 1792511145.20734,
     "ast_hash": "03fd6aa3e0a5ed5755aaf332803a72d7",
     "semantic_hash": ""
   },
   "static/media/legacy/skolni-program-proti-sikanovani-1-1bdc26a8.pdf": {
-    "mtime": 1792436106.159848,
-    "seen": 1792436440.8965118,
+    "mtime": 1792510916.2135496,
+    "seen": 1792511145.207342,
     "ast_hash": "b3a95941284fbb2d80ab44e15fb512f2",
     "semantic_hash": ""
   },
   "static/media/legacy/skolni-program-proti-sikanovani-a3938466.pdf": {
-    "mtime": 1792436106.159848,
-    "seen": 1792436440.8965147,
+    "mtime": 1792510916.2135496,
+    "seen": 1792511145.2073433,
     "ast_hash": "b3a95941284fbb2d80ab44e15fb512f2",
     "semantic_hash": ""
   },
   "static/media/legacy/skolni-rad-2026-aktualizace-1.9.2026-7acb83fe.pdf": {
-    "mtime": 1792436106.159848,
-    "seen": 1792436440.8965168,
+    "mtime": 1792510916.2175496,
+    "seen": 1792511145.2073445,
     "ast_hash": "7d458c58bbf90db402a53e0be303d0d7",
     "semantic_hash": ""
   },
   "static/media/legacy/svp-bpc-c259f89c.pdf": {
-    "mtime": 1792436106.163848,
-    "seen": 1792436440.8965192,
+    "mtime": 1792510916.2935495,
+    "seen": 1792511145.207347,
     "ast_hash": "0c3bc9114a89960d541d74c3dac37349",
     "semantic_hash": ""
   },
   "static/media/legacy/svp-gymnazium-skutec-strategie-osobnostniho-rozvoje-021f25aa.pdf": {
-    "mtime": 1792436106.171848,
-    "seen": 1792436440.8965213,
+    "mtime": 1792510916.3055496,
+    "seen": 1792511145.2073486,
     "ast_hash": "110791deb86b7197aad2198b3c2e8502",
     "semantic_hash": ""
   },
   "static/media/legacy/svp-gymnazium-skutec-zv-22477c57.pdf": {
-    "mtime": 1792436106.179848,
-    "seen": 1792436440.896523,
+    "mtime": 1792510916.3215494,
+    "seen": 1792511145.20735,
     "ast_hash": "658b4a4ae86497af052c5b9071129438",
     "semantic_hash": ""
   },
   "static/media/legacy/svp-gymnazium-skutec-zv-informatika-7d77ef32.pdf": {
-    "mtime": 1792436106.1838481,
-    "seen": 1792436440.8965256,
+    "mtime": 1792510916.3255496,
+    "seen": 1792511145.2073514,
     "ast_hash": "7ce5e761b9e41696fafb203b202bca68",
     "semantic_hash": ""
   },
   "static/media/legacy/svp-gymnazum-skutec-zv-informatika-prechodne-obbobi-de5093bf.pdf": {
-    "mtime": 1792436106.1838481,
-    "seen": 1792436440.8965275,
+    "mtime": 1792510916.3295496,
+    "seen": 1792511145.2073529,
     "ast_hash": "a9a6d44fedd3d02da0d4df2f1af1dc45",
     "semantic_hash": ""
   },
   "static/media/legacy/ucebni-plan-bpc-230f2a18.pdf": {
-    "mtime": 1792436106.1838481,
-    "seen": 1792436440.8965297,
+    "mtime": 1792510916.3335495,
+    "seen": 1792511145.2073543,
     "ast_hash": "99a3623285ee2646c9baad78d7fd34e0",
     "semantic_hash": ""
   },
   "static/media/legacy/ucebni-plan-g-27cba6e6.pdf": {
-    "mtime": 1792436106.191848,
-    "seen": 1792436440.8965313,
+    "mtime": 1792510916.3335495,
+    "seen": 1792511145.2073555,
     "ast_hash": "69f95654649fe160899e15a91ddaa0e8",
     "semantic_hash": ""
   },
   "static/media/legacy/vn-vz-publicita-ae04d699.pdf": {
-    "mtime": 1792436106.191848,
-    "seen": 1792436440.8965337,
+    "mtime": 1792510916.3375494,
+    "seen": 1792511145.2073567,
     "ast_hash": "3f417273af1a6718d22e75452642ca18",
     "semantic_hash": ""
   },
   "static/media/legacy/vn-vz-publicita-dfd31ae8.pdf": {
-    "mtime": 1792436106.191848,
-    "seen": 1792436440.896536,
+    "mtime": 1792510916.3375494,
+    "seen": 1792511145.207358,
     "ast_hash": "3f417273af1a6718d22e75452642ca18",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2013-2014-2f9ec0f6.pdf": {
-    "mtime": 1792436106.195848,
-    "seen": 1792436440.8965383,
+    "mtime": 1792510916.3415496,
+    "seen": 1792511145.2073596,
     "ast_hash": "56eab235a69d5a1dd6e2f5a9c0720c30",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2014-2015-8f85cc53.pdf": {
-    "mtime": 1792436106.195848,
-    "seen": 1792436440.8965402,
+    "mtime": 1792510916.3495495,
+    "seen": 1792511145.2073607,
     "ast_hash": "6fae5387ba1c1376c5937a287758d87d",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2015-2016-d78a276b.pdf": {
-    "mtime": 1792436106.199848,
-    "seen": 1792436440.8965425,
+    "mtime": 1792510916.3535495,
+    "seen": 1792511145.2073624,
     "ast_hash": "8ff0aeb8ea5cbf4c8d7e74ebbec00b20",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2016-2017-b57b696e.pdf": {
-    "mtime": 1792436106.2038481,
-    "seen": 1792436440.8965445,
+    "mtime": 1792510916.3575494,
+    "seen": 1792511145.2073636,
     "ast_hash": "9a8585fcdf6f7430ab5ace80f969edb1",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2017-2018-92c20c16.pdf": {
-    "mtime": 1792436106.215848,
-    "seen": 1792436440.8965466,
+    "mtime": 1792510916.3775496,
+    "seen": 1792511145.2073646,
     "ast_hash": "83e7b895728e99e29bda8a453d91e5a5",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2018-2019-e9aa2473.pdf": {
-    "mtime": 1792436106.279848,
-    "seen": 1792436440.8965485,
+    "mtime": 1792510916.4455495,
+    "seen": 1792511145.2073662,
     "ast_hash": "e99e1e42dfe29878b03252d1c2969ce5",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2019-2020-41a09fce.pdf": {
-    "mtime": 1792436106.307848,
-    "seen": 1792436440.896551,
+    "mtime": 1792510916.4815495,
+    "seen": 1792511145.207367,
     "ast_hash": "58be3de816ed7587a7d83f15168ee3c5",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2020-2021-3fd75c26.pdf": {
-    "mtime": 1792436106.343848,
-    "seen": 1792436440.896553,
+    "mtime": 1792510916.5215495,
+    "seen": 1792511145.2073684,
     "ast_hash": "eda1f4e351e2d02b1e59e4bd87eb7e8a",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2021-2022-35ccd7c7.pdf": {
-    "mtime": 1792436106.355848,
-    "seen": 1792436440.896555,
+    "mtime": 1792510916.5375495,
+    "seen": 1792511145.2073698,
     "ast_hash": "11fdd1b86e26820556d78b0f4c1effe0",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2022-2023-a1564f17.pdf": {
-    "mtime": 1792436106.3878481,
-    "seen": 1792436440.8965573,
+    "mtime": 1792510916.5895495,
+    "seen": 1792511145.2073708,
     "ast_hash": "241bee880dc901ab6945ab1ef31ca930",
     "semantic_hash": ""
   },
   "static/media/legacy/vyrocni-zprava-2024-2025-14fdff45.pdf": {
-    "mtime": 1792436106.4238482,
-    "seen": 1792436440.896559,
+    "mtime": 1792510916.6415496,
+    "seen": 1792511145.2073722,
     "ast_hash": "b9cc6f7d4c19af2fa9583f911aa517e5",
     "semantic_hash": ""
   },
   "static/media/legacy/publicita-1339d0dc.jpg": {
-    "mtime": 1792436106.151848,
-    "seen": 1792436440.8965917,
+    "mtime": 1792510916.2015495,
+    "seen": 1792511145.2073977,
     "ast_hash": "39104d74628bd87e444f0d399b21c571",
     "semantic_hash": ""
   },
   "docs/compliance-audit.md": {
-    "mtime": 1792436105.855848,
-    "seen": 1792436440.8962946,
+    "mtime": 1792510915.2657933,
+    "seen": 1792511145.207176,
     "ast_hash": "7d3ced6a365607bacb7292b0044f8a8a",
     "semantic_hash": ""
   },
   "static/js/pdf-worker.js": {
-    "mtime": 1792436754.7594392,
-    "seen": 1792436868.5254092,
+    "mtime": 1792510915.294604,
+    "seen": 1792511145.206621,
     "ast_hash": "c0014bbc2ad279849918218103a0b0e8",
     "semantic_hash": ""
   },
   "static/js/vendor/ghostscript-1.1.0/gs.js": {
-    "mtime": 1792436754.6506307,
-    "seen": 1792436868.525485,
+    "mtime": 1792510915.2952914,
+    "seen": 1792511145.2066286,
     "ast_hash": "a208a62fd258b8f183c3296fd635ed94",
     "semantic_hash": ""
   },
   "static/js/vendor/ghostscript-1.1.0/SOURCE.txt": {
-    "mtime": 1792436754.7619135,
-    "seen": 1792436868.5445187,
+    "mtime": 1792510915.2952914,
+    "seen": 1792511145.2071826,
     "ast_hash": "b01660d16ced1b0e48e9c6be302262d3",
     "semantic_hash": ""
   },
+<<<<<<< HEAD
   "tools/make_og.py": {
     "mtime": 1792573572.9680128,
     "seen": 1792573943.6343646,
@@ -3279,6 +3298,42 @@
     "mtime": 1792573574.5789418,
     "seen": 1792573943.660211,
     "ast_hash": "f381493aa1ce55c2349da012faa37d44",
+=======
+  "static/media/legacy/co-s-nami-muzete-zazit-9223d48d.pdf": {
+    "mtime": 1792510915.9255495,
+    "seen": 1792511145.2073038,
+    "ast_hash": "c5f31cb3328a7c0f4ae0a03099a539f4",
+    "semantic_hash": ""
+  },
+  "static/media/legacy/spiritualni-kabinet-5-c859fdd2.pdf": {
+    "mtime": 1792510916.2855496,
+    "seen": 1792511145.2073457,
+    "ast_hash": "7cb706f6d3dc431d1593d2b999f52972",
+    "semantic_hash": ""
+  },
+  "content/pages/maltezsky-rad/index.html": {
+    "mtime": 1792518304.2258236,
+    "seen": 1792518501.6519673,
+    "ast_hash": "6263a04b510cd5ffa97df7c82dbe31b0",
+    "semantic_hash": ""
+  },
+  "api/rebuild.js": {
+    "mtime": 1792569413.3528395,
+    "seen": 1792569551.0590093,
+    "ast_hash": "794d05efa255693c99cbe1704e32d542",
+    "semantic_hash": ""
+  },
+  "tests/news.local.js": {
+    "mtime": 1792568424.2895122,
+    "seen": 1792569551.0595162,
+    "ast_hash": "7f24ff635e1f5dabc1540bc108ee9170",
+    "semantic_hash": ""
+  },
+  "docs/publishing.md": {
+    "mtime": 1792569498.1303322,
+    "seen": 1792569551.0796454,
+    "ast_hash": "6c7940d085afe0ed178a2d88678988fb",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
     "semantic_hash": ""
   }
 }

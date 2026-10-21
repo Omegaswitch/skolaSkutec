@@ -363,6 +363,10 @@
    "title": "Školní akce",
    "children": [
     {
+     "url": "/udalosti/",
+     "title": "Plán akcí"
+    },
+    {
      "url": "/skolni-akce/skolni-akce-galerie/",
      "title": "Galerie akcí"
     },
@@ -609,6 +613,10 @@
    "title": "Aktuality"
   },
   {
+   "title": "Maltézský řád",
+   "url": "/maltezsky-rad/"
+  },
+  {
    "url": "/kontakty/",
    "title": "Kontakty",
    "children": [
@@ -641,8 +649,16 @@
    "alt": "Návštěva velkopřevora Fra’ Pierra de Bizemont na gymnáziu ve Skutči",
    "caption": "Den učitelů 28. března 2023: velkopřevor Fra’ Pierre de Bizemont na návštěvě školy."
   },
-  "lifePhoto": {"src": "/media/2023/04/Skutec_03-1024x768.jpg", "alt": "Studenti gymnázia s velkopřevorem Fra’ Pierrem de Bizemont ve třídě", "caption": "Studenti s velkopřevorem Fra’ Pierrem de Bizemont, březen 2023."},
-  "orderPhoto": {"src": "/media/2023/04/Skutec_01-1024x519.jpg", "alt": "Velkopřevor Fra’ Pierre de Bizemont s hosty před vchodem do gymnázia", "caption": "Velkopřevor Fra’ Pierre de Bizemont a PhDr. Ursula Czernin při návštěvě gymnázia, březen 2023."},
+  "lifePhoto": {
+   "src": "/media/2023/04/Skutec_03-1024x768.jpg",
+   "alt": "Studenti gymnázia s velkopřevorem Fra’ Pierrem de Bizemont ve třídě",
+   "caption": "Studenti s velkopřevorem Fra’ Pierrem de Bizemont, březen 2023."
+  },
+  "orderPhoto": {
+   "src": "/media/2023/04/Skutec_01-1024x519.jpg",
+   "alt": "Velkopřevor Fra’ Pierre de Bizemont s hosty před vchodem do gymnázia",
+   "caption": "Velkopřevor Fra’ Pierre de Bizemont a PhDr. Ursula Czernin při návštěvě gymnázia, březen 2023."
+  },
   "programmesTitle": "Dva obory s maturitou",
   "programmesText": "Všeobecné gymnázium i odborný obor bezpečnostně právní činnost končí maturitní zkouškou.",
   "programmes": [
@@ -728,5 +744,91 @@
    "approval": "Vyžaduje schválení",
    "summary": "Shrnutí ze stávajícího webu – doplnit původní text"
   }
- }
+ },
+ "links": [
+  {
+   "label": "Platby žáků škole",
+   "text": "Účet pro platby od žáků (školní fond, exkurze, kurzy, kroužky)",
+   "url": "/o-skole/zakladni-informace/"
+  },
+  {
+   "label": "Co s námi můžete zažít",
+   "text": "Přehled akcí a života školy (PDF)",
+   "url": "/media/legacy/co-s-nami-muzete-zazit-9223d48d.pdf"
+  },
+  {
+   "label": "Spirituální kabinet",
+   "text": "Kurz křesťanské meditace a program spirituála (PDF)",
+   "url": "/media/legacy/spiritualni-kabinet-5-c859fdd2.pdf"
+  },
+  {
+   "label": "Nepanikař",
+   "text": "Aplikace první pomoci při psychických obtížích",
+   "url": "https://nepanikar.eu/aplikace-nepanikar/"
+  },
+  {
+   "label": "Metodik prevence na Instagramu",
+   "text": "Informace o primární prevenci",
+   "url": "https://www.instagram.com/gsrmr_metodik_prevence/"
+  },
+  {
+   "label": "ISIC karta",
+   "text": "Mezinárodní studentský průkaz (PDF)",
+   "url": "/media/legacy/isic-822e53af.pdf"
+  },
+  {
+   "label": "Nábor k policii",
+   "text": "Policie České republiky",
+   "url": "https://nabor.policie.gov.cz/"
+  },
+  {
+   "label": "Finance z EU",
+   "text": "Projekty financované z Evropské unie",
+   "url": "/o-skole/projekty/projekty-eu/"
+  },
+  {
+   "label": "Jak pomohli EU a ESF naší obci",
+   "text": "Publicita projektu (PDF)",
+   "url": "/media/legacy/vn-vz-publicita-ae04d699.pdf"
+  },
+  {
+   "label": "EU – energetické úspory",
+   "text": "Publicita projektu (obrázek)",
+   "url": "/media/legacy/publicita-1339d0dc.jpg"
+  }
+ ],
+ "partners": [
+  {
+   "label": "Člověk v tísni",
+   "url": "https://www.clovekvtisni.cz/"
+  },
+  {
+   "label": "ISIC",
+   "url": "https://www.isic.cz/prukazy/prukaz-isic"
+  },
+  {
+   "label": "Spektrum",
+   "url": "https://spektrum-ams.cz/"
+  },
+  {
+   "label": "eTwinning",
+   "url": "https://www.dzs.cz/program/etwinning"
+  },
+  {
+   "label": "EU MŠMT",
+   "url": "/o-skole/projekty/projekty-eu/"
+  },
+  {
+   "label": "Světluška",
+   "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/svetluska-1/"
+  },
+  {
+   "label": "Židovské muzeum v Praze",
+   "url": "https://www.jewishmuseum.cz/"
+  },
+  {
+   "label": "Život dětem",
+   "url": "/o-skole/projekty/skolni-projekty/charitativni-akce/srdickove-dny/"
+  }
+ ]
 }

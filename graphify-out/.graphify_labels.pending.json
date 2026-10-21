@@ -7,7 +7,7 @@
   "5": "el",
   "6": "serve",
   "7": "connectSSE",
-  "8": ".forEach",
+  "8": "news.local.js",
   "9": "Articles",
   "10": "m",
   "11": "news-editor.js",
@@ -23,8 +23,13 @@
   "21": "initGlobalBar",
   "22": "Rt",
   "23": "live.md",
+<<<<<<< HEAD
   "24": "scheduleAcceptCleanup",
   "25": "actOnAgentTarget",
+=======
+  "24": "mountSvelteComponentVariant",
+  "25": "showToast",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
   "26": "re",
   "27": "i",
   "28": "normalizeManualContextText",
@@ -33,6 +38,7 @@
   "31": "news.js",
   "32": "SKILL.md",
   "33": "The Toolkit",
+<<<<<<< HEAD
   "34": ".remove",
   "35": "make_og.py",
   "36": "createLiveBrowserDomHelpers",
@@ -40,18 +46,32 @@
   "38": "N",
   "39": "mountSvelteComponentVariant",
   "40": "c",
+=======
+  "34": "build",
+  "35": ".forEach",
+  "36": "createLiveBrowserDomHelpers",
+  "37": "createLiveBrowserSessionState",
+  "38": "N",
+  "39": "resolveLiveInjectionAnchor",
+  "40": "split",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
   "41": "animate.md",
   "42": "Handle `generate`",
   "43": "Generate Report",
   "44": "New visual work",
   "45": "O škole (menu item without its own URL)",
   "46": "optimize.md",
-  "47": "u",
+  "47": "onAnnotDown",
   "48": "Scan mode (approach C: auto-extract, then confirm descriptive language)",
   "49": "Hardening Dimensions",
   "50": ".getSelection",
+<<<<<<< HEAD
   "51": "doctor.md",
   "52": "positionParamsPanel",
+=======
+  "51": "u",
+  "52": "syncPageChatFocus",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
   "53": "critique.md",
   "54": "Simplify the Design",
   "55": "Studium",
@@ -71,7 +91,7 @@
   "69": "Operate mode depth (and Read notes)",
   "70": "Shape",
   "71": "gymskutec.cz",
-  "72": "make_logo.py",
+  "72": "syncEditBadgeHitProxies",
   "73": "Visualize: Direction Comps & Asset Production",
   "74": "adapt.native.md",
   "75": "Android platform",
@@ -82,11 +102,15 @@
   "80": "Cognitive Load Assessment",
   "81": "Impeccable Finish Reviewer",
   "82": "Impeccable Manual Edit Applier",
+<<<<<<< HEAD
   "83": "logo_viewbox",
+=======
+  "83": ".Cb",
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
   "84": "impeccable",
   "85": "live-browser-ignores.js",
-  "86": "enhance_body",
-  "87": "Page",
+  "86": "render_home",
+  "87": "layout",
   "88": "Diagnostic Scan",
   "89": "gymskutec.cz rebuild: analysis and implementation plan",
   "90": "R",
@@ -106,5 +130,18 @@
   "104": "search.js",
   "105": "site.js",
   "106": "Persuade and Experience",
+<<<<<<< HEAD
   "107": ".disable"
+=======
+  "107": ".canAdd",
+  "108": "typeset.md",
+  "109": "Publishing (news, events, notices, galleries)",
+  "110": "lockup",
+  "111": "N",
+  "112": "page_body",
+  "113": "eb",
+  "114": "pdf-worker.js",
+  "115": "Operate",
+  "116": "rebuild.js"
+>>>>>>> origin/claude/elegant-heisenberg-vcoq5u
 }

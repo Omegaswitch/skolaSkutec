@@ -36,7 +36,7 @@ def local_name(url, data):
 
 
 def main():
-    files = sorted(ROOT.glob("content/**/*.html"))
+    files = sorted(ROOT.glob("content/**/*.html")) + [ROOT / "content" / "site.json"]
     urls = sorted({u for f in files for u in OLD.findall(f.read_text(encoding="utf-8"))})
     print(f"{len(urls)} old file links in {len(files)} content files")
     if "--list" in sys.argv:
