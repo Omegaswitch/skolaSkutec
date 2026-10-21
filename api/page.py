@@ -271,7 +271,8 @@ def render(path):
     html = "text/html; charset=utf-8"
     if path == "/":
         return 200, html, build.render_home()
-    if path == "/feed.xml":
+    if path == "/feed.xml":  # the feed carries the text of the newest posts, which the listing rows leave out
+        build.NEWS = [as_news(r) for r in rest("posts", {"select": "*", "site_id": f"eq.{SITE_ID}", "url": "in.(" + ",".join(f'"{n["url"]}"' for n in news[:30]) + ")", "order": "date.desc", "limit": 30})] if news else []
         return 200, "application/rss+xml; charset=utf-8", build.rss()
     if path == "/sitemap.xml":
         urls = ["/", "/aktuality/"] + [u for u in ("/fotogalerie/", "/udalosti/", "/kalendar/") if is_dynamic(u) and (u != "/fotogalerie/" or hasattr(build, "render_gallery")) and (u != "/udalosti/" or hasattr(build, "render_events_page")) and (u != "/kalendar/" or hasattr(build, "render_calendar"))] + list(build.PAGES) + [n["url"] for n in news]
