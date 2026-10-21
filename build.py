@@ -8,6 +8,7 @@ Same engine as maltezskyrad.cz, lurdy.eu and velkoprevorskypalac.eu, reduced to 
 """
 import html
 import json
+import os
 import re
 import shutil
 import struct
@@ -287,7 +288,9 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
     names, c = SITE["names"], SITE["contact"]
     full_title = f"{title} | {names['site']}" if title != names["site"] else title
     canonical = SITE["baseUrl"] + url
-    og_image = SITE["baseUrl"] + "/img/og.jpg"  # one 1200×630 card for every page: the Order's flag and the school lockup (tools/make_og.py)
+    # one 1200×630 card for every page: the Order's flag and the school lockup (tools/make_og.py). Served from the domain Vercel
+    # serves now (its .vercel.app address until the school's domain moves, then that domain), so shared links show it before launch.
+    og_image = (f"https://{os.environ['VERCEL_PROJECT_PRODUCTION_URL']}" if os.environ.get("VERCEL_PROJECT_PRODUCTION_URL") else SITE["baseUrl"]) + "/img/og.jpg"
     robots = "" if PRODUCTION else '<meta name="robots" content="noindex, nofollow">'
     preload = "".join(f'<link rel="preload" href="/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>' for f in FONTS_PRELOAD) + \
         '<link rel="preload" href="/img/banner/banner-photo.webp" as="image" fetchpriority="high">'
