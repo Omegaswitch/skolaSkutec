@@ -212,7 +212,8 @@
   ],
   "functions": {
     "api/page.py": {
-      "includeFiles": "{build.py,content/**,static/img/**}"
+      "includeFiles": "{build.py,content/**,static/img/**}",
+      "excludeFiles": "{static/media/**,static/js/**,static/fonts/**,dist/**,graphify-out/**,tools/**,docs/**,tests/**,.github/**,*.md,*.pptx}"
     }
   },
   "rewrites": [
