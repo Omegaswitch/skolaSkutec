@@ -60,21 +60,21 @@
     "semantic_hash": ""
   },
   "build.py": {
-    "mtime": 1792437627.9952242,
-    "seen": 1792437709.7777147,
-    "ast_hash": "fdc678a58ac2d457fe61ad27ca616359",
+    "mtime": 1792573756.2165732,
+    "seen": 1792573943.6337643,
+    "ast_hash": "176b6ab7fbc3387a68ab3e6470b86208",
     "semantic_hash": ""
   },
   "check.py": {
-    "mtime": 1792437627.995882,
-    "seen": 1792437709.7777183,
-    "ast_hash": "1c41b7f7dd665c9dba2857c50584bff2",
+    "mtime": 1792573756.217722,
+    "seen": 1792573943.633775,
+    "ast_hash": "c90ac1f5dc9a7a98b1da1b87f93d2e6d",
     "semantic_hash": ""
   },
   "content/site.json": {
-    "mtime": 1792434986.291395,
-    "seen": 1792436440.895251,
-    "ast_hash": "57fb17c8549da47ad2e37620f132bf44",
+    "mtime": 1792573904.9378088,
+    "seen": 1792573943.6337786,
+    "ast_hash": "6f6c1fd4789a38f8d9e477e1ffe4b67c",
     "semantic_hash": ""
   },
   "skills-lock.json": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792437627.9970584,
-    "seen": 1792437709.7801538,
-    "ast_hash": "7b730056a6b6379750909ffc343c973b",
+    "mtime": 1792573916.0011764,
+    "seen": 1792573943.6369202,
+    "ast_hash": "36671b26b381ee10d0a58b6db751add1",
     "semantic_hash": ""
   },
   "content/news/2014/02/13/ekoskola-den-zeme-2013-26cs.html": {
@@ -3267,6 +3267,18 @@
     "mtime": 1792436754.7619135,
     "seen": 1792436868.5445187,
     "ast_hash": "b01660d16ced1b0e48e9c6be302262d3",
+    "semantic_hash": ""
+  },
+  "tools/make_og.py": {
+    "mtime": 1792573572.9680128,
+    "seen": 1792573943.6343646,
+    "ast_hash": "de9800e946c962189d63b3a33ac4a6b0",
+    "semantic_hash": ""
+  },
+  "static/img/og.jpg": {
+    "mtime": 1792573574.5789418,
+    "seen": 1792573943.660211,
+    "ast_hash": "f381493aa1ce55c2349da012faa37d44",
     "semantic_hash": ""
   }
 }

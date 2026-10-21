@@ -27,6 +27,7 @@ CI (`.github/workflows/ci.yml`) runs the build, `check.py` and both tests on eve
 | `static/` | CSS, JS, fonts, brand files (`img/`), media |
 | `static/img/logo/` | School logo variants (see `docs/brand-compliance.md`); regenerate with `tools/make_logo.py` |
 | `tools/migrate_files.py` | Downloads the documents and images still linked on the old site and rewrites the links. **Run before switching the domain.** |
+| `tools/make_og.py` | Builds `static/img/og.jpg`, the 1200×630 link-preview card (Discord, iMessage, Facebook): the Order's flag under a dark veil, the school lockup in white, a red strip. Same layout on all three school sites. |
 | `docs/` | Inventory of the old site, URL map, brand compliance, QA report |
 
 ## Front matter fields
