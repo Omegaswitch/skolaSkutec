@@ -36,3 +36,7 @@ Regenerate with `pip install fonttools && python3 tools/make_logo.py`.
 1. The school logo and its variants (above).
 2. Every page marked "summary", "new" or "approval" in preview builds.
 3. Consent and usage rights for photographs.
+
+## Share card (`static/img/share/og.jpg`)
+
+The preview image when a page is shared (Open Graph / social media), 1200 × 630 px: the official banner photograph of the Order's flag (as in the site header) with the white school logo, and a red rule. Used for every page without its own photograph, the homepage included; it replaces the group photo of pupils, so shared links show no identifiable minors. Source: `tools/source/share-card.html`, rendered with a headless browser. Needs the same approval as the logo.

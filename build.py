@@ -283,6 +283,10 @@ def lockup():
             f'>')
 
 
+# the default share card: the Order flag and the school logo (generated, see docs/brand-compliance.md)
+OG_CARD = f'<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(SITE["names"]["school"])} – Maltézský řád, Česká republika">'
+
+
 def layout(*, url, title, body, description="", image=None, status=None, main_class=""):
     names, c = SITE["names"], SITE["contact"]
     full_title = f"{title} | {names['site']}" if title != names["site"] else title
@@ -321,7 +325,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description or plain(body, 160))}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{og_image}">
+<meta property="og:image" content="{og_image}">{OG_CARD if image == SITE["defaultImage"] else ""}
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
 {ld}
@@ -486,7 +490,7 @@ def render_home():
 </div></section>
 """
     return layout(url="/", title=names["site"], body=body, status=h.get("status"), description=h["description"],
-                  image=photo["src"] if photo else None)
+                  image=None)  # the share card (img/share/og.jpg), not a photo of pupils
 
 
 def section_children_html(url):
