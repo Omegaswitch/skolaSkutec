@@ -364,6 +364,10 @@
    "title": "Školní akce",
    "children": [
     {
+     "url": "/udalosti/",
+     "title": "Plán akcí"
+    },
+    {
      "url": "/skolni-akce/skolni-akce-galerie/",
      "title": "Galerie akcí"
     },

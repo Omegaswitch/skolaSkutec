@@ -51,6 +51,101 @@ def load_news():
 
 PAGES, NEWS = load_pages(), load_news()
 
+# ---------------------------------------------------------------- published content (shared by the Order of Malta sites)
+# Staff publish through /pridat-aktualitu/ (api/news.js). A post marked draft, or dated in the future, is kept in
+# the repository but not built until it is due; a post an admin pinned is shown as a notice on the home page and
+# the news listing; events live in content/events.json; a post with two or more photos is also in the gallery.
+ALL_NEWS = NEWS
+try:
+    from zoneinfo import ZoneInfo
+    BUILD_TIME = datetime.now(ZoneInfo("Europe/Prague")).strftime("%Y-%m-%dT%H:%M")  # Vercel builds in UTC
+except Exception:
+    BUILD_TIME = datetime.now().strftime("%Y-%m-%dT%H:%M")
+NEWS = [n for n in ALL_NEWS if not n.get("draft") and str(n.get("date", ""))[:10] <= BUILD_TIME[:10]]  # a scheduled post goes out on its day
+PINNED = [n for n in NEWS if n.get("pinned")]
+EVENTS_FILE = CONTENT / "events.json"
+EVENTS = sorted(json.loads(EVENTS_FILE.read_text(encoding="utf-8")), key=lambda e: e["start"]) if EVENTS_FILE.exists() else []
+if "MONTHS_SHORT" not in globals():
+    MONTHS_SHORT = ["led", "úno", "bře", "dub", "kvě", "čvn", "čvc", "srp", "zář", "říj", "lis", "pro"]
+
+
+def pinned_html():
+    """The notices an admin pinned, for the home page and the news listing."""
+    return "".join(
+        f'<aside class="pinned" aria-label="Důležité oznámení"><div class="wrap"><p><b>{esc(n["title"])}</b>'
+        f'{" " + esc(n["excerpt"]) if n.get("excerpt") else ""} <a href="{n["url"]}">Více</a></p></div></aside>' for n in PINNED)
+
+
+def photos_of(n):
+    found = ([n["image"]] if n.get("image") else []) + re.findall(r'<img[^>]+src="(/media/[^"]+)"', n.get("body", ""))
+    return list(dict.fromkeys(found))
+
+
+def gallery_posts():
+    return [n for n in NEWS if len(photos_of(n)) >= 2]
+
+
+def gallery_html(items):
+    if not items:
+        return '<p class="empty">Zatím tu nejsou žádné fotografie. Fotogalerii tvoří aktuality se dvěma a více fotografiemi.</p>'
+    cards = "".join(
+        f'<li><a href="{n["url"]}">{img(photos_of(n)[0], "")}<b>{esc(n["title"])}</b>'
+        f'<span>{short_date(n["date"])} · {len(photos_of(n))} fotografií</span></a></li>' for n in items)
+    return f'<ol class="photo-posts">{cards}</ol>'
+
+
+def event_slug(e):
+    return e["url"].strip("/").split("/")[-1] if e.get("url") else re.sub(r"[^a-z0-9]+", "-", e["title"].lower()).strip("-")
+
+
+def event_when(e):
+    a, b = datetime.fromisoformat(e["start"]), datetime.fromisoformat(e["end"])
+    if a.date() == b.date():
+        return short_date(e["start"]) + ("" if e.get("allDay") else f", {a.hour}:{a.minute:02d}")
+    if a.year == b.year:
+        return f"{a.day}. {a.month}. – {b.day}. {b.month}. {b.year}"
+    return f"{short_date(e['start'])} – {short_date(e['end'])}"
+
+
+def events_list(items, time=None, compact=False):
+    rows = []
+    for e in items:
+        d = datetime.fromisoformat(e["start"])
+        desc = "" if compact else plain(e.get("description", ""), 400)
+        when = event_when(e) + (f", {time}" if time else "") + (f" · {e['place']}" if e.get("place") else "")
+        rows.append(f'<li id="{event_slug(e)}"><time datetime="{e["start"][:10]}"><b>{d.day}</b>{MONTHS_SHORT[d.month - 1]} {d.year}</time>'
+                    f'<div><b>{esc(e["title"])}</b><span>{esc(when)}{" · " + esc(desc) if desc else ""}</span></div></li>')
+    return f'<ol class="events">{"".join(rows)}</ol>'
+
+
+def upcoming(limit=4, today=None):
+    today = today or datetime.now().strftime("%Y-%m-%d")
+    return [e for e in EVENTS if e["end"][:10] >= today][:limit]
+
+
+def home_events_band(url):
+    items = upcoming(6)
+    if not items:
+        return ""
+    return f"""<section class="band" aria-labelledby="events-title"><div class="wrap split">
+ <div class="split-head"><h2 id="events-title" class="display-m">Nadcházející akce</h2><p><a class="link-strong" href="{url}">Všechny akce a termíny</a></p></div>
+ {events_list(items, compact=True)}
+</div></section>"""
+
+
+def events_page_html():
+    today = datetime.now().strftime("%Y-%m-%d")
+    future = [e for e in EVENTS if e["end"][:10] >= today]
+    past = [e for e in EVENTS if e["end"][:10] < today and e["start"][:4] >= str(int(today[:4]) - 1)][-24:][::-1]
+    out = ""
+    if future:
+        out += f'<h2>Nadcházející</h2>{events_list(future)}'
+    else:
+        out += '<p class="empty">Na nejbližší dobu zatím nejsou v kalendáři žádné akce.</p>'
+    if past:
+        out += f'<h2>Proběhlo</h2>{events_list(past)}'
+    return out
+
 
 # navigation index: url -> {node, parent, top}
 NAV_INDEX = {}
@@ -259,6 +354,7 @@ def layout(*, url, title, body, description="", image=None, status=None, main_cl
  </div></nav>
 </header>
 <main id="main" class="{main_class}" tabindex="-1">
+{pinned_html() if url in ("/", "/aktuality/") else ""}
 {status_bar}
 {body}
 </main>
@@ -348,6 +444,7 @@ def render_home():
  <div class="section-head section-head--row"><h2 id="news-title" class="display-m">Aktuality</h2><p><a class="link-strong" href="/aktuality/">Všechny aktuality</a></p></div>
  <ol class="cards">{"".join(news_card(n) for n in latest)}</ol>
 </div></section>"""
+    events_band = home_events_band('/udalosti/')
     body = f"""
 <section class="home-open home-open--school" aria-labelledby="home-title"><div class="wrap home-intro">
  <div class="home-intro-main">
@@ -369,6 +466,8 @@ def render_home():
 </div></section>
 
 {news_band}
+
+{events_band}
 
 <section class="band band-grey" aria-labelledby="life-title"><div class="wrap split">
  <div class="split-head"><h2 id="life-title" class="display-m">{esc(h['lifeTitle'])}</h2><p>{esc(h['lifeText'])}</p>{figure(h.get('lifePhoto'))}</div>
@@ -439,6 +538,16 @@ def crumbs_html(url, extra=None):
     return f'<nav class="crumbs" aria-label="Drobečková navigace"><ol>{"".join(items)}</ol></nav>'
 
 
+def page_body(html_text):
+    """The page's text with the placeholders filled in: <div data-gallery></div>, <div data-events></div>."""
+    html_text = enhance_body(html_text).replace('<div data-gallery></div>', gallery_html(gallery_posts()[:48]))
+    m = re.search(r'<div data-events(?:="([^"]*)")?(?: data-time="([^"]*)")?></div>', html_text)
+    if m:
+        items = [e for e in EVENTS if not m.group(1) or e["title"] == m.group(1)]
+        html_text = html_text.replace(m.group(0), events_list(items, time=m.group(2), compact=bool(m.group(1))))
+    return html_text
+
+
 def render_page(p):
     url = p["url"]
     is_section = p.get("section") or bool(NAV_INDEX.get(url, {}).get("node", {}).get("children"))
@@ -459,7 +568,7 @@ def render_page(p):
  <div class="page-main">
   {figure}
   {card}
-  <div class="prose">{enhance_body(p['body'])}</div>
+  <div class="prose">{page_body(p['body'])}</div>
   {special}
   {section_children_html(url) if is_section else ''}
   {source}
@@ -532,6 +641,27 @@ def render_simple(url, title, inner, status=None):
     return layout(url=url, title=title, body=body, status=status, description=plain(inner, 160))
 
 
+def render_gallery():
+    body = f"""
+<div class="wrap">{crumbs_html('/fotogalerie/')}</div>
+<div class="wrap page page--simple"><header class="page-head"><h1 class="display">Fotogalerie</h1>
+ <p class="lead-s">Fotografie ze života školy. Každá aktualita se dvěma a více fotografiemi je tu; klepnutím otevřete celou aktualitu.</p></header>
+ {gallery_html(gallery_posts()[:48])}
+ {'<p class="small">Starší fotografie najdete v aktualitách podle roku: ' + ' · '.join(f'<a href="/aktuality/{y}/">{y}</a>' for y in sorted({n["date"][:4] for n in gallery_posts()[48:]}, reverse=True)) + '.</p>' if len(gallery_posts()) > 48 else ''}
+</div>"""
+    return layout(url="/fotogalerie/", title="Fotogalerie", body=body, status="new", description="Fotogalerie školy: fotografie ze školních akcí a aktualit.")
+
+
+def render_events_page():
+    body = f"""
+<div class="wrap">{crumbs_html('/udalosti/')}</div>
+<div class="wrap page page--simple"><header class="page-head"><h1 class="display">Plán akcí</h1>
+ <p class="lead-s">Akce a termíny školy. Rozvrh, suplování a agendu tříd najdete v <a href="https://gymskutec.bakalari.cz/" rel="noopener">Bakalářích</a>.</p></header>
+ <div class="prose">{events_page_html()}</div>
+</div>"""
+    return layout(url="/udalosti/", title="Plán akcí", body=body, status="new", description="Plán akcí gymnázia ve Skutči: nadcházející a proběhlé akce školy.")
+
+
 def sitemap_html(nodes):
     return "<ul>" + "".join(f'<li><a href="{n["url"]}">{esc(n["title"])}</a>{sitemap_html(n["children"]) if n.get("children") else ""}</li>' for n in nodes) + "</ul>"
 
@@ -562,13 +692,92 @@ NEWS_EDITOR_URL = "/pridat-aktualitu/"
 
 
 def render_news_editor():
-    """Staff page for publishing news (api/news.js); not linked, not indexed, behind a password. Markup as on maltezskyrad.cz."""
-    body = (ROOT / "tools" / "news-editor.html").read_text(encoding="utf-8").replace("{ASSET_VERSION}", ASSET_VERSION)
+    """Staff page for publishing news and events (api/news.js); not linked, not indexed, behind a password."""
+    body = f"""
+<div class="wrap page page--simple ne" id="news-app">
+ <header class="page-head"><h1 class="display">Přidat aktualitu</h1>
+  <p class="lead-s">Aktualita se po zveřejnění objeví na webu v sekci <a href="/aktuality/">Aktuality</a> asi za minutu.</p></header>
+ <noscript><p class="ne-msg ne-msg--error">Formulář potřebuje zapnutý JavaScript.</p></noscript>
+ <form id="ne-login" class="ne-card" hidden>
+  <h2 class="display-s">Přihlášení</h2>
+  <label class="ne-field"><span>Jméno</span><input name="name" autocomplete="username" required></label>
+  <label class="ne-field"><span>Heslo</span><input name="password" type="password" autocomplete="current-password" required></label>
+  <p class="ne-msg" id="ne-login-msg" role="alert" hidden></p>
+  <p><button class="btn" type="submit">Přihlásit se</button></p>
+ </form>
+ <div id="ne-app" hidden>
+ <p class="ne-who">Přihlášen(a): <b id="ne-user"></b> · <button type="button" class="link-btn" id="ne-logout">Odhlásit</button></p>
+ <div class="ne-tabs" role="tablist" aria-label="Co chcete udělat">
+  <button type="button" role="tab" id="ne-tab-new" aria-selected="true" aria-controls="ne-editor">Nová aktualita</button>
+  <button type="button" role="tab" id="ne-tab-list" aria-selected="false" aria-controls="ne-manage">Upravit nebo smazat</button>
+  <button type="button" role="tab" id="ne-tab-events" aria-selected="false" aria-controls="ne-events" hidden>Události</button>
+ </div>
+ <section id="ne-manage" role="tabpanel" aria-labelledby="ne-tab-list" hidden>
+  <label class="ne-field"><span>Hledat aktualitu</span><input id="ne-search" type="search" placeholder="Část titulku nebo rok…"></label>
+  <ul id="ne-list" class="ne-list"></ul>
+  <p class="ne-hint">Nové a upravené aktuality se v seznamu objeví asi za minutu, až se web znovu sestaví. Koncepty a naplánované aktuality jsou označené; smazat lze jen vlastní aktuality (správce všechny).</p>
+  <p class="ne-msg" id="ne-list-msg" role="alert" hidden></p>
+ </section>
+ <section id="ne-events" role="tabpanel" aria-labelledby="ne-tab-events" hidden>
+  <form id="ne-event-form" class="ne-card">
+   <h2 class="display-s">Událost v kalendáři</h2>
+   <div class="ne-editing" id="ne-ev-editing" hidden><p>Upravujete: <b id="ne-ev-editing-title"></b></p><button type="button" class="link-btn" id="ne-ev-cancel">Zrušit úpravy</button></div>
+   <label class="ne-field"><span>Název <i aria-hidden="true">*</i></span><input id="ne-ev-title" maxlength="200" required></label>
+   <div class="ne-row">
+    <label class="ne-field"><span>Začátek <i aria-hidden="true">*</i></span><input id="ne-ev-start" type="datetime-local" required></label>
+    <label class="ne-field"><span>Konec <small>(nepovinné)</small></span><input id="ne-ev-end" type="datetime-local"></label>
+    <label class="ne-check"><input id="ne-ev-allday" type="checkbox"> Celý den</label>
+   </div>
+   <label class="ne-field"><span>Místo <small>(nepovinné)</small></span><input id="ne-ev-place" maxlength="120"></label>
+   <label class="ne-field"><span>Popis <small>(nepovinné; prázdný řádek odděluje odstavce)</small></span><textarea id="ne-ev-desc" rows="4"></textarea></label>
+   <div class="ne-submit"><button class="btn" type="submit" id="ne-ev-save">Přidat událost</button></div>
+  </form>
+  <h2 class="display-s">Události</h2>
+  <ul id="ne-event-list" class="ne-list"></ul>
+  <p class="ne-msg" id="ne-event-msg" role="alert" hidden></p>
+ </section>
+ <form id="ne-editor" role="tabpanel" aria-labelledby="ne-tab-new">
+  <div class="ne-editing" id="ne-editing" hidden><p>Upravujete: <a id="ne-editing-link"></a></p><button type="button" class="link-btn" id="ne-cancel">Zrušit úpravy</button></div>
+  <p class="ne-msg ne-msg--error" id="ne-readonly" hidden>Tuto aktualitu napsal někdo jiný; upravit nebo smazat ji může jen autor nebo správce webu.</p>
+  <p class="ne-msg" id="ne-draft" hidden></p>
+  <label class="ne-field"><span>Titulek <i aria-hidden="true">*</i></span><input id="ne-title" maxlength="200" required></label>
+  <div class="ne-row">
+   <label class="ne-field"><span>Datum a čas zveřejnění</span><input id="ne-date" type="datetime-local" required><small id="ne-date-hint"></small></label>
+   <fieldset class="ne-field"><legend>Kategorie</legend><div id="ne-cats" class="ne-cats"></div></fieldset>
+  </div>
+  <div class="ne-row ne-flags">
+   <label class="ne-check"><input id="ne-draft-flag" type="checkbox"> Koncept <small>(uložit, ale zatím nezveřejnit)</small></label>
+   <label class="ne-check" id="ne-pin-field" hidden><input id="ne-pin" type="checkbox"> Připnout na úvodní stránku <small>(důležité oznámení)</small></label>
+  </div>
+  <div class="ne-field"><span id="ne-text-label">Text <i aria-hidden="true">*</i></span>
+   <div class="ne-text-wrap"><div id="ne-text" class="prose" aria-labelledby="ne-text-label"></div></div>
+   <div id="ne-locked" class="ne-locked" hidden><p class="ne-msg ne-msg--error">Text této starší aktuality obsahuje prvky, které editor neumí (například fotografie s popiskem nebo tabulku). Text proto zůstane beze změny; upravit můžete titulek, datum, kategorie, perex, fotografii a přílohy.</p><div class="prose" id="ne-locked-text"></div></div>
+   <p class="ne-hint" id="ne-text-hint">Nadpis a podnadpis, tučné písmo, kurzíva, seznamy, citace, odkazy a fotografie v textu. Dvě a více fotografií za sebou tvoří mřížku a aktualita se objeví i ve fotogalerii. Písmo a barvy jsou dané vzhledem webu.</p>
+   <p class="ne-msg" id="ne-inline-msg" hidden></p></div>
+  <label class="ne-field"><span>Perex <small>(nepovinné – krátké shrnutí v přehledu aktualit; jinak se vezme začátek textu)</small></span><textarea id="ne-excerpt" rows="2" maxlength="300"></textarea></label>
+  <div class="ne-field"><span>Hlavní fotografie <small>(nepovinné – zobrazí se nad textem; zmenší se před odesláním)</small></span>
+   <label class="btn btn--ghost ne-pick">Vybrat fotografii<input id="ne-photo" type="file" accept="image/jpeg,image/png,image/webp" class="visually-hidden"></label>
+   <ul id="ne-photo-box" class="ne-files ne-photo"></ul></div>
+  <div class="ne-field"><span>Přílohy ke stažení <small>(PDF nebo fotografie, nejvýše 3 MB na soubor; fotografie i větší PDF se před odesláním zmenší přímo v prohlížeči)</small></span>
+   <div class="ne-drop" id="ne-drop"><p>Přetáhněte soubory sem, nebo</p>
+    <label class="btn btn--ghost ne-pick">vyberte soubory<input id="ne-files" type="file" multiple accept="application/pdf,image/jpeg,image/png,image/webp" class="visually-hidden"></label></div>
+   <ul id="ne-file-list" class="ne-files"></ul>
+   <p class="ne-hint">PDF zmenšuje Ghostscript (licence AGPL) spuštěný v tomto prohlížeči; soubor nikam jinam neodchází. <a href="/js/vendor/ghostscript-1.1.0/SOURCE.txt">Zdroj a licence</a>.</p></div>
+  <div class="ne-submit"><button class="btn" type="submit" id="ne-publish">Zveřejnit</button>
+   <p class="ne-msg" id="ne-msg" role="alert" hidden></p></div>
+ </form>
+ </div>
+ <div id="ne-done" class="ne-card" hidden role="status">
+  <h2 class="display-s" id="ne-done-title">Zveřejněno</h2>
+  <p id="ne-done-text">Změna bude na webu asi za minutu: <a id="ne-done-link"></a></p>
+  <p><button class="btn" type="button" id="ne-again">Zpět na aktuality</button></p>
+ </div>
+</div>
+<link rel="stylesheet" href="/js/vendor/quill-2.0.3/quill.snow.css">
+<script src="/js/vendor/quill-2.0.3/quill.js"></script>
+<script src="/js/news-editor.js?v={ASSET_VERSION}"></script>"""
     h = layout(url=NEWS_EDITOR_URL, title="Přidat aktualitu", body=body, description="Přidání aktuality na web gymnázia.")
-    return h if not PRODUCTION else h.replace("<head>\n", '<head>\n<meta name="robots" content="noindex, nofollow">\n', 1)
-
-
-# ---------------------------------------------------------------- output
+    return h.replace("<head>\n", '<head>\n<meta name="robots" content="noindex, nofollow">\n', 1) if PRODUCTION else h
 
 
 def write(url, html_text):
@@ -611,9 +820,11 @@ def build():
             write(f"/aktuality/{c}/", render_news_index(items, active=c, url=f"/aktuality/{c}/"))
     for y in sorted({n["date"][:4] for n in NEWS}):
         write(f"/aktuality/{y}/", render_news_index([n for n in NEWS if n["date"].startswith(y)], year=y, url=f"/aktuality/{y}/"))
+    write("/udalosti/", render_events_page())
     write(NEWS_EDITOR_URL, render_news_editor())
     (DIST / NEWS_EDITOR_URL.strip("/") / "news.json").write_text(json.dumps(  # the editor's list of posts to edit or delete
-        [{"path": n["src"], "url": n["url"], "title": n["title"], "date": n["date"][:16], "author": n.get("author")} for n in NEWS],
+        [{"path": n["src"], "url": n["url"], "title": n["title"], "date": n["date"][:16], "author": n.get("author"), "editedBy": n.get("editedBy"),
+          "draft": bool(n.get("draft")), "pinned": bool(n.get("pinned"))} for n in ALL_NEWS],
         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     privacy = (CONTENT / "privacy.html").read_text(encoding="utf-8")
     write("/ochrana-osobnich-udaju/", render_simple("/ochrana-osobnich-udaju/", "Ochrana osobních údajů", privacy, status="approval"))
@@ -627,7 +838,7 @@ def build():
                                                            '<p>Děkujeme, vaši zprávu jsme přijali. Odpovíme co nejdříve.</p><p><a class="link-strong" href="/">Úvodní stránka</a></p>'))
     write("/404.html", render_simple("/404.html", "Stránka nenalezena",
                                      '<p>Tato stránka neexistuje nebo byla přesunuta.</p><p><a class="link-strong" href="/">Úvodní stránka</a> · <a class="link-strong" href="/aktuality/">Aktuality</a> · <a class="link-strong" href="/kontakty/">Kontakty</a></p>'))
-    urls = ["/", "/aktuality/", "/hledat/", "/ochrana-osobnich-udaju/", "/mapa-webu/", "/prohlaseni-o-pristupnosti/"] + list(PAGES) + [n["url"] for n in NEWS]
+    urls = ["/", "/aktuality/", "/udalosti/", "/hledat/", "/ochrana-osobnich-udaju/", "/mapa-webu/", "/prohlaseni-o-pristupnosti/"] + list(PAGES) + [n["url"] for n in NEWS]
     (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
                                       "".join(f"<url><loc>{SITE['baseUrl']}{u}</loc></url>" for u in urls) + "</urlset>", encoding="utf-8")
     (DIST / "robots.txt").write_text(("User-agent: *\nAllow: /\nDisallow: /pridat-aktualitu/\nDisallow: /api/\n\nSitemap: " + SITE["baseUrl"] + "/sitemap.xml\n") if PRODUCTION

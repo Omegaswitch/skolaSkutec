@@ -44,8 +44,9 @@ Vercel environment variables:
 
 | Variable | Value |
 |---|---|
-| `NEWS_USERS` | one `Name:password` per line, one per co-worker |
+| `NEWS_USERS` | one `Name:password` per line (`Name:password:admin` for an administrator, who can edit or delete anyone's posts and pin notices), one per co-worker |
 | `NEWS_SECRET` | a long random string (`openssl rand -base64 32`) |
+| `DEPLOY_HOOK_URL`, `CRON_SECRET` | daily rebuild so scheduled posts and date-based lists go out on their day — see `docs/publishing.md` (also: roles, drafts, events, pinned notices, galleries, local stand-in `node tests/news.local.js`) |
 | `GITHUB_TOKEN` | fine-grained token, repository `Omegaswitch/skolaSkutec` only, Contents: read and write |
 | `RESEND_API_KEY`, `MAIL_TO`, `MAIL_FROM` | contact form e-mail (Resend); `MAIL_TO` defaults to info@gymskutec.cz. Optional `NEWS_NOTIFY` for news e-mails. |
 

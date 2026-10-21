@@ -54,15 +54,15 @@
     "semantic_hash": ""
   },
   "api/news.js": {
-    "mtime": 1792510915.2428942,
-    "seen": 1792511145.2066066,
-    "ast_hash": "c316ace4608098afa9dcdf03de6b9f82",
+    "mtime": 1792569413.3508842,
+    "seen": 1792569551.0590029,
+    "ast_hash": "4cd8b35cd9aab96be68adb03844fd10c",
     "semantic_hash": ""
   },
   "build.py": {
-    "mtime": 1792510915.2428942,
-    "seen": 1792511145.2066083,
-    "ast_hash": "3ccfb65f0cc78e0948bab9ad65810c00",
+    "mtime": 1792569413.3500292,
+    "seen": 1792569551.0590138,
+    "ast_hash": "2e750716d79860d5fc094bc907b9c49c",
     "semantic_hash": ""
   },
   "check.py": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "content/site.json": {
-    "mtime": 1792518443.0841043,
-    "seen": 1792518501.6414351,
-    "ast_hash": "0d65a3a5764d0511c7f0f4208d9a65c1",
+    "mtime": 1792568613.7364302,
+    "seen": 1792569551.0590508,
+    "ast_hash": "07e3159135ed0d770ec206cfd2a90a1a",
     "semantic_hash": ""
   },
   "skills-lock.json": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "static/js/news-editor.js": {
-    "mtime": 1792510915.294604,
-    "seen": 1792511145.2066183,
-    "ast_hash": "6c55e8b5e6764205e038b8508219a950",
+    "mtime": 1792569413.3520591,
+    "seen": 1792569551.059169,
+    "ast_hash": "773a3849a80d279a57563ef56d0922c7",
     "semantic_hash": ""
   },
   "static/js/search.js": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "tests/news.test.js": {
-    "mtime": 1792510916.6452253,
-    "seen": 1792511145.206638,
-    "ast_hash": "690b6d5cc8260eaef31c166bd3b5c42d",
+    "mtime": 1792568424.2893634,
+    "seen": 1792569551.0595205,
+    "ast_hash": "faf4699a55ef2aa867ee0c46c4dbc9dd",
     "semantic_hash": ""
   },
   "tools/make_logo.py": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1792510916.6495183,
-    "seen": 1792511145.2066462,
-    "ast_hash": "2220fc85cf57b7683e4bcd3f3006ad21",
+    "mtime": 1792569413.3527079,
+    "seen": 1792569551.0596678,
+    "ast_hash": "f8fca79d5316da84045318dc148631b9",
     "semantic_hash": ""
   },
   ".claude/skills/impeccable/SKILL.md": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792510915.2426643,
-    "seen": 1792511145.2067187,
-    "ast_hash": "7b730056a6b6379750909ffc343c973b",
+    "mtime": 1792569530.8787148,
+    "seen": 1792569551.0620513,
+    "ast_hash": "b7ba06cfe920ebdb5eaa1ba5d2aa3f60",
     "semantic_hash": ""
   },
   "content/news/2014/02/13/ekoskola-den-zeme-2013-26cs.html": {
@@ -1770,9 +1770,9 @@
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/index.html": {
-    "mtime": 1792510915.2565129,
-    "seen": 1792511145.2070117,
-    "ast_hash": "cb441fd9ea96dfd4f3191cf0fe7ecb8c",
+    "mtime": 1792568613.7368865,
+    "seen": 1792569551.073657,
+    "ast_hash": "37ebd624ec0e0ce02c4ba071f17aa676",
     "semantic_hash": ""
   },
   "content/pages/o-skole/fotogalerie/ucebny/index.html": {
@@ -2448,9 +2448,9 @@
     "semantic_hash": ""
   },
   "docs/qa-report.md": {
-    "mtime": 1792510915.2657933,
-    "seen": 1792511145.2071772,
-    "ast_hash": "c1dc092bc36dff1c4e6b67a8ed659970",
+    "mtime": 1792569530.8796785,
+    "seen": 1792569551.0796502,
+    "ast_hash": "77e58f777da5327783cae78c734cc2bc",
     "semantic_hash": ""
   },
   "docs/source-inventory-2.md": {
@@ -2469,12 +2469,6 @@
     "mtime": 1792510915.2657933,
     "seen": 1792511145.2071807,
     "ast_hash": "81a0df01b5e46c7074347843dcade019",
-    "semantic_hash": ""
-  },
-  "tools/news-editor.html": {
-    "mtime": 1792510916.6455495,
-    "seen": 1792511145.2071836,
-    "ast_hash": "477813a38be88af6d710caf9603a065e",
     "semantic_hash": ""
   },
   "static/img/banner/banner-photo.webp": {
@@ -3285,6 +3279,24 @@
     "mtime": 1792518304.2258236,
     "seen": 1792518501.6519673,
     "ast_hash": "6263a04b510cd5ffa97df7c82dbe31b0",
+    "semantic_hash": ""
+  },
+  "api/rebuild.js": {
+    "mtime": 1792569413.3528395,
+    "seen": 1792569551.0590093,
+    "ast_hash": "794d05efa255693c99cbe1704e32d542",
+    "semantic_hash": ""
+  },
+  "tests/news.local.js": {
+    "mtime": 1792568424.2895122,
+    "seen": 1792569551.0595162,
+    "ast_hash": "7f24ff635e1f5dabc1540bc108ee9170",
+    "semantic_hash": ""
+  },
+  "docs/publishing.md": {
+    "mtime": 1792569498.1303322,
+    "seen": 1792569551.0796454,
+    "ast_hash": "6c7940d085afe0ed178a2d88678988fb",
     "semantic_hash": ""
   }
 }

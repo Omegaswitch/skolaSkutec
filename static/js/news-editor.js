@@ -1,15 +1,15 @@
-// /pridat-aktualitu/: sign in, then write a new post or edit / delete an existing one (api/news.js).
-// Photos are shrunk on this device before upload (1600 px on the long side, WebP or JPEG, which also drops location data
-// from the camera) and PDFs over 1 MB are compressed with Ghostscript (WebAssembly);
-// every file goes up in its own request.
+// /pridat-aktualitu/: sign in, then write a new post or edit / delete an existing one, and keep the calendar of
+// events (api/news.js). Photos are shrunk on this device before upload (1600 px on the long side, WebP or JPEG,
+// which also drops location data from the camera) and PDFs over 1 MB are compressed with Ghostscript (WebAssembly);
+// every file goes up in its own request. The same file runs on every Order of Malta site.
 (function () {
   var root = document.getElementById("news-app");
   if (!root) return;
   var API = "/api/news";
   var $ = function (s) { return root.querySelector(s); };
-  var login = $("#ne-login"), app = $("#ne-app"), editor = $("#ne-editor"), manage = $("#ne-manage"), done = $("#ne-done");
+  var login = $("#ne-login"), app = $("#ne-app"), editor = $("#ne-editor"), manage = $("#ne-manage"), done = $("#ne-done"), events = $("#ne-events");
   // files: {sha, path, url, role, label} for new uploads, {url, role, label, ext} for files already on the site
-  var state = { files: [], blobs: {}, editing: null, names: {} };
+  var state = { files: [], blobs: {}, editing: null, names: {}, defaultCategory: "", role: null, features: {}, user: null, event: null };
   var MAX = 3 * 1024 * 1024, DRAFT = "news-draft", GONE = "news-deleted";
   var PDF_SHRINK_FROM = 1024 * 1024, V = (document.currentScript && document.currentScript.src.split("?")[1]) || "";
 
@@ -30,18 +30,27 @@
     login: "Jméno nebo heslo nesouhlasí.", session: "Přihlášení vypršelo. Přihlaste se prosím znovu.",
     type: "Lze nahrát jen fotografie (JPG, PNG, WebP) a PDF.", size: "Soubor je i po zmenšení příliš velký (nejvýše 3 MB). PDF prosím rozdělte nebo zmenšete jeho obrázky.",
     missing: "Vyplňte prosím titulek, datum a text.", config: "Formulář ještě není nastavený (chybí přístupové údaje na serveru).",
-    gone: "Tato aktualita už neexistuje (možná ji mezitím někdo smazal).",
+    gone: "Tato položka už neexistuje (možná ji mezitím někdo smazal).",
+    forbidden: "Tuto položku může upravit nebo smazat jen ten, kdo ji napsal, nebo správce webu.",
     server: "Něco se nepovedlo na straně serveru. Zkuste to prosím za chvíli znovu.", 0: "Spojení se nezdařilo. Zkontrolujte připojení k internetu."
   };
   var errorOf = function (r) { return ERR[r.body && r.body.error] || ERR[r.status] || ERR.server; };
   function signedOut(r) { if (r && r.status === 401) show(null); }
+  function today() { return now().slice(0, 10); }
+  function now() { var n = new Date(); n.setMinutes(n.getMinutes() - n.getTimezoneOffset()); return n.toISOString().slice(0, 16); }
 
   // ---- sign-in
   function show(user, info) {
     login.hidden = !!user; app.hidden = !user; done.hidden = true;
     if (!user) return;
-    $("#ne-user").textContent = user;
-    if (info) { state.names = info.allCategories || {}; categories(info.categories || []); }
+    state.user = user;
+    if (info) {
+      state.names = info.allCategories || {}; state.defaultCategory = info.defaultCategory || ""; state.role = info.role; state.features = info.features || {};
+      categories(info.categories || []);
+    }
+    $("#ne-user").textContent = user + (state.role === "admin" ? " (správce)" : "");
+    $("#ne-pin-field").hidden = !state.features.pin;
+    $("#ne-tab-events").hidden = !state.features.events;
     setup(); tab("new");
   }
   call().then(function (r) { show(r.body.user, r.body); }, function () { show(null); });
@@ -49,7 +58,7 @@
     e.preventDefault();
     var b = login.querySelector("button"); b.disabled = true; msg($("#ne-login-msg"));
     call({ action: "login", name: login.name.value, password: login.password.value }).then(function (r) {
-      login.password.value = ""; return call().then(function (s) { show(r.body.user, s.body); });
+      login.password.value = ""; show(r.body.user, r.body);
     }, function (r) { msg($("#ne-login-msg"), errorOf(r), "error"); }).then(function () { b.disabled = false; });
   });
   $("#ne-logout").addEventListener("click", function () { call({ action: "logout" }).then(function () { location.reload(); }); });
@@ -71,15 +80,16 @@
     root.querySelectorAll('#ne-cats input').forEach(function (i) { i.checked = list.indexOf(i.value) >= 0; });
   }
 
-  // ---- tabs: write a new post / pick one to edit or delete
+  // ---- tabs: write a new post / pick one to edit or delete / events
   function tab(which) {
-    var list = which === "list";
-    $("#ne-tab-new").setAttribute("aria-selected", String(!list)); $("#ne-tab-list").setAttribute("aria-selected", String(list));
-    editor.hidden = list; manage.hidden = !list;
-    if (list) loadList();
+    ["new", "list", "events"].forEach(function (t) { $("#ne-tab-" + t).setAttribute("aria-selected", String(t === which)); });
+    editor.hidden = which !== "new"; manage.hidden = which !== "list"; events.hidden = which !== "events";
+    if (which === "list") loadList();
+    if (which === "events") loadEvents();
   }
   $("#ne-tab-new").addEventListener("click", function () { if (state.editing) reset(); tab("new"); });
   $("#ne-tab-list").addEventListener("click", function () { tab("list"); });
+  $("#ne-tab-events").addEventListener("click", function () { tab("events"); });
 
   // ---- the list of posts (written by the build; a minute behind after changes)
   var posts = null;
@@ -90,6 +100,7 @@
       .then(function (d) { posts = d; render(); }, function () { msg($("#ne-list-msg"), ERR[0], "error"); });
   }
   function fmt(d) { var p = d.slice(0, 10).split("-"); return +p[2] + ". " + +p[1] + ". " + p[0]; }
+  function mine(p) { return state.role === "admin" || !p.author || p.author === state.user || p.editedBy === state.user; }
   function render() {
     var q = $("#ne-search").value.trim().toLowerCase(), hidden = gone(), ul = $("#ne-list");
     var items = posts.filter(function (p) { return hidden.indexOf(p.path) < 0 && (!q || (p.title + " " + p.date).toLowerCase().indexOf(q) >= 0); });
@@ -100,9 +111,14 @@
         '<button type="button" class="btn btn--ghost ne-small">Upravit</button><button type="button" class="link-btn ne-del">Smazat</button>';
       li.querySelector("time").textContent = fmt(p.date);
       var a = li.querySelector("a"); a.href = p.url; a.textContent = p.title;
-      li.querySelector(".ne-list-meta").textContent = p.author ? "Přidal(a): " + p.author : "";
+      var flags = [];
+      if (p.draft) flags.push("koncept"); else if (p.date.slice(0, 10) > today()) flags.push("naplánováno na " + fmt(p.date));
+      if (p.pinned) flags.push("připnuto na úvodní stránce");
+      li.querySelector(".ne-list-meta").textContent = (p.author ? "Přidal(a): " + p.author : "") + (flags.length ? (p.author ? " · " : "") + flags.join(" · ") : "");
+      if (p.draft || p.date.slice(0, 10) > today()) li.classList.add("ne-unpublished");
       li.querySelector(".btn").onclick = function () { edit(p); };
-      li.querySelector(".ne-del").onclick = function () { del(p, li); };
+      var delBtn = li.querySelector(".ne-del");
+      if (mine(p)) delBtn.onclick = function () { del(p, li); }; else delBtn.remove();
       ul.appendChild(li);
     });
     if (!items.length) ul.innerHTML = '<li class="ne-list-empty">Nic nenalezeno.</li>';
@@ -125,6 +141,7 @@
       msg($("#ne-list-msg"));
       var d = r.body; reset(); state.editing = d;
       $("#ne-title").value = d.title; $("#ne-date").value = d.date; $("#ne-excerpt").value = d.excerpt || "";
+      $("#ne-draft-flag").checked = !!d.draft; $("#ne-pin").checked = !!d.pinned;
       setCategories(d.categories);
       var locked = !d.editable;
       $("#ne-text").parentNode.hidden = locked; $("#ne-locked").hidden = !locked;
@@ -134,17 +151,18 @@
       if (d.image) existingPhoto(d.image);
       d.attachments.forEach(function (a) { attachmentRow({ name: a.label + "." + a.ext.toLowerCase() }, { url: a.url, role: "attachment", label: a.label, ext: a.ext }); });
       $("#ne-editing").hidden = false; var link = $("#ne-editing-link"); link.href = d.url; link.textContent = d.title;
-      $("#ne-publish").textContent = "Uložit změny";
+      $("#ne-readonly").hidden = d.mayChange !== false;
+      $("#ne-publish").textContent = "Uložit změny"; $("#ne-publish").disabled = d.mayChange === false;
       tab("new"); window.scrollTo(0, root.offsetTop);
     }, function (r) { msg($("#ne-list-msg"), errorOf(r), "error"); signedOut(r); });
   }
   function reset() {
     state.files = []; state.blobs = {}; state.editing = null;
-    editor.reset(); setDate(); setCategories(["akce"]);
+    editor.reset(); setDate(); setCategories([state.defaultCategory]);
     if (quill) quill.setText("");
     $("#ne-photo-box").innerHTML = ""; $("#ne-file-list").innerHTML = "";
     $("#ne-text").parentNode.hidden = false; $("#ne-locked").hidden = true; $("#ne-text-hint").hidden = false;
-    $("#ne-editing").hidden = true; $("#ne-publish").textContent = "Zveřejnit";
+    $("#ne-editing").hidden = true; $("#ne-readonly").hidden = true; $("#ne-publish").textContent = "Zveřejnit"; $("#ne-publish").disabled = false;
     ["#ne-msg", "#ne-draft", "#ne-inline-msg"].forEach(function (s) { msg($(s)); });
   }
   $("#ne-cancel").addEventListener("click", function () { reset(); restore(); tab("list"); });
@@ -249,14 +267,14 @@
 
   // ---- the text editor (Quill): only formats the site already styles, so every post looks like the rest of the site
   var quill = null;
-  function setDate() { var n = new Date(); n.setMinutes(n.getMinutes() - n.getTimezoneOffset()); $("#ne-date").value = n.toISOString().slice(0, 16); }
+  function setDate() { $("#ne-date").value = now(); }
   function setup() {
     if (quill || !window.Quill) return;
     // Quill's image format accepts only http(s) and data sources and turns anything else into "//:0"; the preview of a
     // photo being uploaded is a blob: URL, which must survive until it is swapped for the uploaded /media/ address
     var Img = Quill.import("formats/image");
     Quill.register(class extends Img { static sanitize(url) { return /^blob:/.test(url) ? url : Img.sanitize(url); } }, true);
-    setDate(); setCategories(["akce"]);
+    setDate(); setCategories([state.defaultCategory]);
     quill = new Quill("#ne-text", {
       theme: "snow", placeholder: "Text aktuality…",
       formats: ["header", "bold", "italic", "underline", "strike", "link", "list", "blockquote", "image"],
@@ -271,12 +289,14 @@
     restore();
     var t; quill.on("text-change", function () { clearTimeout(t); t = setTimeout(save, 800); });
     editor.querySelectorAll("#ne-title, #ne-excerpt").forEach(function (el) { el.addEventListener("input", function () { clearTimeout(t); t = setTimeout(save, 800); }); });
+    $("#ne-date").addEventListener("input", dateHint); dateHint();
   }
+  function dateHint() { var d = $("#ne-date").value; $("#ne-date-hint").textContent = d && d.slice(0, 10) > today() ? "Budoucí datum: aktualita se na webu objeví až v tento den." : ""; }
   function insertImage() {
     var i = document.createElement("input"); i.type = "file"; i.accept = "image/jpeg,image/png,image/webp"; i.multiple = true;
     i.onchange = function () {
       var files = Array.prototype.slice.call(i.files); if (!files.length) return;
-      // each photo on its own line: two or more in a row become a photo grid on the site
+      // each photo on its own line: two or more in a row become a photo grid on the site (and the post is listed in the gallery)
       var at = quill.getSelection(true).index, note = $("#ne-inline-msg"), left = files.length;
       msg(note, files.length > 1 ? "Fotografie se nahrávají… (" + files.length + ")" : "Fotografie se nahrává…");
       files.forEach(function (f) {
@@ -315,16 +335,87 @@
     var html = locked ? "" : quill.getSemanticHTML().replace(/&nbsp;/g, " ");
     Object.keys(state.blobs).forEach(function (k) { html = html.split(k).join(state.blobs[k]); });
     var data = { action: "publish", title: $("#ne-title").value, date: $("#ne-date").value, excerpt: $("#ne-excerpt").value, body: html,
-      categories: Array.prototype.map.call(editor.querySelectorAll('input[name="cat"]:checked'), function (c) { return c.value; }), files: state.files };
+      categories: Array.prototype.map.call(editor.querySelectorAll('input[name="cat"]:checked'), function (c) { return c.value; }), files: state.files,
+      draft: $("#ne-draft-flag").checked };
+    if (state.features.pin) data.pinned = $("#ne-pin").checked;
     if (ed) data.path = ed.path;
     if (!data.title.trim() || (!locked && !quill.getText().trim())) return msg(out, ERR.missing, "error");
     b.disabled = true; msg(out, ed ? "Ukládá se…" : "Zveřejňuje se…");
     call(data).then(function (r) {
       if (!ed) try { localStorage.removeItem(DRAFT); } catch (er) {}
       app.hidden = true; done.hidden = false;
-      $("#ne-done-title").textContent = ed ? "Uloženo" : "Zveřejněno";
+      $("#ne-done-title").textContent = r.body.draft ? "Uloženo jako koncept" : r.body.scheduled ? "Naplánováno" : ed ? "Uloženo" : "Zveřejněno";
+      $("#ne-done-text").firstChild.textContent = r.body.draft ? "Koncept není na webu vidět; zveřejníte ho úpravou (zrušte „Koncept“). Adresa bude: "
+        : r.body.scheduled ? "Aktualita se na webu objeví v uvedený den (po sestavení webu): " : "Změna bude na webu asi za minutu: ";
       var a = $("#ne-done-link"); a.href = r.body.url; a.textContent = location.origin + r.body.url;
     }, function (r) { msg(out, errorOf(r), "error"); signedOut(r); }).then(function () { b.disabled = false; });
   });
   $("#ne-again").addEventListener("click", function () { location.reload(); });
+
+  // ---- events: the calendar kept in content/events.json
+  var evForm = $("#ne-event-form"), evList = $("#ne-event-list"), evMsg = $("#ne-event-msg"), eventsCache = null;
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function fmtWhen(e) {
+    var s = e.start.slice(0, 10).split("-"), t = e.end.slice(0, 10).split("-"), a = +s[2] + ". " + +s[1] + ". " + s[0], b = +t[2] + ". " + +t[1] + ". " + t[0];
+    return (a === b ? a : a + " – " + b) + (e.allDay ? "" : ", " + e.start.slice(11));
+  }
+  function loadEvents() {
+    msg(evMsg, "Načítá se…");
+    call({ action: "events" }).then(function (r) { eventsCache = r.body.events || []; msg(evMsg); renderEvents(); }, function (r) { msg(evMsg, errorOf(r), "error"); signedOut(r); });
+  }
+  function renderEvents() {
+    var today = now().slice(0, 10);
+    evList.innerHTML = "";
+    var items = eventsCache.slice().sort(function (a, b) { return a.start < b.start ? 1 : -1; });
+    var upcoming = items.filter(function (e) { return e.end.slice(0, 10) >= today; }).reverse(), past = items.filter(function (e) { return e.end.slice(0, 10) < today; });
+    upcoming.concat(past).forEach(function (e) {
+      var li = document.createElement("li");
+      li.innerHTML = '<time></time><div><span class="ne-list-title"></span><span class="ne-list-meta"></span></div><button type="button" class="btn btn--ghost ne-small">Upravit</button><button type="button" class="link-btn ne-del">Smazat</button>';
+      li.querySelector("time").textContent = fmtWhen(e);
+      li.querySelector(".ne-list-title").textContent = e.title;
+      li.querySelector(".ne-list-meta").textContent = (e.place ? e.place + " · " : "") + (e.end.slice(0, 10) < today ? "proběhlo" : "nadcházející");
+      li.querySelector(".btn").onclick = function () { editEvent(e); };
+      var delBtn = li.querySelector(".ne-del");
+      if (mine(e)) delBtn.onclick = function () { delEvent(e, li); }; else delBtn.remove();
+      evList.appendChild(li);
+    });
+    if (!items.length) evList.innerHTML = '<li class="ne-list-empty">Zatím žádné události.</li>';
+  }
+  function editEvent(e) {
+    state.event = e;
+    $("#ne-ev-title").value = e.title; $("#ne-ev-place").value = e.place || "";
+    $("#ne-ev-start").value = e.start.replace(" ", "T"); $("#ne-ev-end").value = e.end.replace(" ", "T");
+    $("#ne-ev-allday").checked = !!e.allDay; $("#ne-ev-desc").value = e.description.replace(/<\/p>\s*<p>/g, "\n\n").replace(/<br\s*\/?>/g, "\n").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").trim();
+    $("#ne-ev-editing").hidden = false; $("#ne-ev-editing-title").textContent = e.title; $("#ne-ev-save").textContent = "Uložit změny";
+    window.scrollTo(0, evForm.offsetTop);
+  }
+  function resetEvent() {
+    state.event = null; evForm.reset(); $("#ne-ev-editing").hidden = true; $("#ne-ev-save").textContent = "Přidat událost";
+    var d = new Date(); $("#ne-ev-start").value = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + "T08:00"; $("#ne-ev-end").value = "";
+  }
+  $("#ne-ev-cancel").addEventListener("click", resetEvent);
+  function delEvent(e, li) {
+    if (!confirm("Opravdu smazat událost „" + e.title + "“?")) return;
+    call({ action: "event-delete", url: e.url }).then(function () { eventsCache = eventsCache.filter(function (x) { return x.url !== e.url; }); li.remove(); msg(evMsg, "Smazáno: " + e.title + ". Z webu zmizí asi za minutu."); },
+      function (r) { msg(evMsg, errorOf(r), "error"); signedOut(r); });
+  }
+  evForm.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var start = $("#ne-ev-start").value, end = $("#ne-ev-end").value || start, b = $("#ne-ev-save");
+    if (!$("#ne-ev-title").value.trim() || !start) return msg(evMsg, "Vyplňte prosím název a začátek události.", "error");
+    if (end < start) return msg(evMsg, "Konec události nemůže být před začátkem.", "error");
+    var desc = $("#ne-ev-desc").value.trim().split(/\n{2,}/).filter(Boolean).map(function (p) {
+      return "<p>" + p.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>") + "</p>"; }).join("");
+    var data = { action: "event", title: $("#ne-ev-title").value, start: start.replace("T", " "), end: end.replace("T", " "), allDay: $("#ne-ev-allday").checked, place: $("#ne-ev-place").value, description: desc };
+    if (state.event) data.url = state.event.url;
+    b.disabled = true; msg(evMsg, "Ukládá se…");
+    call(data).then(function (r) {
+      eventsCache = eventsCache.filter(function (x) { return x.url !== r.body.url; }).concat([r.body.event]);
+      msg(evMsg, (state.event ? "Uloženo: " : "Přidáno: ") + r.body.event.title + ". Na webu asi za minutu."); resetEvent(); renderEvents();
+    }, function (r) { msg(evMsg, errorOf(r), "error"); signedOut(r); }).then(function () { b.disabled = false; });
+  });
+  $("#ne-ev-allday").addEventListener("change", function () {
+    var all = this.checked; ["#ne-ev-start", "#ne-ev-end"].forEach(function (s) { var i = $(s); if (all && i.value) i.value = i.value.slice(0, 10) + (s.indexOf("start") > 0 ? "T00:00" : "T23:59"); });
+  });
+  resetEvent();
 })();

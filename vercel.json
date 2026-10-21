@@ -4,6 +4,7 @@
   "installCommand": "",
   "buildCommand": "python3 build.py --production --offline",
   "outputDirectory": "dist",
+  "crons": [{ "path": "/api/rebuild", "schedule": "0 3 * * *" }],
   "cleanUrls": false,
   "trailingSlash": true,
   "headers": [

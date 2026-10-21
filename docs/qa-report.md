@@ -57,3 +57,26 @@ Fixed in this audit:
 Not changed (deliberate): mobile header height and the banner text shadow (shared with the sister sites); Impeccable detector `cramped-padding` / `dark-glow` / `flat-type-hierarchy` are false positives (full-bleed wrappers, family banner shadow, unresolved stylesheet); `broken-image` / `overused-font` hit a regex in news-editor.js and the vendored Quill CSS.
 
 Staff page `/pridat-aktualitu/`: its API exists only on Vercel (404 on the local server, expected); the sign-in form appears after a session check (layout shift 0.09–0.21, internal page only).
+
+## Cross-device audit and publishing workflow (21 October 2026)
+
+Run with Playwright (Chromium) and axe-core 4.10 on the built site of all three school sites at six viewports
+(phone 360 and 390 px, phone landscape 844 px, tablet 768 and 1024 px, desktop 1920 px): home, news listing, a post,
+the main information page, contacts, the Grand Priory page, the editor.
+
+| Check | Result |
+|---|---|
+| Horizontal overflow, layout | one bug across the sites: at 1024 px the hidden drop-down menus of the last items widened the page; fixed by right-aligning those menus (`.nav-list>li:nth-last-child(-n+3)>.sub`) |
+| axe (WCAG 2 A/AA, 2.1, 2.2) | 0 violations at every viewport |
+| Console errors, missing alt texts, one h1 | 0 |
+| Sticky menu bar (added 20 Oct) | opens and scrolls correctly at every width; mobile menu limited to the viewport height |
+| Small type and tap targets in the Grand Magistry frame (top bar, footer) | informational: the frame is the Order's prescribed template and was left as designed |
+
+Publishing (see `docs/publishing.md`): roles (editor/admin), drafts, scheduled posts with a daily rebuild, pinned
+notices, events and photo galleries were added to the shared editor and tested end to end in Chromium against the
+local stand-in (`tests/news.local.js`): create with photo → draft → edit into a scheduled post → not built → admin pins a
+notice → shown on the home page → event added, edited, deleted → post deleted → path traversal refused; 0 page errors.
+`node tests/news.test.js`, `python3 build.py --production --offline` and `python3 check.py` pass.
+
+Still needing authorisation: the Vercel environment variables (`NEWS_USERS`, `NEWS_SECRET`, `GITHUB_TOKEN`,
+`DEPLOY_HOOK_URL`, `CRON_SECRET`) are not set on this project, so publishing is not live yet.
