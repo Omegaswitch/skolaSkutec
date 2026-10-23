@@ -25,7 +25,7 @@ def main():
     logo = "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
     html = f'''<!doctype html><body style="margin:0;width:1200px;height:630px;position:relative;overflow:hidden;background:#1d2a3a">
 <img src="{photo}" style="position:absolute;top:0;height:630px;width:auto;left:-2690px;filter:blur(1.2px)" alt="">
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,30,.9) 0%,rgba(14,22,30,.86) 62%,rgba(14,22,30,.5) 82%,rgba(14,22,30,.55) 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,30,.9) 0%,rgba(14,22,30,.88) 35%,rgba(14,22,30,.82) 55%,rgba(14,22,30,.72) 70%,rgba(14,22,30,.6) 85%,rgba(14,22,30,.5) 100%)"></div>
 <img src="{logo}" style="position:absolute;left:68px;top:50%;transform:translateY(-54%);height:206px;width:auto" alt="">
 <div style="position:absolute;left:0;right:0;bottom:0;height:18px;background:{RED}"></div></body>'''
     with sync_playwright() as p:
