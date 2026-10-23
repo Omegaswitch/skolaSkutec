@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Renders the link-preview image static/img/og.jpg (1200×630, Open Graph): the Order's flag (the official banner
-photograph, a crop scaled up under a dark veil), the school lockup with all lettering in white, and a red strip at the
+photograph, a crop scaled up under a dark veil), the school lockup as in the site's header (the school's
+name in red), and a red strip at the
 foot, the same on every Order school site. Run once after a logo change; the output is committed.
 
     pip install playwright pillow && python3 tools/make_og.py
@@ -20,13 +21,11 @@ RED = "#e31818"
 
 def main():
     svg = LOGO.read_text(encoding="utf-8")
-    i = svg.rfind('<path fill="' + RED + '"')  # the last red path is the school's name; the shield keeps its colours
-    svg = svg[:i] + '<path fill="#fff"' + svg[i + len('<path fill="' + RED + '"'):]
     photo = "data:image/webp;base64," + base64.b64encode(BANNER.read_bytes()).decode()
     logo = "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
     html = f'''<!doctype html><body style="margin:0;width:1200px;height:630px;position:relative;overflow:hidden;background:#1d2a3a">
 <img src="{photo}" style="position:absolute;top:0;height:630px;width:auto;left:-2690px;filter:blur(1.2px)" alt="">
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,30,.74) 0%,rgba(14,22,30,.62) 45%,rgba(14,22,30,.45) 70%,rgba(14,22,30,.55) 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,30,.9) 0%,rgba(14,22,30,.86) 62%,rgba(14,22,30,.5) 82%,rgba(14,22,30,.55) 100%)"></div>
 <img src="{logo}" style="position:absolute;left:68px;top:50%;transform:translateY(-54%);height:206px;width:auto" alt="">
 <div style="position:absolute;left:0;right:0;bottom:0;height:18px;background:{RED}"></div></body>'''
     with sync_playwright() as p:
